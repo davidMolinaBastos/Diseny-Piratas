@@ -2,21 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-[CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/CartaObject", order = 1)]
-
-public class CartaObject : MonoBehaviour
+[CreateAssetMenu(fileName = "CartaData", menuName = "ScriptableObjects/CartaObject", order = 0)]
+public class CartaObject : ScriptableObject
 {
-
     public enum TipoPasiva
     {
 
     }
-
-    public string NombreCarta;
-    public Sprite ImagenCarta;
+    public string nickname;
+    public Sprite sprite;
     public int levelCarta;
-    public int rolValor;
+    public int rollValor;
 
 
     // Start is called before the first frame update

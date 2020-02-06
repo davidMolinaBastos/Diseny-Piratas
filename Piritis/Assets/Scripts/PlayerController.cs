@@ -4,77 +4,56 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
-    public enum TdeNodo{
-        isla, enemigo, evento
-    }
-    public TdeNodo TipoNodo;
-
     [Header("KeyCodes")]
     public KeyCode m_LeftKeyCode = KeyCode.A;
     public KeyCode m_RightKeyCode = KeyCode.D;
     public KeyCode m_UpKeyCode = KeyCode.W;
     public KeyCode m_DownKeyCode = KeyCode.S;
+
     [Space(10)]
-    public NodoScript ActualNode;
+    public NodoScript CurrentNode;
 
-    public float speed; 
+    [Header("VariablesMovimiento")]
+    public float speed, closeNodeR; 
 
-    Vector2 finalPosition;
+    //Privadas
+    NodoScript nextNode;
     bool moving = false;
-    //private Dictionary<string, GameObject> PossiblePositions;
-    
-    void Start()
-    {
-    }
-    
+
     void Update()
     {
         //Movimiento
-        
         if (!moving) {
-            if (Input.GetKey(m_UpKeyCode) && ActualNode.nodos[0] != null)
+            if (Input.GetKey(m_UpKeyCode) && CurrentNode.nodos[0] != null)
             {
-                finalPosition = ActualNode.nodos[0].transform.position;
+                nextNode = CurrentNode.nodos[0];
                 moving = true;
             }
-
-            else if (Input.GetKey(m_DownKeyCode) && ActualNode.nodos[2] != null)
+            else if (Input.GetKey(m_DownKeyCode) && CurrentNode.nodos[2] != null)
             {
-                finalPosition = ActualNode.nodos[2].transform.position;
+                nextNode = CurrentNode.nodos[2];
                 moving = true;
             }
-
-            else if (Input.GetKey(m_RightKeyCode) && ActualNode.nodos[1] != null)
+            else if (Input.GetKey(m_RightKeyCode) && CurrentNode.nodos[1] != null)
             {
-                finalPosition = ActualNode.nodos[1].transform.position;
+                nextNode = CurrentNode.nodos[1];
                 moving = true;
             }
-
-            else if (Input.GetKey(m_LeftKeyCode) && ActualNode.nodos[3] != null)
+            else if (Input.GetKey(m_LeftKeyCode) && CurrentNode.nodos[3] != null)
             {
-                finalPosition = ActualNode.nodos[3].transform.position;
+                nextNode = CurrentNode.nodos[3];
                 moving = true;
             }
         }
         else
         {
-            if(((Vector2)transform.position- finalPosition).magnitude < 0.05f)
+            if((nextNode.transform.position - transform.position).magnitude < closeNodeR)
             {
+                CurrentNode = nextNode;
                 moving = false;
-                return;
             }
-            transform.position = new Vector3(1,1,0) * ((Vector2)transform.position - finalPosition).normalized * speed * Time.deltaTime;
+            else
+                transform.Translate((nextNode.transform.position-transform.position).normalized * speed * Time.deltaTime);
         }
-    }
-    private void LateUpdate()
-    {
-        print(finalPosition);
-    }
-    void OnTriggerEnter2D(Collider2D _Collider)
-    {
-        Debug.Log("Collision");
-        if (_Collider.tag == "Nodo")
-            ActualNode = _Collider.GetComponent<NodoScript>();
     }
 }
