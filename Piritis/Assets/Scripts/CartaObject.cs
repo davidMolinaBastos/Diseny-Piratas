@@ -13,18 +13,5 @@ public class CartaObject : ScriptableObject
     public Sprite sprite;
     public int levelCarta;
     public int rollValor;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+    public int ID;
 }

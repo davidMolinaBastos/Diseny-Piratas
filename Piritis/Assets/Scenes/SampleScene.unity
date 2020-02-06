@@ -298,6 +298,11 @@ PrefabInstance:
       propertyPath: nodos.Array.data[1]
       value: 
       objectReference: {fileID: 612261132}
+    - target: {fileID: 1016678189268778091, guid: 7f7b98fc77400be4691c55ab803728e4,
+        type: 3}
+      propertyPath: tipoNodo
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_Name
@@ -428,6 +433,11 @@ PrefabInstance:
       propertyPath: nodos.Array.data[3]
       value: 
       objectReference: {fileID: 612261132}
+    - target: {fileID: 1016678189268778091, guid: 7f7b98fc77400be4691c55ab803728e4,
+        type: 3}
+      propertyPath: tipoNodo
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_Name
@@ -517,6 +527,11 @@ PrefabInstance:
       propertyPath: nodos.Array.data[0]
       value: 
       objectReference: {fileID: 612261132}
+    - target: {fileID: 1016678189268778091, guid: 7f7b98fc77400be4691c55ab803728e4,
+        type: 3}
+      propertyPath: tipoNodo
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_Name
@@ -524,6 +539,64 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f7b98fc77400be4691c55ab803728e4, type: 3}
+--- !u!1 &1057518255
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1057518257}
+  - component: {fileID: 1057518256}
+  - component: {fileID: 1057518258}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: GameController
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1057518256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057518255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04bd1e9c464b8904e971965723588e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1057518257
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057518255}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1057518258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057518255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49f32bcba0e81340a3ce405c887c6f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListaDeCartas: []
+  CartasPlayer: []
 --- !u!1 &1418534094
 GameObject:
   m_ObjectHideFlags: 0
@@ -707,6 +780,11 @@ PrefabInstance:
       propertyPath: nodos.Array.data[2]
       value: 
       objectReference: {fileID: 612261132}
+    - target: {fileID: 1016678189268778091, guid: 7f7b98fc77400be4691c55ab803728e4,
+        type: 3}
+      propertyPath: tipoNodo
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_Name
@@ -827,6 +905,11 @@ PrefabInstance:
       propertyPath: nodos.Array.data[3]
       value: 
       objectReference: {fileID: 1902163203}
+    - target: {fileID: 1016678189268778091, guid: 7f7b98fc77400be4691c55ab803728e4,
+        type: 3}
+      propertyPath: tipoNodo
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_Name

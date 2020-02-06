@@ -19,7 +19,14 @@ public class PlayerController : MonoBehaviour
     //Privadas
     NodoScript nextNode;
     bool moving = false;
-
+    GameController gameController;
+    CardBlackboard cb;
+    List<CartaObject> currentDeck;
+    private void Start()
+    {
+        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+        cb = GameObject.FindGameObjectWithTag("GameController").GetComponent<CardBlackboard>();
+    }
     void Update()
     {
         //Movimiento
@@ -50,6 +57,15 @@ public class PlayerController : MonoBehaviour
             if((nextNode.transform.position - transform.position).magnitude < closeNodeR)
             {
                 CurrentNode = nextNode;
+                switch (CurrentNode.tipoNodo) {
+                    case NodoScript.TNodo.ISLA:
+                        gameController.DisplayIslandHUD();
+                        break;
+                    case NodoScript.TNodo.EVENTO:
+                        EventNodeScript evento = (EventNodeScript)CurrentNode;
+                        gameController.StartEvent(evento);
+                        break;
+                }
                 moving = false;
             }
             else
