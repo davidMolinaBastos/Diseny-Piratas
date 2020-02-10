@@ -13,5 +13,4 @@ public class CartaObject : ScriptableObject
     public Sprite sprite;
     public int levelCarta;
     public int rollValor;
-    public int ID;
 }

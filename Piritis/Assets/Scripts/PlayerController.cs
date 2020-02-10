@@ -14,14 +14,16 @@ public class PlayerController : MonoBehaviour
     public NodoScript CurrentNode;
 
     [Header("VariablesMovimiento")]
-    public float speed, closeNodeR; 
+    public float speed;
+    public float closeNodeR;
 
     //Privadas
     NodoScript nextNode;
     bool moving = false;
     GameController gameController;
     CardBlackboard cb;
-    List<CartaObject> currentDeck;
+    CartaObject[] cardhand = { null, null, null };
+
     private void Start()
     {
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
@@ -30,46 +32,49 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //Movimiento
-        if (!moving) {
+        if (!moving)
+        {
             if (Input.GetKey(m_UpKeyCode) && CurrentNode.nodos[0] != null)
             {
-                nextNode = CurrentNode.nodos[0];
+                nextNode = (NodoScript)CurrentNode.nodos[0];
                 moving = true;
             }
             else if (Input.GetKey(m_DownKeyCode) && CurrentNode.nodos[2] != null)
             {
-                nextNode = CurrentNode.nodos[2];
+                nextNode = (NodoScript)CurrentNode.nodos[2];
                 moving = true;
             }
             else if (Input.GetKey(m_RightKeyCode) && CurrentNode.nodos[1] != null)
             {
-                nextNode = CurrentNode.nodos[1];
+                nextNode = (NodoScript)CurrentNode.nodos[1];
                 moving = true;
             }
             else if (Input.GetKey(m_LeftKeyCode) && CurrentNode.nodos[3] != null)
             {
-                nextNode = CurrentNode.nodos[3];
+                nextNode = (NodoScript)CurrentNode.nodos[3];
                 moving = true;
             }
         }
         else
         {
-            if((nextNode.transform.position - transform.position).magnitude < closeNodeR)
+            if ((nextNode.transform.position - transform.position).magnitude < closeNodeR)
             {
                 CurrentNode = nextNode;
-                switch (CurrentNode.tipoNodo) {
+                switch (CurrentNode.tipoNodo)
+                {
                     case NodoScript.TNodo.ISLA:
-                        gameController.DisplayIslandHUD();
+                        gameController.ChangeState(GameController.GameStates.ISLAND);
                         break;
                     case NodoScript.TNodo.EVENTO:
                         EventNodeScript evento = (EventNodeScript)CurrentNode;
-                        gameController.StartEvent(evento);
+                        gameController.CallEvent(evento);
                         break;
                 }
                 moving = false;
             }
             else
-                transform.Translate((nextNode.transform.position-transform.position).normalized * speed * Time.deltaTime);
+                transform.Translate((nextNode.transform.position - transform.position).normalized * speed * Time.deltaTime);
         }
     }
+    public void SetMoving(bool movin) { moving = movin; }
 }

@@ -11,14 +11,17 @@ public class EventNodeScript : NodoScript, IRestartGameElement
     public List<TEvent> eventos;
 
     [Header("Stats")]
-    public float goldValue, crewValue;
-    
+    public float goldValue;
+    public float crewValue;
+    public string nombre = "default";
+
     bool depleted = false;
     TEvent evento;
     void Start()
     {
+        tipoNodo = TNodo.EVENTO;
         Random.InitState((int)System.DateTime.Now.Ticks);
-        evento = eventos[Random.Range(0,2)];
+        evento = eventos[Random.Range(0, 2)];
         GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().AddResetElement(this);
     }
     public void ResetNode()
