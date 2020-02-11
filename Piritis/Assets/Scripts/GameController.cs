@@ -8,30 +8,29 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     List<IRestartGameElement> m_ResetNodes = new List<IRestartGameElement>();
+
     CardBlackboard cb;
     MenuController mc;
     PlayerController pc;
 
-    public enum GameStates
-    {
-        EVENT, ISLAND, FREEROAM, INVENTORY
-    }
-    GameStates gameState;
-    float gold,treasureParts;
+    
+    float gold, treasureParts;
+    bool eventActive;
 
-    public KeyCode AcceptKeyCode;
+    public KeyCode AcceptKeyCode = KeyCode.E;
 
     private void Start()
     {
         cb = GetComponent<CardBlackboard>();
         mc = GetComponent<MenuController>();
         pc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        ChangeState(GameStates.FREEROAM);
     }
-    
+
     public void CallEvent(EventNodeScript evento)
     {
-        ChangeState(GameStates.EVENT);
+        //mc.DisplayEvent(true, evento);
+        eventActive = true;
+        pc.SetMoving(false);
     }
 
     public void AddResetElement(IRestartGameElement RestartGameElement)
@@ -40,49 +39,16 @@ public class GameController : MonoBehaviour
     }
     private void Update()
     {
-        switch (gameState)
+        if (eventActive)
         {
-            case GameStates.EVENT:
-                if (Input.GetKeyDown(AcceptKeyCode))
-                    ChangeState(GameStates.FREEROAM);
-                break;
-            case GameStates.ISLAND:
-                break;
-            case GameStates.INVENTORY:
-                break;
-            case GameStates.FREEROAM:
-                break;
-        }
-    }
-    public void ChangeState(GameStates newState)
-    {
-        switch (gameState)
-        {
-            case GameStates.EVENT:
-                mc.DisplayEvent(false);
-                break;
-            case GameStates.ISLAND:
-                break;
-            case GameStates.INVENTORY:
-                break;
-            case GameStates.FREEROAM:
-                pc.SetMoving(false);
-                break;
-        }
-        switch (newState)
-        {
-            case GameStates.EVENT:
-                mc.DisplayEvent(true);
-                break;
-            case GameStates.ISLAND:
-                break;
-            case GameStates.INVENTORY:
-                break;
-            case GameStates.FREEROAM:
+            if (Input.GetKeyDown(AcceptKeyCode))
+            {
+                print("E pressed");
+                //mc.DisplayEvent(false, null);
+                eventActive = false;
                 pc.SetMoving(true);
-                break;
+            }
         }
-        gameState = newState;
     }
 }
 public interface IRestartGameElement

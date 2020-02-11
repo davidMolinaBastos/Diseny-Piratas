@@ -148,7 +148,19 @@ MonoBehaviour:
   eventos: 010000000100000001000000
   goldValue: 100
   crewValue: 100
-  nombre: Default
+  message: default
+--- !u!114 &491250021 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1016678189268778091, guid: 7f7b98fc77400be4691c55ab803728e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 927608414}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491250019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb6950c0cf211db4c85411cf5c859379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &515557197
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,7 +178,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &515557198
 RectTransform:
   m_ObjectHideFlags: 0
@@ -550,8 +562,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Nodo (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1016678189268778091, guid: 7f7b98fc77400be4691c55ab803728e4, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f7b98fc77400be4691c55ab803728e4, type: 3}
 --- !u!1001 &934927539
 PrefabInstance:
@@ -725,6 +736,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   e_text: {fileID: 515557199}
   e_image: {fileID: 1283919983}
+  currentEvent: {fileID: 0}
 --- !u!1 &1175628270
 GameObject:
   m_ObjectHideFlags: 0
@@ -779,7 +791,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1283919982
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1292,7 +1304,7 @@ PrefabInstance:
         type: 3}
       propertyPath: nodos.Array.data[1]
       value: 
-      objectReference: {fileID: 491250020}
+      objectReference: {fileID: 491250021}
     - target: {fileID: 1016678189268778091, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: nodos.Array.data[0]

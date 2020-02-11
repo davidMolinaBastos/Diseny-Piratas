@@ -9,8 +9,11 @@ public class CartaObject : ScriptableObject
     {
 
     }
+    public TipoPasiva pasiva;
     public string nickname;
+
     public Sprite sprite;
+
     public int levelCarta;
     public int rollValor;
 }

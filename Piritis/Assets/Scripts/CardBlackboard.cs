@@ -10,7 +10,9 @@ public class CardBlackboard : MonoBehaviour
     public List<CartaObject> Nivel3;
     public List<CartaObject> Nivel4;
     public List<CartaObject> Nivel5;
-    static public List<CartaObject>[] Niveles = new List<CartaObject>[5];
+
+    [HideInInspector]public List<CartaObject>[] Niveles = new List<CartaObject>[5];
+
     [Header("Deck del Player")]
     public List<CartaObject> CartasPlayer;
     public void Start()

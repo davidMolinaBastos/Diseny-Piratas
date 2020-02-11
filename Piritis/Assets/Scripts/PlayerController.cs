@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
 
     //Privadas
     NodoScript nextNode;
-    bool moving = false;
+    bool moving = false, canMove = true;
     GameController gameController;
     CardBlackboard cb;
     CartaObject[] cardhand = { null, null, null };
@@ -32,49 +32,54 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //Movimiento
-        if (!moving)
+        if (canMove)
         {
-            if (Input.GetKey(m_UpKeyCode) && CurrentNode.nodos[0] != null)
+            if (!moving)
             {
-                nextNode = (NodoScript)CurrentNode.nodos[0];
-                moving = true;
-            }
-            else if (Input.GetKey(m_DownKeyCode) && CurrentNode.nodos[2] != null)
-            {
-                nextNode = (NodoScript)CurrentNode.nodos[2];
-                moving = true;
-            }
-            else if (Input.GetKey(m_RightKeyCode) && CurrentNode.nodos[1] != null)
-            {
-                nextNode = (NodoScript)CurrentNode.nodos[1];
-                moving = true;
-            }
-            else if (Input.GetKey(m_LeftKeyCode) && CurrentNode.nodos[3] != null)
-            {
-                nextNode = (NodoScript)CurrentNode.nodos[3];
-                moving = true;
-            }
-        }
-        else
-        {
-            if ((nextNode.transform.position - transform.position).magnitude < closeNodeR)
-            {
-                CurrentNode = nextNode;
-                switch (CurrentNode.tipoNodo)
+                if (Input.GetKey(m_UpKeyCode) && CurrentNode.nodos[0] != null)
                 {
-                    case NodoScript.TNodo.ISLA:
-                        gameController.ChangeState(GameController.GameStates.ISLAND);
-                        break;
-                    case NodoScript.TNodo.EVENTO:
-                        EventNodeScript evento = (EventNodeScript)CurrentNode;
-                        gameController.CallEvent(evento);
-                        break;
+                    nextNode = CurrentNode.nodos[0];
+                    moving = true;
                 }
-                moving = false;
+                else if (Input.GetKey(m_DownKeyCode) && CurrentNode.nodos[2] != null)
+                {
+                    nextNode = CurrentNode.nodos[2];
+                    moving = true;
+                }
+                else if (Input.GetKey(m_RightKeyCode) && CurrentNode.nodos[1] != null)
+                {
+                    nextNode = CurrentNode.nodos[1];
+                    moving = true;
+                }
+                else if (Input.GetKey(m_LeftKeyCode) && CurrentNode.nodos[3] != null)
+                {
+                    nextNode = CurrentNode.nodos[3];
+                    moving = true;
+                }
             }
             else
-                transform.Translate((nextNode.transform.position - transform.position).normalized * speed * Time.deltaTime);
+            {
+                if (nextNode != null)
+                {
+                    if ((nextNode.transform.position - transform.position).magnitude < closeNodeR)
+                    {
+                        CurrentNode = nextNode;
+                        switch (CurrentNode.tipoNodo)
+                        {
+                            case NodoScript.TNodo.ISLA:
+
+                                break;
+                            case NodoScript.TNodo.EVENTO:
+                                gameController.CallEvent(CurrentNode.gameObject.GetComponent<EventNodeScript>());
+                                break;
+                        }
+                        moving = false;
+                    }
+                    else
+                        transform.Translate((nextNode.transform.position - transform.position).normalized * speed * Time.deltaTime);
+                }
+            }
         }
     }
-    public void SetMoving(bool movin) { moving = movin; }
+    public void SetMoving(bool movin) { canMove = movin; }
 }

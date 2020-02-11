@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(NodoScript))]
 public class IslandScript : NodoScript
 {
     //Objetos, precios, etc etc etc
@@ -9,6 +10,6 @@ public class IslandScript : NodoScript
 
     private void Start()
     {
-        tipoNodo = TNodo.EVENTO;
+        tipoNodo = TNodo.ISLA;
     }
 }

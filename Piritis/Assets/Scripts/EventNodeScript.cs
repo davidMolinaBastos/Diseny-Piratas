@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(NodoScript))]
 public class EventNodeScript : NodoScript, IRestartGameElement
 {
     //Lista de posibles eventos
-    public enum TEvent { FIGHT, CHANGE_GOLD, CHANGE_CARD }
+    public enum TEvent { FIGHT, CHANGE_GOLD, CHANGE_CARD, CHANGE_BOTH }
+    TEvent evento;
 
     [Header("Eventos")]
     public List<TEvent> eventos;
@@ -13,10 +15,10 @@ public class EventNodeScript : NodoScript, IRestartGameElement
     [Header("Stats")]
     public float goldValue;
     public float crewValue;
-    public string nombre = "default";
+    public string message = "default";
 
     bool depleted = false;
-    TEvent evento;
+
     void Start()
     {
         tipoNodo = TNodo.EVENTO;
