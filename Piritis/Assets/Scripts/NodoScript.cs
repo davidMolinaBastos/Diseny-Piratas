@@ -12,5 +12,5 @@ public class NodoScript : MonoBehaviour
        3 = Oeste */
 
     public List<NodoScript> nodos;
-    [HideInInspector]public TNodo tipoNodo;
+    public TNodo tipoNodo;
 }

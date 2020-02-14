@@ -11,7 +11,7 @@ public class CardBlackboard : MonoBehaviour
     public List<CartaObject> Nivel4;
     public List<CartaObject> Nivel5;
 
-    [HideInInspector]public List<CartaObject>[] Niveles = new List<CartaObject>[5];
+    [HideInInspector] public List<CartaObject>[] Niveles = new List<CartaObject>[5];
 
     [Header("Deck del Player")]
     public List<CartaObject> CartasPlayer;
@@ -23,4 +23,6 @@ public class CardBlackboard : MonoBehaviour
         Niveles[3] = Nivel4;
         Niveles[4] = Nivel5;
     }
+    public List<CartaObject> GetCardListOfLvl(int lvl) { return Niveles[lvl]; }
+    public List<CartaObject> GetPlayerCards() { return CartasPlayer; }
 }
