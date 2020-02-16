@@ -17,12 +17,13 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float closeNodeR;
 
+
     //Privadas
     NodoScript nextNode;
     bool moving = false, canMove = true;
     GameController gameController;
     CardBlackboard cb;
-    CartaObject[] cardhand = { null, null, null };
+    CartaObject[] cardHand = { null, null, null };
 
     private void Start()
     {
@@ -81,5 +82,6 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
     public void SetMoving(bool movin) { canMove = movin; }
 }

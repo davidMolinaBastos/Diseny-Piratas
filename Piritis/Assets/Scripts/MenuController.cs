@@ -16,6 +16,7 @@ public class MenuController : MonoBehaviour
 
     public void Start()
     {
+        //DEACTIVATE UI ON START
         e_text.enabled = false;
         e_image.enabled = false;
         foreach (Image i in playerCards)
@@ -24,6 +25,8 @@ public class MenuController : MonoBehaviour
             i.enabled = false;
         Background.enabled = false;
     }
+
+    //DISPLAY METHODS
     public void DisplayEvent(bool display, EventNodeScript evento)
     {
         currentEvent = evento;
@@ -32,6 +35,7 @@ public class MenuController : MonoBehaviour
         e_text.enabled = display;
         e_image.enabled = display;
     }
+
     public void DisplayFight(bool display)
     {
         foreach (Image i in playerCards)

@@ -5,24 +5,20 @@ using UnityEngine;
 public class CardBlackboard : MonoBehaviour
 {
     [Header("Lista de todas las Cartas")]
-    public List<CartaObject> Nivel1;
-    public List<CartaObject> Nivel2;
-    public List<CartaObject> Nivel3;
-    public List<CartaObject> Nivel4;
-    public List<CartaObject> Nivel5;
+    public CartaObject[] Nivel1 = new CartaObject[13];
+    public CartaObject[] Nivel2 = new CartaObject[36];
+    public CartaObject[] Nivel3 = new CartaObject[18];
+    public CartaObject[] Nivel4 = new CartaObject[17];
+    public CartaObject[] Nivel5 = new CartaObject[8];
 
-    [HideInInspector] public List<CartaObject>[] Niveles = new List<CartaObject>[5];
+    public List<CartaObject[]> Niveles = new List<CartaObject[]>();
 
     [Header("Deck del Player")]
     public List<CartaObject> CartasPlayer;
     public void Start()
     {
-        Niveles[0] = Nivel1;
-        Niveles[1] = Nivel2;
-        Niveles[2] = Nivel3;
-        Niveles[3] = Nivel4;
-        Niveles[4] = Nivel5;
+        Niveles = new List<CartaObject[]> { Nivel1, Nivel2, Nivel3, Nivel4, Nivel5 };
     }
-    public List<CartaObject> GetCardListOfLvl(int lvl) { return Niveles[lvl]; }
+    public CartaObject ReturnRandomCard(int lvl) { return Niveles[lvl][Random.Range(0, Niveles[lvl].Length)]; }
     public List<CartaObject> GetPlayerCards() { return CartasPlayer; }
 }

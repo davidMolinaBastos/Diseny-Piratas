@@ -148,6 +148,7 @@ MonoBehaviour:
   eventos: 010000000100000001000000
   goldValue: 100
   crewValue: 100
+  islandID: 0
   message: default
   pirateLv: 1
   pirateHand:
@@ -859,6 +860,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Nodo (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
+        type: 3}
+      propertyPath: m_TagString
+      value: EventNode
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f7b98fc77400be4691c55ab803728e4, type: 3}
 --- !u!1001 &934927539
@@ -986,7 +992,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04bd1e9c464b8904e971965723588e34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AcceptKeyCode: 0
+  Islas:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!4 &1057518257
 Transform:
   m_ObjectHideFlags: 0
@@ -1484,6 +1493,7 @@ MonoBehaviour:
   eventos: 000000000000000000000000
   goldValue: 100
   crewValue: 100
+  islandID: 0
   message: default
   pirateLv: 1
   pirateHand:
@@ -1681,6 +1691,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Nodo (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
+        type: 3}
+      propertyPath: m_TagString
+      value: EventNode
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f7b98fc77400be4691c55ab803728e4, type: 3}
@@ -1939,7 +1954,7 @@ PrefabInstance:
     - target: {fileID: 1016678189268778091, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: tipoNodo
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
