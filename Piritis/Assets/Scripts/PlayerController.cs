@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
                         switch (CurrentNode.tipoNodo)
                         {
                             case NodoScript.TNodo.ISLA:
-
+                                gameController.CallShopWindow();
                                 break;
                             case NodoScript.TNodo.EVENTO:
                                 gameController.CallEvent(CurrentNode.gameObject.GetComponent<EventNodeScript>());
@@ -83,5 +83,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void SwitchCards(CartaObject oldHand, CartaObject oldDeck, int handID)
+    {
+        cb.CartasPlayer.Add(oldHand);
+        cb.CartasPlayer.Remove(oldDeck);
+        cardHand[handID] = oldDeck;
+    }
+    public void RemoveCardFromHand(int index) { cardHand[index] = null; }
+    public void AddNewRandomCard(int lvl) { cb.CartasPlayer.Add(cb.ReturnRandomCard(lvl)); }
+    public void DeleteRandomDeckCard() { cb.CartasPlayer.RemoveAt(Random.Range(0, cb.CartasPlayer.Capacity));}
     public void SetMoving(bool movin) { canMove = movin; }
 }

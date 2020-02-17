@@ -14,6 +14,10 @@ public class MenuController : MonoBehaviour
     public Image[] enemyCards = new Image[3];
     public Image Background;
 
+    [Header("Fight Window")]
+    public GameObject[] Buttons;
+    public Text goldCounter;
+    public Image BackgroundShop;
     public void Start()
     {
         //DEACTIVATE UI ON START
@@ -24,6 +28,10 @@ public class MenuController : MonoBehaviour
         foreach (Image i in enemyCards)
             i.enabled = false;
         Background.enabled = false;
+        foreach (GameObject go in Buttons)
+            go.SetActive(false);
+        goldCounter.enabled = false;
+        BackgroundShop.enabled = false;
     }
 
     //DISPLAY METHODS
@@ -43,5 +51,13 @@ public class MenuController : MonoBehaviour
         foreach (Image i in enemyCards)
             i.enabled = display;
         Background.enabled = display;
+    }
+    public void DisplayShop(bool display, float gold)
+    {
+        foreach (GameObject go in Buttons)
+            go.SetActive(display);
+        goldCounter.enabled = display;
+        goldCounter.text = "Gold: " + gold;
+        BackgroundShop.enabled = display;
     }
 }

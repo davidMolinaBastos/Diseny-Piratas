@@ -11,10 +11,11 @@ public class GameController : MonoBehaviour
 
     CardBlackboard cb;
     MenuController mc;
+    BattleManager bm;
     PlayerController pc;
     EventNodeScript evento;
 
-    float gold, treasureParts;
+    float gold = 0, treasureParts = 0;
     bool eventActive;
 
 
@@ -26,12 +27,14 @@ public class GameController : MonoBehaviour
     {
         cb = GetComponent<CardBlackboard>();
         mc = GetComponent<MenuController>();
+        bm = GetComponent<BattleManager>();
         pc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
     private void Update()
     {
 #if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.T)) RefillNodes();  //DebugRefill
+        if (Input.GetKeyDown(KeyCode.Y)) gold += 100f; //DebugAddMoney
 #endif
         if (eventActive)
         {
@@ -52,7 +55,21 @@ public class GameController : MonoBehaviour
         }
     }
 
-    
+    //Shop Managment
+    public void CallShopWindow()
+    {
+        mc.DisplayShop(true, gold);
+        pc.SetMoving(false);
+        RefillNodes();
+    }
+    public void CloseShopWindow()
+    {
+        mc.DisplayShop(false, gold);
+        pc.SetMoving(true);
+    }
+    public void ChangeGold(float value) { gold += value; }
+    public void ChangePieces(int value) { treasureParts += value; }
+
     //Event Managment
     public void CallEvent(EventNodeScript e)
     {
@@ -73,30 +90,30 @@ public class GameController : MonoBehaviour
             pc.SetMoving(false);
             evento = e;
             e.Deplete();
+            PerformEvent(e);
         }
     }
     void PerformEvent(EventNodeScript e)
     {
         switch (e.GetEventType())
         {
+            case EventNodeScript.TEvent.FIGHT:
+                break;
             case EventNodeScript.TEvent.CHANGE_GOLD:
-                gold += e.goldValue;
+                e.ChangeGoldEffect();
                 break;
             case EventNodeScript.TEvent.CHANGE_CARD:
-
+                e.ChangeCardEffect();
                 break;
             case EventNodeScript.TEvent.CHANGE_BOTH:
-                gold += e.goldValue;
+                e.ChangeBothEffect();
                 break;
             case EventNodeScript.TEvent.TELEPORT:
-                
-                break;
-            case EventNodeScript.TEvent.Random:
+                e.TeleportEffect();
                 break;
         }
     }
-
-
+    
     //Restarts and refills
     public void AddResetElement(IRestartGameElement RestartGameElement) { m_ResetNodes.Add(RestartGameElement); }
     public void RefillNodes()
@@ -105,7 +122,6 @@ public class GameController : MonoBehaviour
         for (int i = 0; i < eve.GetLength(0); i++)
             eve[i].GetComponent<EventNodeScript>().ResetNode();
     }
-
 }
 
 
