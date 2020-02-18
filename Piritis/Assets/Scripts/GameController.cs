@@ -18,6 +18,7 @@ public class GameController : MonoBehaviour
     float gold = 0, treasureParts = 0;
     bool eventActive;
 
+    BattleManager.TResults[] results;
 
     // PORT ROYAL = 0, TORTUGA = 1, NEW PROVIDENCE = 2
     public Transform[] Islas = new Transform[3];
@@ -80,6 +81,7 @@ public class GameController : MonoBehaviour
             mc.DisplayFight(true);
             eventActive = true;
             pc.SetMoving(false);
+            evento = e;
             e.Deplete();
             PerformEvent(e);
         }
@@ -98,6 +100,10 @@ public class GameController : MonoBehaviour
         switch (e.GetEventType())
         {
             case EventNodeScript.TEvent.FIGHT:
+                bm.Battle(pc.GetHand(), e.pirateHand);
+                gold += bm.GetWinnings();
+                results = bm.ReturnResults();
+                bm.FlushValues();
                 break;
             case EventNodeScript.TEvent.CHANGE_GOLD:
                 e.ChangeGoldEffect();
@@ -113,7 +119,12 @@ public class GameController : MonoBehaviour
                 break;
         }
     }
-    
+    public void DeleteCards()
+    {
+        for (int i = 0; i < 3; i++)
+            if (results[i] == BattleManager.TResults.Loose)
+                pc.RemoveCardFromHand(i);
+    }
     //Restarts and refills
     public void AddResetElement(IRestartGameElement RestartGameElement) { m_ResetNodes.Add(RestartGameElement); }
     public void RefillNodes()
