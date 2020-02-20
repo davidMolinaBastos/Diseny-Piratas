@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baa37abe85cac7641afe8c70757303d5, type: 3}
   m_Name: EdwardTeach
   m_EditorClassIdentifier: 
-  nickname: 
-  pasiva: 0
+  nickname: Edward Teach
+  pasiva: 4
   sprite: {fileID: 0}
-  levelCarta: 0
+  levelCarta: 5
   rollValor: 0
-  valor: 0
+  valor: 3

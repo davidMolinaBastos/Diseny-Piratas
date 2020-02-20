@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baa37abe85cac7641afe8c70757303d5, type: 3}
   m_Name: Dutchman
   m_EditorClassIdentifier: 
-  nickname: 
+  nickname: Dutchman
   pasiva: 0
   sprite: {fileID: 0}
   levelCarta: 0
