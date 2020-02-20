@@ -89,8 +89,22 @@ public class PlayerController : MonoBehaviour
         cb.CartasPlayer.Remove(oldDeck);
         cardHand[handID] = oldDeck;
     }
-    public void RemoveCardFromHand(int index) { cardHand[index] = null; }
+    public void RemoveCardFromHand(int index)
+    {
+        cardHand[index] = null;
+        cardHand[index] = GetRandomDeckCard();
+    }
+    public CartaObject GetRandomDeckCard()
+    {
+        Random.InitState((int)System.DateTime.Now.Ticks);
+        return cb.CartasPlayer[Random.Range(0, cb.CartasPlayer.Capacity)];
+    }
     public void AddNewRandomCard(int lvl) { cb.CartasPlayer.Add(cb.ReturnRandomCard(lvl)); }
-    public void DeleteRandomDeckCard() { cb.CartasPlayer.RemoveAt(Random.Range(0, cb.CartasPlayer.Capacity));}
+    public void DeleteRandomDeckCard() {
+        Random.InitState((int)System.DateTime.Now.Ticks);
+        cb.CartasPlayer.RemoveAt(Random.Range(0, cb.CartasPlayer.Capacity));
+    }
+    public CartaObject[] GetHand() { return cardHand; }
+
     public void SetMoving(bool movin) { canMove = movin; }
 }
