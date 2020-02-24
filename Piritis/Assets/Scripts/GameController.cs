@@ -17,7 +17,8 @@ public class GameController : MonoBehaviour
 
     float gold = 0, treasureParts = 0;
     bool eventActive;
-
+    [HideInInspector] public bool inventory;
+    [HideInInspector] public int invCase;
     BattleManager.TResults[] results;
 
     // PORT ROYAL = 0, TORTUGA = 1, NEW PROVIDENCE = 2
@@ -56,17 +57,38 @@ public class GameController : MonoBehaviour
         }
     }
 
+    //InventoryManager
+    public void CallInventory(int Case, int Lvl)
+    {
+        inventory = true;
+        invCase = Case;
+        mc.DisplayInventory(true, pc, Case, Lvl);
+        pc.SetMoving(false);
+    }
+    public void CloseInventory(int Case, int Lvl)
+    {
+        inventory = true;
+        invCase = Case;
+        mc.DisplayInventory(false, pc, Case, Lvl);
+        pc.SetMoving(true);
+    }
     //Shop Managment
     public void CallShopWindow()
     {
-        mc.DisplayShop(true, gold);
+        mc.DisplayShop(true, gold, treasureParts);
         pc.SetMoving(false);
         RefillNodes();
     }
     public void CloseShopWindow()
     {
-        mc.DisplayShop(false, gold);
+        mc.DisplayShop(false, gold, treasureParts);
         pc.SetMoving(true);
+    }
+    public bool CanBuy(float value)
+    {
+        if (value > gold)
+            return false;
+        return true;
     }
     public void ChangeGold(float value) { gold += value; }
     public void ChangePieces(int value) { treasureParts += value; }

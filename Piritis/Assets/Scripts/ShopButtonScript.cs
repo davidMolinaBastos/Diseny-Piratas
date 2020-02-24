@@ -29,11 +29,19 @@ public class ShopButtonScript : MonoBehaviour
                 gc.CloseShopWindow();
                 break;
             case TButton.BuyCard:
+                if (!gc.CanBuy(0))
+                    break;
+                if (!gc.CanBuy(exampleIsland.GetPriceOf(false, lvl)))
+                    break;
                 gc.ChangeGold(-exampleIsland.GetPriceOf(false, lvl));
                 pc.AddNewRandomCard(lvl);
                 gc.CallShopWindow();
                 break;
             case TButton.BuyTreasure:
+                if (!gc.CanBuy(0))
+                    break;
+                if (!gc.CanBuy(exampleIsland.GetPriceOf(true, lvl)))
+                    break;
                 gc.ChangeGold(-exampleIsland.GetPriceOf(true, lvl));
                 gc.ChangePieces(1);
                 gc.CallShopWindow();

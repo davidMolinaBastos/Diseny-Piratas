@@ -16,12 +16,9 @@ public class IslandScript : NodoScript
     public float lvl5Price;
 
 
-    public List<float> prices = new List<float>();
+    [HideInInspector]public List<float> prices = new List<float>();
 
     public float treasurePrice;
-
-    public float piecesLeft;
-
 
     private void Start()
     {

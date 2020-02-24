@@ -140,6 +140,7 @@ public class BattleManager : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             //PlayerPasive
+            print(playerHand[i]);
             switch (playerHand[i].pasiva)
             {
                 case CartaObject.TipoPasiva.CAMBIAR_VALOR:
