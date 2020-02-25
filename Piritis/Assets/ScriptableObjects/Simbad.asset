@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Simbad
   m_EditorClassIdentifier: 
   nickname: 
-  pasiva: 0
-  sprite: {fileID: 0}
-  levelCarta: 0
+  pasiva: 4
+  sprite: {fileID: 21300000, guid: d5c452260e8c8d04ca3770aae311687b, type: 3}
+  levelCarta: 5
   rollValor: 0
-  valor: 0
+  valor: 3
