@@ -30,6 +30,7 @@ public class BattleManager : MonoBehaviour
 
     //Public Handling
     public TResults[] ReturnResults() { return results; }
+    public int[] ReturnPlayerRolls() { return PlayerRolls; }
     public float GetWinnings()
     {
         float wins, defeats, draws;

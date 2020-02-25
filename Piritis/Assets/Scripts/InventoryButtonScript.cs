@@ -22,6 +22,8 @@ public class InventoryButtonScript : MonoBehaviour
         cb = gc.gameObject.GetComponent<CardBlackboard>();
         mc = gc.gameObject.GetComponent<MenuController>();
         pc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        if (Type == TButton.HAND)
+            AssociatedCard = pc.GetHand()[HandOrder];
     }
 
     public void OnClick()
