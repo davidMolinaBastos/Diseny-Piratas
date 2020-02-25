@@ -50,7 +50,7 @@ public class InventoryButtonScript : MonoBehaviour
             case TButton.DECK:
                 gc.CallInventory(1, 0);
                 mc.SelectedDeckCard = AssociatedCard;
-                pc.SwitchCards(mc.SelectedHandCard, mc.SelectedDeckCard,)
+                pc.SwitchCards(mc.SelectedHandCard, mc.SelectedDeckCard, HandOrder);
                 break;
         }
     }
