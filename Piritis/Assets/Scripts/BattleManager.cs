@@ -36,7 +36,7 @@ public class BattleManager : MonoBehaviour
         float wins, defeats, draws;
         float total =  wins = defeats = draws = 0;
 
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 2; i++)
             if (results[i] == TResults.Win)
                 wins++;
             else if (results[i] == TResults.Loose)
@@ -61,7 +61,7 @@ public class BattleManager : MonoBehaviour
     }
     public void FlushValues()
     {
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 2; i++)
         {
             results[i] = TResults.Void;
             PlayerRolls[i] = 0;
@@ -83,7 +83,7 @@ public class BattleManager : MonoBehaviour
     }
     void CheckResults()
     {
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 2; i++)
         {
             if (results[i] == TResults.Void)
             {
@@ -141,7 +141,6 @@ public class BattleManager : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             //PlayerPasive
-            print(playerHand[i]);
             switch (playerHand[i].pasiva)
             {
                 case CartaObject.TipoPasiva.CAMBIAR_VALOR:

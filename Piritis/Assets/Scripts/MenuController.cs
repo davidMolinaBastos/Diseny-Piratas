@@ -22,6 +22,8 @@ public class MenuController : MonoBehaviour
 
     [Header("Inventory")]
     public Image BackgroundInventory;
+    public Text InvTitle;
+    public GameObject ReturnButton;
     public Text[] HandT;
     public GameObject Hand;
     public GameObject DeckLevels;
@@ -50,8 +52,8 @@ public class MenuController : MonoBehaviour
         BackgroundShop.enabled = false;
 
         BackgroundInventory.enabled = false;
-        BackgroundInventory.gameObject.GetComponentInChildren<Text>().enabled = false;
-        BackgroundInventory.gameObject.GetComponentInChildren<Button>().gameObject.SetActive(false);
+        InvTitle.enabled = false;
+        ReturnButton.SetActive(false);
         Hand.SetActive(false);
         DeckLevels.SetActive(false);
         foreach (GameObject go in Lvls)
@@ -70,25 +72,27 @@ public class MenuController : MonoBehaviour
 
     public void DisplayFight(bool display, CartaObject[] pirateHand, CartaObject[] playerHand)
     {
-        for(int i = 0; i < 3;i++)
-        {
-            if (playerCards[i] != null)
+        if (playerHand != null)
+            for (int i = 0; i < 3; i++)
             {
-                playerCards[i].enabled = display;
-                playerCards[i].sprite = playerHand[i].sprite;
-                //dice[i].clip = Animations[gc.ReturnPlayerRolls[i]]
-                //dice[i].Play();
-                //gc.fightCounter = dice[i].clip.length;
+                if (playerHand[i] != null)
+                {
+                    playerCards[i].enabled = display;
+                    playerCards[i].sprite = playerHand[i].sprite;
+                    //dice[i].clip = Animations[gc.ReturnPlayerRolls[i]]
+                    //dice[i].Play();
+                    //gc.fightCounter = dice[i].clip.length;
+                }
             }
-        }
-        for (int i = 0; i < 3; i++)
-        {
-            if (enemyCards[i] != null)
+        if (pirateHand != null)
+            for (int i = 0; i < 3; i++)
             {
-                enemyCards[i].enabled = display;
-                enemyCards[i].sprite = pirateHand[i].sprite;
+                if (pirateHand[i] != null)
+                {
+                    enemyCards[i].enabled = display;
+                    enemyCards[i].sprite = pirateHand[i].sprite;
+                }
             }
-        }
         Background.enabled = display;
     }
     public void DisplayShop(bool display, float gold, float treasure)
@@ -105,8 +109,8 @@ public class MenuController : MonoBehaviour
     public void DisplayInventory(bool display, PlayerController pc, int Case, int lvl)
     {
         BackgroundInventory.enabled = display;
-        BackgroundInventory.gameObject.GetComponentInChildren<Text>().enabled = display;
-        BackgroundInventory.gameObject.GetComponentInChildren<Button>().gameObject.SetActive(display);
+        InvTitle.enabled = display;
+        ReturnButton.SetActive(display);
         switch (Case)
         {
             case 1:
