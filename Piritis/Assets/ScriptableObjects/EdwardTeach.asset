@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nickname: Edward Teach
   pasiva: 4
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: e227be5911353fe4fbe3deb5d41809b7, type: 3}
   levelCarta: 5
   rollValor: 0
   valor: 3
