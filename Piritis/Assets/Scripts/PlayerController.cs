@@ -90,7 +90,8 @@ public class PlayerController : MonoBehaviour
 
     public void SwitchCards(CartaObject oldHand, CartaObject oldDeck, int handID)
     {
-        cb.CartasPlayer.Add(oldHand);
+        if(oldHand != null)
+            cb.CartasPlayer.Add(oldHand);
         cb.CartasPlayer.Remove(oldDeck);
         cardHand[handID] = oldDeck;
     }
@@ -98,13 +99,20 @@ public class PlayerController : MonoBehaviour
     public void RemoveCardFromHand(int index)
     {
         cardHand[index] = null;
-        cardHand[index] = GetRandomDeckCard();
+        SwitchCards(null, GetRandomDeckCard(), index);
     }
 
     public CartaObject GetRandomDeckCard()
     {
         Random.InitState((int)System.DateTime.Now.Ticks);
         return cb.CartasPlayer[Random.Range(0, cb.CartasPlayer.Capacity)];
+    }
+
+    public void Teleport(Transform objective)
+    {
+        transform.position = objective.position;
+        CurrentNode = objective.gameObject.GetComponent<NodoScript>();
+        gameController.CallShopWindow();
     }
 
     public void AddNewRandomCard(int lvl) { cb.CartasPlayer.Add(cb.ReturnRandomCard(lvl)); }

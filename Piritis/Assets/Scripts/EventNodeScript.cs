@@ -52,7 +52,13 @@ public class EventNodeScript : NodoScript, IRestartGameElement
     }
     public void ChangeCardEffect()
     {
-
+        PlayerController pc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        if (tripulantes)
+            for (int i = 0; i < crewValue; i++)
+                pc.RemoveCardFromHand(i);
+        else
+            for (int i = 0; i < crewValue; i++)
+                pc.DeleteRandomDeckCard();
     }
     public void ChangeBothEffect()
     {
@@ -61,7 +67,8 @@ public class EventNodeScript : NodoScript, IRestartGameElement
     }
     public void TeleportEffect()
     {
-
+        GameObject pc = GameObject.FindGameObjectWithTag("Player");
+        pc.GetComponent<PlayerController>().Teleport(gc.Islas[islandID]);
     }
 
     //DepleteManagment

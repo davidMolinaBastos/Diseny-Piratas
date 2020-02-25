@@ -210,6 +210,7 @@ GameObject:
   - component: {fileID: 77290489}
   - component: {fileID: 77290488}
   - component: {fileID: 77290487}
+  - component: {fileID: 77290490}
   m_Layer: 5
   m_Name: Carta1
   m_TagString: Untagged
@@ -279,7 +280,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 77290488}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 77290490}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!114 &77290488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,6 +328,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 77290485}
   m_CullTransparentMesh: 0
+--- !u!114 &77290490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 77290485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e720f1e6ad973f4ca7ed21b35c03673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 2
+  HandOrder: 1
+  LvlSelect: 0
+  AssociatedCard: {fileID: 0}
 --- !u!1 &80728838
 GameObject:
   m_ObjectHideFlags: 0
@@ -1028,7 +1056,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &203839316
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1476,6 +1504,8 @@ MonoBehaviour:
   - {fileID: 1182419178}
   - {fileID: 697214596}
   - {fileID: 795918283}
+  SelectedHandCard: {fileID: 0}
+  SelectedDeckCard: {fileID: 0}
 --- !u!114 &273755509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1488,6 +1518,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04bd1e9c464b8904e971965723588e34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: 0
+  invCase: 0
+  fightCounter: 0
   Islas:
   - {fileID: 0}
   - {fileID: 0}
@@ -1538,7 +1571,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &278207636
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2544,7 +2577,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &537513981
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2813,7 +2846,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &584919705
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2911,7 +2944,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100
+  m_Text: 250
 --- !u!222 &625223673
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3471,7 +3504,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &697214597
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3563,7 +3596,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100
+  m_Text: 400
 --- !u!222 &743719851
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4056,7 +4089,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &795918284
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4524,6 +4557,7 @@ GameObject:
   - component: {fileID: 912476870}
   - component: {fileID: 912476869}
   - component: {fileID: 912476868}
+  - component: {fileID: 912476871}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -4593,7 +4627,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 912476869}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 912476871}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!114 &912476869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4630,6 +4675,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 912476866}
   m_CullTransparentMesh: 0
+--- !u!114 &912476871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912476866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e720f1e6ad973f4ca7ed21b35c03673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 1
+  HandOrder: 0
+  LvlSelect: 0
+  AssociatedCard: {fileID: 0}
 --- !u!1 &935028543
 GameObject:
   m_ObjectHideFlags: 0
@@ -5584,7 +5645,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1110880873
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5621,7 +5682,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1142956948
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5661,7 +5722,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1182419179
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6600,7 +6661,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1308277657
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7829,7 +7890,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100
+  m_Text: 700
 --- !u!222 &1548862150
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8488,12 +8549,12 @@ MonoBehaviour:
   nodos: []
   tipoNodo: 0
   lvl1Price: 100
-  lvl2Price: 100
-  lvl3Price: 100
-  lvl4Price: 100
-  lvl5Price: 100
+  lvl2Price: 250
+  lvl3Price: 400
+  lvl4Price: 700
+  lvl5Price: 950
   prices: []
-  treasurePrice: 100
+  treasurePrice: 2000
 --- !u!1 &1628165146
 GameObject:
   m_ObjectHideFlags: 0
@@ -9354,7 +9415,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100
+  m_Text: 2000
 --- !u!222 &1855537056
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9527,6 +9588,7 @@ GameObject:
   - component: {fileID: 1895373560}
   - component: {fileID: 1895373559}
   - component: {fileID: 1895373558}
+  - component: {fileID: 1895373561}
   m_Layer: 5
   m_Name: InventoryButton
   m_TagString: Untagged
@@ -9596,7 +9658,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1895373559}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1895373561}
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!114 &1895373559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9633,6 +9706,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1895373556}
   m_CullTransparentMesh: 0
+--- !u!114 &1895373561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895373556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e720f1e6ad973f4ca7ed21b35c03673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 0
+  HandOrder: 0
+  LvlSelect: 0
+  AssociatedCard: {fileID: 0}
 --- !u!1 &1907537766
 GameObject:
   m_ObjectHideFlags: 0
@@ -10176,7 +10265,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100
+  m_Text: 950
 --- !u!222 &1974950132
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10496,7 +10585,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2029845112
 RectTransform:
   m_ObjectHideFlags: 0
