@@ -11,13 +11,17 @@ public class GameController : MonoBehaviour
 
     CardBlackboard cb;
     MenuController mc;
+    BattleManager bm;
     PlayerController pc;
     EventNodeScript evento;
 
-    float gold, treasureParts;
+    float gold = 0, treasureParts = 0;
     bool eventActive;
-
-
+    [HideInInspector] public bool inventory;
+    [HideInInspector] public int invCase;
+    BattleManager.TResults[] results;
+    int[] playerRolls;
+    [HideInInspector]public float fightCounter;
     // PORT ROYAL = 0, TORTUGA = 1, NEW PROVIDENCE = 2
     public Transform[] Islas = new Transform[3];
 
@@ -26,18 +30,31 @@ public class GameController : MonoBehaviour
     {
         cb = GetComponent<CardBlackboard>();
         mc = GetComponent<MenuController>();
+        bm = GetComponent<BattleManager>();
         pc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
     private void Update()
     {
+        if(fightCounter < 0)
+        {
+            mc.DisplayFight(false, null, pc.GetHand());
+            eventActive = false;
+            pc.SetMoving(true);
+            evento = null;
+        }
+            else
+        {
+            fightCounter -= Time.deltaTime;
+        }
 #if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.T)) RefillNodes();  //DebugRefill
+        if (Input.GetKeyDown(KeyCode.Y)) gold += 100f; //DebugAddMoney
 #endif
         if (eventActive)
         {
             if (Input.anyKeyDown && evento.GetEventType() == EventNodeScript.TEvent.FIGHT)
             {
-                mc.DisplayFight(false);
+                mc.DisplayFight(false, null, pc.GetHand());
                 eventActive = false;
                 pc.SetMoving(true);
                 evento = null;
@@ -52,7 +69,42 @@ public class GameController : MonoBehaviour
         }
     }
 
-    
+    //InventoryManager
+    public void CallInventory(int Case, int Lvl)
+    {
+        inventory = true;
+        invCase = Case;
+        mc.DisplayInventory(true, pc, Case, Lvl);
+        pc.SetMoving(false);
+    }
+    public void CloseInventory(int Case, int Lvl)
+    {
+        inventory = true;
+        invCase = Case;
+        mc.DisplayInventory(false, pc, Case, Lvl);
+        pc.SetMoving(true);
+    }
+    //Shop Managment
+    public void CallShopWindow()
+    {
+        mc.DisplayShop(true, gold, treasureParts);
+        pc.SetMoving(false);
+        RefillNodes();
+    }
+    public void CloseShopWindow()
+    {
+        mc.DisplayShop(false, gold, treasureParts);
+        pc.SetMoving(true);
+    }
+    public bool CanBuy(float value)
+    {
+        if (value > gold)
+            return false;
+        return true;
+    }
+    public void ChangeGold(float value) { gold += value; }
+    public void ChangePieces(int value) { treasureParts += value; }
+
     //Event Managment
     public void CallEvent(EventNodeScript e)
     {
@@ -60,9 +112,10 @@ public class GameController : MonoBehaviour
             return;
         if (e.GetEventType() == EventNodeScript.TEvent.FIGHT)
         {
-            mc.DisplayFight(true);
+            mc.DisplayFight(true, e.pirateHand, pc.GetHand());
             eventActive = true;
             pc.SetMoving(false);
+            evento = e;
             e.Deplete();
             PerformEvent(e);
         }
@@ -73,30 +126,44 @@ public class GameController : MonoBehaviour
             pc.SetMoving(false);
             evento = e;
             e.Deplete();
+            PerformEvent(e);
         }
     }
     void PerformEvent(EventNodeScript e)
     {
         switch (e.GetEventType())
         {
+            case EventNodeScript.TEvent.FIGHT:
+                bm.Battle(pc.GetHand(), e.pirateHand);
+                gold += bm.GetWinnings();
+                playerRolls = bm.ReturnPlayerRolls();
+                results = bm.ReturnResults();
+                bm.FlushValues();
+                DeleteCards();
+                break;
             case EventNodeScript.TEvent.CHANGE_GOLD:
-                gold += e.goldValue;
+                e.ChangeGoldEffect();
                 break;
             case EventNodeScript.TEvent.CHANGE_CARD:
-
+                e.ChangeCardEffect();
                 break;
             case EventNodeScript.TEvent.CHANGE_BOTH:
-                gold += e.goldValue;
+                e.ChangeBothEffect();
                 break;
             case EventNodeScript.TEvent.TELEPORT:
-                
-                break;
-            case EventNodeScript.TEvent.Random:
+                e.TeleportEffect();
                 break;
         }
     }
 
+    public int[] ReturnPlayerRolls() { return playerRolls; }
 
+    public void DeleteCards()
+    {
+        for (int i = 0; i < 2; i++)
+            if (results[i] == BattleManager.TResults.Loose)
+                pc.RemoveCardFromHand(i);
+    }
     //Restarts and refills
     public void AddResetElement(IRestartGameElement RestartGameElement) { m_ResetNodes.Add(RestartGameElement); }
     public void RefillNodes()
@@ -105,7 +172,6 @@ public class GameController : MonoBehaviour
         for (int i = 0; i < eve.GetLength(0); i++)
             eve[i].GetComponent<EventNodeScript>().ResetNode();
     }
-
 }
 
 

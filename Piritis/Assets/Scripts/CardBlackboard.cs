@@ -18,7 +18,22 @@ public class CardBlackboard : MonoBehaviour
     public void Start()
     {
         Niveles = new List<CartaObject[]> { Nivel1, Nivel2, Nivel3, Nivel4, Nivel5 };
+        CartasPlayer.Add(ReturnRandomCard(0));
+        CartasPlayer.Add(ReturnRandomCard(0));
+        CartasPlayer.Add(ReturnRandomCard(1));
+        CartasPlayer.Add(ReturnRandomCard(1));
+        CartasPlayer.Add(ReturnRandomCard(2));
+        CartasPlayer.Add(ReturnRandomCard(2));
     }
-    public CartaObject ReturnRandomCard(int lvl) { return Niveles[lvl][Random.Range(0, Niveles[lvl].Length)]; }
+    public CartaObject ReturnRandomCard(int lvl)
+    {
+        Random.InitState((int)System.DateTime.Now.Ticks);
+        return Niveles[lvl][Random.Range(0, Niveles[lvl].Length)];
+    }
     public List<CartaObject> GetPlayerCards() { return CartasPlayer; }
+    public CartaObject ReturnRandomPlayerCard()
+    {
+        Random.InitState((int)System.DateTime.Now.Ticks);
+        return CartasPlayer[Random.Range(0, CartasPlayer[0].levelCarta)];
+    }
 }

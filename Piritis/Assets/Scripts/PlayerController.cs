@@ -29,7 +29,10 @@ public class PlayerController : MonoBehaviour
     {
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         cb = GameObject.FindGameObjectWithTag("GameController").GetComponent<CardBlackboard>();
+        for (int i = 0; i < 3; i++)
+            cardHand[i] = cb.ReturnRandomPlayerCard();
     }
+
     void Update()
     {
         //Movimiento
@@ -68,7 +71,7 @@ public class PlayerController : MonoBehaviour
                         switch (CurrentNode.tipoNodo)
                         {
                             case NodoScript.TNodo.ISLA:
-
+                                gameController.CallShopWindow();
                                 break;
                             case NodoScript.TNodo.EVENTO:
                                 gameController.CallEvent(CurrentNode.gameObject.GetComponent<EventNodeScript>());
@@ -82,6 +85,44 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+
+
+    public void SwitchCards(CartaObject oldHand, CartaObject oldDeck, int handID)
+    {
+        if(oldHand != null)
+            cb.CartasPlayer.Add(oldHand);
+        cb.CartasPlayer.Remove(oldDeck);
+        cardHand[handID] = oldDeck;
+    }
+
+    public void RemoveCardFromHand(int index)
+    {
+        cardHand[index] = null;
+        SwitchCards(null, GetRandomDeckCard(), index);
+    }
+
+    public CartaObject GetRandomDeckCard()
+    {
+        Random.InitState((int)System.DateTime.Now.Ticks);
+        return cb.CartasPlayer[Random.Range(0, cb.CartasPlayer.Capacity)];
+    }
+
+    public void Teleport(Transform objective)
+    {
+        transform.position = objective.position;
+        CurrentNode = objective.gameObject.GetComponent<NodoScript>();
+        gameController.CallShopWindow();
+    }
+
+    public void AddNewRandomCard(int lvl) { cb.CartasPlayer.Add(cb.ReturnRandomCard(lvl)); }
+    public void DeleteRandomDeckCard()
+    {
+        Random.InitState((int)System.DateTime.Now.Ticks);
+        cb.CartasPlayer.RemoveAt(Random.Range(0, cb.CartasPlayer.Capacity));
+    }
+
+    public CartaObject[] GetHand() { return cardHand; }
 
     public void SetMoving(bool movin) { canMove = movin; }
 }

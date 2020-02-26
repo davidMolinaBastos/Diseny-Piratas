@@ -6,7 +6,7 @@ using UnityEngine;
 public class EventNodeScript : NodoScript, IRestartGameElement
 {
     //Lista de posibles eventos
-    public enum TEvent { FIGHT, CHANGE_GOLD, CHANGE_CARD, CHANGE_BOTH, TELEPORT, Random }
+    public enum TEvent { FIGHT, CHANGE_GOLD, CHANGE_CARD, CHANGE_BOTH, TELEPORT }
     TEvent evento;
 
     [Header("Eventos")]
@@ -22,10 +22,12 @@ public class EventNodeScript : NodoScript, IRestartGameElement
     [Range(0, 3)] public int pirateLv;
     public CartaObject[] pirateHand = new CartaObject[2];
 
+    GameController gc;
     bool depleted = false;
 
     void Start()
     {
+        gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         tipoNodo = TNodo.EVENTO;
         gameObject.tag = "EventNode";
         Random.InitState((int)System.DateTime.Now.Ticks);
@@ -42,6 +44,31 @@ public class EventNodeScript : NodoScript, IRestartGameElement
         }
         evento = eventos[Random.Range(0, 3)];
         GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().AddResetElement(this);
+    }
+
+    public void ChangeGoldEffect()
+    {
+        gc.ChangeGold(goldValue);
+    }
+    public void ChangeCardEffect()
+    {
+        PlayerController pc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        if (tripulantes)
+            for (int i = 0; i < crewValue; i++)
+                pc.RemoveCardFromHand(i);
+        else
+            for (int i = 0; i < crewValue; i++)
+                pc.DeleteRandomDeckCard();
+    }
+    public void ChangeBothEffect()
+    {
+        ChangeCardEffect();
+        ChangeGoldEffect();
+    }
+    public void TeleportEffect()
+    {
+        GameObject pc = GameObject.FindGameObjectWithTag("Player");
+        pc.GetComponent<PlayerController>().Teleport(gc.Islas[islandID]);
     }
 
     //DepleteManagment
