@@ -1056,7 +1056,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &203839316
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1492,8 +1492,8 @@ MonoBehaviour:
   treasureCounter: {fileID: 935028545}
   BackgroundShop: {fileID: 2079632057}
   BackgroundInventory: {fileID: 552007562}
-  InvTitle: {fileID: 0}
-  ReturnButton: {fileID: 0}
+  InvTitle: {fileID: 142750367}
+  ReturnButton: {fileID: 912476866}
   HandT:
   - {fileID: 901003069}
   - {fileID: 901003069}
@@ -1889,7 +1889,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 332708283}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -15, z: 0}
+  m_LocalPosition: {x: 0, y: -2.47, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
