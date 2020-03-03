@@ -1303,7 +1303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1322,8 +1322,8 @@ Canvas:
   m_GameObject: {fileID: 203839315}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 1600788426}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -2502,7 +2502,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 332708283}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -12.521001, z: 0}
+  m_LocalPosition: {x: -0.8, y: -15.58, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2861,7 +2861,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1774422785}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1754632460}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb6950c0cf211db4c85411cf5c859379, type: 3}
@@ -10466,7 +10466,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 391939942}
   tipoNodo: 1
-  eventos: 010000000100000001000000
+  eventos: 000000000000000000000000
   tripulantes: 0
   goldValue: 100
   crewValue: 100
@@ -10901,6 +10901,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1713681878}
   m_CullTransparentMesh: 0
+--- !u!1 &1754632460 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1774422785}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1754632462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754632460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d910f5e00e871ca4983fb88de8baa8d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodos: []
+  tipoNodo: 1
+  eventos: 010000000200000001000000
+  tripulantes: 0
+  goldValue: 0
+  crewValue: 0
+  islandID: 0
+  message: default
+  pirateLv: 0
+  pirateHand:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &1771174634 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1016678189268778091, guid: 7f7b98fc77400be4691c55ab803728e4,
