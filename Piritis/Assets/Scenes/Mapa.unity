@@ -177,7 +177,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: ffd3f720923c0ba4c9094fe8938cbfd9, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -222,12 +222,12 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 391939942}
   tipoNodo: 1
-  eventos: 010000000100000001000000
+  eventos: 010000000400000002000000
   tripulantes: 0
   goldValue: 100
   crewValue: 100
-  islandID: 0
-  message: default
+  islandID: 1
+  message: Mermaid reef
   pirateLv: 1
   pirateHand:
   - {fileID: 11400000, guid: 743bc0999d01a99449d8d00b9a535463, type: 2}
@@ -644,7 +644,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: ffd3f720923c0ba4c9094fe8938cbfd9, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -699,7 +699,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 157, y: 150}
+  m_AnchoredPosition: {x: 161, y: 154}
   m_SizeDelta: {x: 82.3, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &137837368
@@ -715,14 +715,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.509434, g: 0.47707388, b: 0.11294055, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: ffd3f720923c0ba4c9094fe8938cbfd9, type: 3}
-    m_FontSize: 16
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -777,8 +777,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 112}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -1.6, y: 111.5}
+  m_SizeDelta: {x: 218.45, y: 56.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &142750367
 MonoBehaviour:
@@ -793,14 +793,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9245283, g: 0.8388315, b: 0.047970813, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: ffd3f720923c0ba4c9094fe8938cbfd9, type: 3}
-    m_FontSize: 21
+    m_FontSize: 33
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -834,7 +834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0.6981132, g: 0.5064743, b: 0, a: 0.5}
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.07058824}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
 --- !u!1 &149327821
@@ -1084,7 +1084,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: ffd3f720923c0ba4c9094fe8938cbfd9, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -1220,6 +1220,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -551861365808625604, guid: ae9347b2ac577ec43800025810ad0adf,
         type: 3}
+    - target: {fileID: 4472259160784094926, guid: 7f7b98fc77400be4691c55ab803728e4,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_Name
@@ -1332,7 +1337,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!1 &219451820
 GameObject:
@@ -1371,8 +1376,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -220, y: 136}
-  m_SizeDelta: {x: 41.6, y: 37}
+  m_AnchoredPosition: {x: -221.5, y: 138}
+  m_SizeDelta: {x: 44.6, y: 41}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &219451822
 MonoBehaviour:
@@ -1747,6 +1752,11 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4472259160784094926, guid: 7f7b98fc77400be4691c55ab803728e4,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_Name
@@ -1759,6 +1769,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f7b98fc77400be4691c55ab803728e4, type: 3}
+--- !u!1 &245205865 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 245205864}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &245205866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245205865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d910f5e00e871ca4983fb88de8baa8d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodos: []
+  tipoNodo: 1
+  eventos: 010000000200000004000000
+  tripulantes: 0
+  goldValue: 300
+  crewValue: 1
+  islandID: 0
+  message: Prosperous winds
+  pirateLv: 0
+  pirateHand:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &258116089
 GameObject:
   m_ObjectHideFlags: 0
@@ -1998,9 +2039,12 @@ MonoBehaviour:
   invCase: 0
   fightCounter: 0
   Islas:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1609575686}
+  - {fileID: 1611905338}
+  - {fileID: 865933214}
+  - {fileID: 1500179920}
+  - {fileID: 462818694}
+  - {fileID: 1428563556}
 --- !u!4 &273755510
 Transform:
   m_ObjectHideFlags: 0
@@ -2394,6 +2438,11 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4472259160784094926, guid: 7f7b98fc77400be4691c55ab803728e4,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_Name
@@ -2406,6 +2455,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f7b98fc77400be4691c55ab803728e4, type: 3}
+--- !u!1 &295450936 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 295450935}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &295450937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295450936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d910f5e00e871ca4983fb88de8baa8d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodos: []
+  tipoNodo: 1
+  eventos: 010000000200000004000000
+  tripulantes: 0
+  goldValue: 0
+  crewValue: 0
+  islandID: 2
+  message: Bottled messages
+  pirateLv: 1
+  pirateHand:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &332708283
 GameObject:
   m_ObjectHideFlags: 0
@@ -2441,7 +2521,7 @@ MonoBehaviour:
   m_UpKeyCode: 119
   m_DownKeyCode: 115
   CurrentNode: {fileID: 1316918624}
-  speed: 1
+  speed: 5
   closeNodeR: 0.001
 --- !u!212 &332708285
 SpriteRenderer:
@@ -2481,7 +2561,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: -5781588522152963664, guid: 11d49adcb9c15c04f95a7983ab695af5,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2637,7 +2717,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: ffd3f720923c0ba4c9094fe8938cbfd9, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -2795,7 +2875,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: ffd3f720923c0ba4c9094fe8938cbfd9, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -3025,17 +3105,22 @@ PrefabInstance:
         type: 3}
       propertyPath: nodos.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1080564664}
     - target: {fileID: 1016678189268778091, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: nodos.Array.data[3]
       value: 
-      objectReference: {fileID: 391939942}
+      objectReference: {fileID: 0}
     - target: {fileID: 1016678189268778091, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: tipoNodo
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1016678189268778091, guid: 7f7b98fc77400be4691c55ab803728e4,
+        type: 3}
+      propertyPath: nodos.Array.data[2]
+      value: 
+      objectReference: {fileID: 462818692}
     - target: {fileID: 4472259160784094926, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_Color.r
@@ -3057,6 +3142,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -551861365808625604, guid: ae9347b2ac577ec43800025810ad0adf,
         type: 3}
+    - target: {fileID: 4472259160784094926, guid: 7f7b98fc77400be4691c55ab803728e4,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_Name
@@ -3241,6 +3331,11 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4472259160784094926, guid: 7f7b98fc77400be4691c55ab803728e4,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_Name
@@ -3253,6 +3348,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f7b98fc77400be4691c55ab803728e4, type: 3}
+--- !u!1 &492339345 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 492339344}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &492339346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492339345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d910f5e00e871ca4983fb88de8baa8d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodos: []
+  tipoNodo: 1
+  eventos: 00000000000000000000000004000000
+  tripulantes: 0
+  goldValue: 300
+  crewValue: 0
+  islandID: 1
+  message: Ghost ship
+  pirateLv: 2
+  pirateHand:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1001 &495949144
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3263,12 +3389,12 @@ PrefabInstance:
     - target: {fileID: 769930972392881528, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.208625
+      value: 9.38
       objectReference: {fileID: 0}
     - target: {fileID: 769930972392881528, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 19.95727
+      value: 19.9
       objectReference: {fileID: 0}
     - target: {fileID: 769930972392881528, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
@@ -3379,7 +3505,7 @@ PrefabInstance:
     - target: {fileID: 4472259160784094926, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
@@ -3523,7 +3649,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: ffd3f720923c0ba4c9094fe8938cbfd9, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -3675,7 +3801,7 @@ PrefabInstance:
     - target: {fileID: 4472259160784094926, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
@@ -3942,8 +4068,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.7, y: -1.9}
-  m_SizeDelta: {x: 683.9, y: 499.8}
+  m_AnchoredPosition: {x: 13.9, y: 7.4}
+  m_SizeDelta: {x: 916.8, y: 518.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &552007562
 MonoBehaviour:
@@ -4066,7 +4192,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1022774393}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1022774394}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb6950c0cf211db4c85411cf5c859379, type: 3}
@@ -4520,7 +4646,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: ffd3f720923c0ba4c9094fe8938cbfd9, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -4938,7 +5064,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: ffd3f720923c0ba4c9094fe8938cbfd9, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -5212,7 +5338,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: ffd3f720923c0ba4c9094fe8938cbfd9, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -5850,7 +5976,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: ffd3f720923c0ba4c9094fe8938cbfd9, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -5902,7 +6028,7 @@ RectTransform:
   m_GameObject: {fileID: 912476866}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.25584, y: 1.25584, z: 1.25584}
+  m_LocalScale: {x: 1.6795561, y: 1.6795561, z: 1.6795561}
   m_Children:
   - {fileID: 546075924}
   m_Father: {fileID: 552007561}
@@ -5910,7 +6036,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 215, y: 109}
+  m_AnchoredPosition: {x: 256, y: 108}
   m_SizeDelta: {x: 21.26, y: 20.62}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &912476868
@@ -6054,8 +6180,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 148, y: 68}
-  m_SizeDelta: {x: 105.41, y: 30}
+  m_AnchoredPosition: {x: 137.23999, y: 72}
+  m_SizeDelta: {x: 129.81, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &935028545
 MonoBehaviour:
@@ -6070,14 +6196,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.509434, g: 0.47707388, b: 0.11294055, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: ffd3f720923c0ba4c9094fe8938cbfd9, type: 3}
-    m_FontSize: 16
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -6339,7 +6465,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1175509796}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1175509797}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb6950c0cf211db4c85411cf5c859379, type: 3}
@@ -6478,6 +6604,11 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4472259160784094926, guid: 7f7b98fc77400be4691c55ab803728e4,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_Name
@@ -6490,6 +6621,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f7b98fc77400be4691c55ab803728e4, type: 3}
+--- !u!1 &1022774394 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1022774393}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1022774395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022774394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d910f5e00e871ca4983fb88de8baa8d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodos: []
+  tipoNodo: 1
+  eventos: 010000000200000004000000
+  tripulantes: 0
+  goldValue: 150
+  crewValue: 2
+  islandID: 0
+  message: Possessed compass
+  pirateLv: 0
+  pirateHand:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1032572893
 GameObject:
   m_ObjectHideFlags: 0
@@ -6809,7 +6971,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 295450935}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 295450936}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb6950c0cf211db4c85411cf5c859379, type: 3}
@@ -7080,6 +7242,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -551861365808625604, guid: ae9347b2ac577ec43800025810ad0adf,
         type: 3}
+    - target: {fileID: 4472259160784094926, guid: 7f7b98fc77400be4691c55ab803728e4,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_Name
@@ -7175,7 +7342,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1969034839}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1969034840}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb6950c0cf211db4c85411cf5c859379, type: 3}
@@ -7314,6 +7481,11 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4472259160784094926, guid: 7f7b98fc77400be4691c55ab803728e4,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_Name
@@ -7326,6 +7498,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f7b98fc77400be4691c55ab803728e4, type: 3}
+--- !u!1 &1175509797 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1175509796}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1175509798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175509797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d910f5e00e871ca4983fb88de8baa8d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodos: []
+  tipoNodo: 0
+  eventos: 010000000200000004000000
+  tripulantes: 0
+  goldValue: 250
+  crewValue: 1
+  islandID: 2
+  message: Maelstrom
+  pirateLv: 0
+  pirateHand:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1182419178
 GameObject:
   m_ObjectHideFlags: 0
@@ -7400,8 +7603,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -104}
-  m_SizeDelta: {x: 715.9, y: 105.3}
+  m_AnchoredPosition: {x: -2.8, y: -91.3}
+  m_SizeDelta: {x: 322.4, y: 79.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1201698839
 CanvasRenderer:
@@ -7565,7 +7768,7 @@ PrefabInstance:
     - target: {fileID: 4472259160784094926, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
@@ -7635,7 +7838,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: ffd3f720923c0ba4c9094fe8938cbfd9, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -7712,7 +7915,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: ffd3f720923c0ba4c9094fe8938cbfd9, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -8087,7 +8290,7 @@ MonoBehaviour:
   goldValue: 100
   crewValue: 100
   islandID: 0
-  message: default
+  message: Dangerous seas
   pirateLv: 1
   pirateHand:
   - {fileID: 11400000, guid: 743bc0999d01a99449d8d00b9a535463, type: 2}
@@ -8599,7 +8802,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: ffd3f720923c0ba4c9094fe8938cbfd9, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -8836,7 +9039,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: ffd3f720923c0ba4c9094fe8938cbfd9, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -8913,7 +9116,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: ffd3f720923c0ba4c9094fe8938cbfd9, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -9035,7 +9238,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: ffd3f720923c0ba4c9094fe8938cbfd9, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -9182,7 +9385,7 @@ PrefabInstance:
     - target: {fileID: 4472259160784094926, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
@@ -9869,7 +10072,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: ffd3f720923c0ba4c9094fe8938cbfd9, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -10412,7 +10615,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -10471,7 +10674,7 @@ MonoBehaviour:
   goldValue: 100
   crewValue: 100
   islandID: 0
-  message: default
+  message: Onboard Mutiny
   pirateLv: 1
   pirateHand:
   - {fileID: 11400000, guid: 743bc0999d01a99449d8d00b9a535463, type: 2}
@@ -10590,7 +10793,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: ffd3f720923c0ba4c9094fe8938cbfd9, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -10617,7 +10820,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 245205864}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 245205865}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb6950c0cf211db4c85411cf5c859379, type: 3}
@@ -10685,7 +10888,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: ffd3f720923c0ba4c9094fe8938cbfd9, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -10762,7 +10965,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: ffd3f720923c0ba4c9094fe8938cbfd9, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -10923,10 +11126,10 @@ MonoBehaviour:
   tipoNodo: 1
   eventos: 010000000200000001000000
   tripulantes: 0
-  goldValue: 0
-  crewValue: 0
+  goldValue: 200
+  crewValue: 1
   islandID: 0
-  message: default
+  message: Destiny Designs
   pirateLv: 0
   pirateHand:
   - {fileID: 0}
@@ -11000,7 +11203,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: ffd3f720923c0ba4c9094fe8938cbfd9, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -11035,12 +11238,12 @@ PrefabInstance:
     - target: {fileID: 769930972392881528, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.03
+      value: -7.83
       objectReference: {fileID: 0}
     - target: {fileID: 769930972392881528, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.78
+      value: -3.83
       objectReference: {fileID: 0}
     - target: {fileID: 769930972392881528, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
@@ -11111,7 +11314,7 @@ PrefabInstance:
         type: 3}
       propertyPath: nodos.Array.data[0]
       value: 
-      objectReference: {fileID: 1270085493}
+      objectReference: {fileID: 865933211}
     - target: {fileID: 1016678189268778091, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: nodos.Array.data[2]
@@ -11146,6 +11349,11 @@ PrefabInstance:
     - target: {fileID: 4472259160784094926, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472259160784094926, guid: 7f7b98fc77400be4691c55ab803728e4,
+        type: 3}
+      propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
@@ -11375,7 +11583,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: ffd3f720923c0ba4c9094fe8938cbfd9, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -11654,7 +11862,7 @@ RectTransform:
   m_GameObject: {fileID: 1895373556}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4606, y: 1.4606, z: 1.4606}
   m_Children:
   - {fileID: 2075043167}
   m_Father: {fileID: 387039252}
@@ -11662,7 +11870,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -334.3, y: 149.4}
+  m_AnchoredPosition: {x: -294.1, y: 86.2}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1895373558
@@ -11737,8 +11945,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 2013261503205373015, guid: 249120e88949688489693fbccdfba8b6,
+    type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -12076,6 +12285,11 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4472259160784094926, guid: 7f7b98fc77400be4691c55ab803728e4,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_Name
@@ -12394,6 +12608,11 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4472259160784094926, guid: 7f7b98fc77400be4691c55ab803728e4,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_Name
@@ -12406,6 +12625,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f7b98fc77400be4691c55ab803728e4, type: 3}
+--- !u!1 &1969034840 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1969034839}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1969034841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969034840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d910f5e00e871ca4983fb88de8baa8d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodos: []
+  tipoNodo: 1
+  eventos: 010000000200000003000000
+  tripulantes: 0
+  goldValue: 100
+  crewValue: 2
+  islandID: 0
+  message: Beware the Kraken
+  pirateLv: 0
+  pirateHand:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1974950129
 GameObject:
   m_ObjectHideFlags: 0
@@ -12758,7 +13008,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: ffd3f720923c0ba4c9094fe8938cbfd9, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -12892,6 +13142,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -4574535678318772947, guid: ae9347b2ac577ec43800025810ad0adf,
         type: 3}
+    - target: {fileID: 4472259160784094926, guid: 7f7b98fc77400be4691c55ab803728e4,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_Name
@@ -12910,7 +13165,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 492339344}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 492339345}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb6950c0cf211db4c85411cf5c859379, type: 3}
@@ -12981,7 +13236,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2075043167
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13211,13 +13466,13 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 391939942}
   tipoNodo: 1
-  eventos: 010000000100000001000000
+  eventos: 000000000000000000000000
   tripulantes: 0
-  goldValue: 100
+  goldValue: 800
   crewValue: 100
   islandID: 0
-  message: default
-  pirateLv: 1
+  message: Calavera Island
+  pirateLv: 3
   pirateHand:
   - {fileID: 11400000, guid: 743bc0999d01a99449d8d00b9a535463, type: 2}
   - {fileID: 11400000, guid: 743bc0999d01a99449d8d00b9a535463, type: 2}
