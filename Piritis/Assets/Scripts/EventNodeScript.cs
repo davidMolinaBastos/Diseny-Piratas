@@ -10,7 +10,7 @@ public class EventNodeScript : NodoScript, IRestartGameElement
     TEvent evento;
 
     [Header("Eventos")]
-    public TEvent[] eventos = new TEvent[2];
+    public TEvent[] eventos = new TEvent[3];
 
 
     [Header("Stats")]
@@ -19,8 +19,8 @@ public class EventNodeScript : NodoScript, IRestartGameElement
     public float crewValue;
     public int islandID; //Check GameController for the IDs
     public string message = "default";
-    [Range(0, 3)] public int pirateLv;
-    public CartaObject[] pirateHand = new CartaObject[2];
+    [Range(0, 5)] public int pirateLv;
+    public CartaObject[] pirateHand = new CartaObject[3];
 
     GameController gc;
     bool depleted = false;

@@ -16,7 +16,7 @@ public class IslandScript : NodoScript
     public float lvl5Price;
 
 
-    [HideInInspector]public List<float> prices = new List<float>();
+    [HideInInspector] public List<float> prices = new List<float>();
 
     public float treasurePrice;
 
@@ -27,7 +27,7 @@ public class IslandScript : NodoScript
     }
 
 
-     public float GetPriceOf(bool treasure, int lvl)
+    public float GetPriceOf(bool treasure, int lvl)
     {
         float price;
         if (treasure)

@@ -60,7 +60,18 @@ public class MenuController : MonoBehaviour
             go.SetActive(false);
     }
 
+    private void Update()
+    {
+        if (Background.enabled)
+            UpdateFight();
+    }
+
+    void UpdateFight()
+    {
+
+    }
     //DISPLAY METHODS
+
     public void DisplayEvent(bool display, EventNodeScript evento)
     {
         currentEvent = evento;

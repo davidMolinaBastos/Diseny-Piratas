@@ -21,9 +21,9 @@ public class GameController : MonoBehaviour
     [HideInInspector] public int invCase;
     BattleManager.TResults[] results;
     int[] playerRolls;
-    [HideInInspector]public float fightCounter;
-    // PORT ROYAL = 0, TORTUGA = 1, NEW PROVIDENCE = 2
-    public Transform[] Islas = new Transform[3];
+    [HideInInspector] public float fightCounter;
+    // PORT ROYAL = 0, TORTUGA = 1, NEW PROVIDENCE = 2, 
+    public Transform[] Islas = new Transform[6];
 
     //Default Methods
     private void Start()
@@ -35,14 +35,14 @@ public class GameController : MonoBehaviour
     }
     private void Update()
     {
-        if(fightCounter < 0)
+        if (fightCounter < 0)
         {
             mc.DisplayFight(false, null, pc.GetHand());
             eventActive = false;
             pc.SetMoving(true);
             evento = null;
         }
-            else
+        else
         {
             fightCounter -= Time.deltaTime;
         }
@@ -52,6 +52,9 @@ public class GameController : MonoBehaviour
 #endif
         if (eventActive)
         {
+            /*
+            SE TIENE QUE CAMBIAR
+            */
             if (Input.anyKeyDown && evento.GetEventType() == EventNodeScript.TEvent.FIGHT)
             {
                 mc.DisplayFight(false, null, pc.GetHand());
@@ -84,6 +87,7 @@ public class GameController : MonoBehaviour
         mc.DisplayInventory(false, pc, Case, Lvl);
         pc.SetMoving(true);
     }
+
     //Shop Managment
     public void CallShopWindow()
     {
@@ -164,6 +168,9 @@ public class GameController : MonoBehaviour
             if (results[i] == BattleManager.TResults.Loose)
                 pc.RemoveCardFromHand(i);
     }
+
+
+
     //Restarts and refills
     public void AddResetElement(IRestartGameElement RestartGameElement) { m_ResetNodes.Add(RestartGameElement); }
     public void RefillNodes()
