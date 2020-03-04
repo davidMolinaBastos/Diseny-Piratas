@@ -119,7 +119,10 @@ public class PlayerController : MonoBehaviour
     public void DeleteRandomDeckCard()
     {
         Random.InitState((int)System.DateTime.Now.Ticks);
-        cb.CartasPlayer.RemoveAt(Random.Range(0, cb.CartasPlayer.Capacity));
+        cb.CartasPlayer.TrimExcess();
+        int r = Random.Range(0, cb.CartasPlayer.Capacity);
+        print(r);
+        cb.CartasPlayer.RemoveAt(r);
     }
 
     public CartaObject[] GetHand() { return cardHand; }

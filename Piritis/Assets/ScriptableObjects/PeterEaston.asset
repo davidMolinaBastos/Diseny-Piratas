@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nickname: Peter Easton
   pasiva: 4
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: fa046d14f8678ac44803ba72a3dd4ec0, type: 3}
   levelCarta: 4
   rollValor: 0
   valor: 2

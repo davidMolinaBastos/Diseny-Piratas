@@ -15,13 +15,13 @@ public class GameController : MonoBehaviour
     PlayerController pc;
     EventNodeScript evento;
 
-    float gold = 0, treasureParts = 0;
+    public float gold = 0, treasureParts = 0;
     bool eventActive;
     [HideInInspector] public bool inventory;
     [HideInInspector] public int invCase;
     BattleManager.TResults[] results;
     int[] playerRolls;
-    [HideInInspector] public float fightCounter;
+    [HideInInspector] public float fightCounter = 5;
     // PORT ROYAL = 0, TORTUGA = 1, NEW PROVIDENCE = 2, 
     public Transform[] Islas = new Transform[6];
 
@@ -35,17 +35,18 @@ public class GameController : MonoBehaviour
     }
     private void Update()
     {
-        if (fightCounter < 0)
-        {
-            mc.DisplayFight(false, null, pc.GetHand());
-            eventActive = false;
-            pc.SetMoving(true);
-            evento = null;
-        }
-        else
-        {
-            fightCounter -= Time.deltaTime;
-        }
+        if (eventActive && evento.GetEventType() == EventNodeScript.TEvent.FIGHT)
+            if (fightCounter < 0)
+            {
+                mc.DisplayFight(false, null, pc.GetHand());
+                eventActive = false;
+                pc.SetMoving(true);
+                evento = null;
+            }
+            else
+            {
+                fightCounter -= Time.deltaTime;
+            }
 #if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.T)) RefillNodes();  //DebugRefill
         if (Input.GetKeyDown(KeyCode.Y)) gold += 100f; //DebugAddMoney
@@ -55,14 +56,14 @@ public class GameController : MonoBehaviour
             /*
             SE TIENE QUE CAMBIAR
             */
-            if (Input.anyKeyDown && evento.GetEventType() == EventNodeScript.TEvent.FIGHT)
+            if (evento.GetEventType() == EventNodeScript.TEvent.FIGHT && fightCounter <= 0)//Input.anyKeyDown && evento.GetEventType() == EventNodeScript.TEvent.FIGHT)
             {
                 mc.DisplayFight(false, null, pc.GetHand());
                 eventActive = false;
                 pc.SetMoving(true);
                 evento = null;
             }
-            else if (Input.anyKeyDown)
+            else if (evento.GetEventType() != EventNodeScript.TEvent.FIGHT && Input.anyKeyDown)
             {
                 mc.DisplayEvent(false, null);
                 eventActive = false;

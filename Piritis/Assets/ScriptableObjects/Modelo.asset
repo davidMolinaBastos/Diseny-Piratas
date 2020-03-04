@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Modelo
   m_EditorClassIdentifier: 
   nickname: PlaceHolder
-  sprite: {fileID: 21300000, guid: 12ab82ab09b30fa4db5ce8f88dca4ecc, type: 3}
+  pasiva: 0
+  sprite: {fileID: 21300000, guid: fa046d14f8678ac44803ba72a3dd4ec0, type: 3}
   levelCarta: 1
   rollValor: 0
+  valor: 0

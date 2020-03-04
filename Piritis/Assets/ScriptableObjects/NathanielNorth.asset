@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nickname: Nathaniel North
   pasiva: 1
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: fcbcb8b383f22424d9261f04c2cece75, type: 3}
   levelCarta: 3
   rollValor: 0
   valor: 0

@@ -13,6 +13,8 @@ public class MenuController : MonoBehaviour
     public Image[] playerCards = new Image[3];
     public Image[] enemyCards = new Image[3];
     public Image Background;
+    public Animation[] dice;
+    public AnimationClip[] anims;
 
     [Header("Shop")]
     public GameObject[] Buttons;
@@ -31,9 +33,12 @@ public class MenuController : MonoBehaviour
 
     [HideInInspector] public CartaObject SelectedHandCard = null;
     [HideInInspector] public CartaObject SelectedDeckCard = null;
+
+    GameController gc;
     public void Start()
     {
         //DEACTIVATE UI ON START
+        gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         e_text.enabled = false;
         e_image.enabled = false;
 
@@ -43,6 +48,8 @@ public class MenuController : MonoBehaviour
         foreach (Image i in enemyCards)
             i.enabled = false;
         Background.enabled = false;
+        foreach (Animation a in dice)
+            a.gameObject.SetActive(false);
 
 
         foreach (GameObject go in Buttons)
@@ -90,9 +97,10 @@ public class MenuController : MonoBehaviour
                 {
                     playerCards[i].enabled = display;
                     playerCards[i].sprite = playerHand[i].sprite;
-                    //dice[i].clip = Animations[gc.ReturnPlayerRolls[i]]
-                    //dice[i].Play();
-                    //gc.fightCounter = dice[i].clip.length;
+                    print(gc.ReturnPlayerRolls()[i]);
+                    dice[i].clip = anims[gc.ReturnPlayerRolls()[i]];
+                    dice[i].Play();
+                    gc.fightCounter = dice[i].clip.length;
                 }
             }
         if (pirateHand != null)
@@ -105,6 +113,8 @@ public class MenuController : MonoBehaviour
                 }
             }
         Background.enabled = display;
+        foreach (Animation a in dice)
+            a.gameObject.SetActive(true);
     }
     public void DisplayShop(bool display, float gold, float treasure)
     {
