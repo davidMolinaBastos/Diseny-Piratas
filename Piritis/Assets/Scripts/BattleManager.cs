@@ -20,12 +20,25 @@ public class BattleManager : MonoBehaviour
 
     public void Battle(CartaObject[] pH, CartaObject[] eH) //Start
     {
+        results = new TResults[]{ TResults.Void, TResults.Void, TResults.Void };
         playerHand = pH;
         enemyHand = eH;
         RollDice();
+        print("PlayerRolls: " + PlayerRolls[0] + " " +
+            PlayerRolls[1] + " " + PlayerRolls[2]);
+        print("EnemyRolls: " + EnemyRolls[0] + " " +
+            EnemyRolls[1] + " " + EnemyRolls[2]);
         ApplyPasives();
+        CheckResults();
+        print("Results Pre Empates " + results[0] + " " + results[1] + " " + results[2]);
         ApplyLatePasives();
         CheckResults();
+        print("Results" + results[0] + " " + results[1] + " " + results[2]);
+
+        print("PlayerRolls: " + PlayerRolls[0] + " " +
+            PlayerRolls[1] + " " + PlayerRolls[2]);
+        print("EnemyRolls: " + EnemyRolls[0] + " " +
+            EnemyRolls[1] + " " + EnemyRolls[2]);
     }
 
     //Public Handling
@@ -34,34 +47,38 @@ public class BattleManager : MonoBehaviour
     public float GetWinnings()
     {
         float wins, defeats, draws;
-        float total =  wins = defeats = draws = 0;
+        float total = wins = defeats = draws = 0;
 
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < 3; i++)
             if (results[i] == TResults.Win)
                 wins++;
             else if (results[i] == TResults.Loose)
                 defeats++;
             else
                 draws++;
-
-        if (wins == 3)
-            total = masacreWinnings;
-        else if (wins == 2 && draws == 1)
-            total = capturaWinnings;
-        else if (wins == 2 && defeats == 1)
-            total = pillajeWinnings;
-        else if (wins == 1 && draws == 2)
-            total = bravataWinnings;
-        else if (wins == 1 && draws == 1)
-            total = trifulcaWinnings;
-
-        if (doubled) total *= 2;
-
-        return total;
+        switch (wins)
+        {
+            case 3:
+                total = masacreWinnings;
+                break;
+            case 2:
+                if (draws > 0)
+                    total = capturaWinnings;
+                else
+                    total = pillajeWinnings;
+                break;
+            case 1:
+                if (draws > 1)
+                    total = bravataWinnings;
+                else if (draws > 0)
+                    total = trifulcaWinnings;
+                break;
+        }
+        return doubled ? total * 2 : total;
     }
     public void FlushValues()
     {
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < 3; i++)
         {
             results[i] = TResults.Void;
             PlayerRolls[i] = 0;
@@ -88,11 +105,20 @@ public class BattleManager : MonoBehaviour
             if (results[i] == TResults.Void)
             {
                 if (PlayerRolls[i] < EnemyRolls[i])
+                {
                     results[i] = TResults.Loose;
+                    print("Loose");
+                }
                 else if (PlayerRolls[i] > EnemyRolls[i])
+                {
                     results[i] = TResults.Win;
+                    print("Win");
+                }
                 else
+                {
                     results[i] = TResults.Draw;
+                    print("Draw");
+                }
             }
         }
     }

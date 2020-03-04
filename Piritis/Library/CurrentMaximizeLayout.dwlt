@@ -26,7 +26,7 @@ MonoBehaviour:
   m_MinSize: {x: 906, y: 421}
   m_MaxSize: {x: 22001, y: 10000}
   vertical: 0
-  controlID: 2799
+  controlID: 11111
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 671
+    y: 617
     width: 1132
     height: 328
   m_ViewDataDictionary: {fileID: 0}
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 201, y: 421}
   m_MaxSize: {x: 4001, y: 8021}
   vertical: 1
-  controlID: 2800
+  controlID: 11112
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -203,9 +203,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 7.06033, y: -14.721306, z: -21.867188}
+    m_Target: {x: 5.234423, y: -9.517476, z: -32.703903}
     speed: 2
-    m_Value: {x: 7.06033, y: -14.721306, z: -21.867188}
+    m_Value: {x: 5.234423, y: -9.517476, z: -32.703903}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -255,9 +255,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 18.66202
+    m_Target: 12.881923
     speed: 2
-    m_Value: 18.66202
+    m_Value: 12.881923
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -400,20 +400,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Modelos
+    - Assets/Prefabs
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Modelos
+  - Assets/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Loky\Documents\GitHub\Diseny-Piratas\Piritis
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 983d0000
-    m_LastClickedID: 15768
-    m_ExpandedIDs: 00000000863d0000883d000000ca9a3b
+    m_SelectedIDs: 9e3d0000
+    m_LastClickedID: 15774
+    m_ExpandedIDs: 00000000883d00008a3d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -441,7 +441,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000863d0000883d000000ca9a3b
+    m_ExpandedIDs: 00000000883d00008a3d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -466,9 +466,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: c4360000
-    m_LastClickedInstanceID: 14020
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: f8360000
+    m_LastClickedInstanceID: 14072
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: e24e000084450000fc3c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -551,10 +551,10 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
+      scrollPos: {x: 0, y: 519}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 3afbffff46fbffff58fbffff6efbffff84360000423c0000
+      m_ExpandedIDs: 58fbffff6efbffff84360000323700009a370000b2370000cc3700001a380000803800006239000082390000c4390000823b0000423c0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -640,5 +640,5 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
-  m_LastInspectedObjectInstanceID: 14020
-  m_LastVerticalScrollValue: 79
+  m_LastInspectedObjectInstanceID: 14072
+  m_LastVerticalScrollValue: 0

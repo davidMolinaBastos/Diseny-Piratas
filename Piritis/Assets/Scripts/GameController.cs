@@ -135,9 +135,7 @@ public class GameController : MonoBehaviour
                 bm.Battle(pc.GetHand(), e.pirateHand);
                 gold += bm.GetWinnings();
                 playerRolls = bm.ReturnPlayerRolls();
-                foreach (int i in playerRolls) print("Rolled:" + i);
                 results = bm.ReturnResults();
-                foreach (BattleManager.TResults r in results) print("Result:" + r);
                 break;
             case EventNodeScript.TEvent.CHANGE_GOLD:
                 e.ChangeGoldEffect();

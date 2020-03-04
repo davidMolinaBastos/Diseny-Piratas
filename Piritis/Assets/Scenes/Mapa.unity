@@ -1269,8 +1269,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 109, y: 144}
-  m_SizeDelta: {x: 82.3, y: 30}
+  m_AnchoredPosition: {x: 69.1, y: 139}
+  m_SizeDelta: {x: 211.9, y: 62.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &137837368
 MonoBehaviour:
@@ -3010,26 +3010,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Nivel1:
   - {fileID: 11400000, guid: d31aded28e47eb340bd0a344686d6dee, type: 2}
-  - {fileID: 11400000, guid: 8ca79ff17da8ceb469c019d25f500010, type: 2}
-  - {fileID: 11400000, guid: 30254518169384444a2f1a1250f93232, type: 2}
+  - {fileID: 11400000, guid: d31aded28e47eb340bd0a344686d6dee, type: 2}
+  - {fileID: 11400000, guid: d31aded28e47eb340bd0a344686d6dee, type: 2}
   Nivel2:
   - {fileID: 11400000, guid: 0e70d1a1f926f95429f256ae06fcdc90, type: 2}
+  - {fileID: 11400000, guid: 743bc0999d01a99449d8d00b9a535463, type: 2}
+  - {fileID: 11400000, guid: 743bc0999d01a99449d8d00b9a535463, type: 2}
   - {fileID: 11400000, guid: 743bc0999d01a99449d8d00b9a535463, type: 2}
   - {fileID: 11400000, guid: 743bc0999d01a99449d8d00b9a535463, type: 2}
   Nivel3:
   - {fileID: 11400000, guid: 22cb9dbd2560ea04dad6fbccbd927f65, type: 2}
   - {fileID: 11400000, guid: b96902fb2af6cfa45ad3161daf735b20, type: 2}
   - {fileID: 11400000, guid: cd4c5999c19a6c84297b1825a4a01584, type: 2}
-  - {fileID: 11400000, guid: 997f7e29f400ede49a82c4ab84ec186d, type: 2}
+  - {fileID: 11400000, guid: cd4c5999c19a6c84297b1825a4a01584, type: 2}
+  - {fileID: 11400000, guid: cd4c5999c19a6c84297b1825a4a01584, type: 2}
   Nivel4:
   - {fileID: 11400000, guid: f9f9e131c0c875e46ae40e8b52b42c6e, type: 2}
   - {fileID: 11400000, guid: c7c1afd947041fd40833c26fc0f5b21e, type: 2}
   - {fileID: 11400000, guid: 2d3594313ef8f6348b211a29ea1bb03f, type: 2}
   - {fileID: 11400000, guid: 279bf941614d4fb41b4938b32b4587cb, type: 2}
-  - {fileID: 11400000, guid: 388945136945c3644af851aa19ebb282, type: 2}
-  - {fileID: 11400000, guid: 4bc9124bb63a45f4183c697cb2826cc8, type: 2}
   Nivel5:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 743bc0999d01a99449d8d00b9a535463, type: 2}
   - {fileID: 11400000, guid: 19078f66e404c4b449b04a729c746b7a, type: 2}
   - {fileID: 11400000, guid: 3b85caf4a9a50ac4cb9194d414734703, type: 2}
   CartasPlayer: []
@@ -4706,7 +4707,8 @@ Animation:
   m_Enabled: 1
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: 0c075b4ce8fe56542b5c2d2c253f9be7, type: 2}
-  m_Animations: []
+  m_Animations:
+  - {fileID: 7400000, guid: 0c075b4ce8fe56542b5c2d2c253f9be7, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 1

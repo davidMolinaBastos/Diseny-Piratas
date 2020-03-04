@@ -102,18 +102,17 @@ public class MenuController : MonoBehaviour
                     gc.fightCounter = dice[i].clip.length;
                 }
             }
-        if (pirateHand != null)
-            for (int i = 0; i < 3; i++)
-            {
-                if (pirateHand[i] != null)
-                {
-                    enemyCards[i].enabled = display;
-                    enemyCards[i].sprite = pirateHand[i].sprite;
-                }
-            }
+        for (int i = 0; i < 3; i++)
+        {
+            enemyCards[i].enabled = display;
+            if(pirateHand != null)
+            if (pirateHand[i] != null)
+                enemyCards[i].sprite = pirateHand[i].sprite;
+
+        }
         Background.enabled = display;
         foreach (Animation a in dice)
-            a.gameObject.SetActive(true);
+            a.gameObject.SetActive(display);
     }
     public void DisplayShop(bool display, float gold, float treasure)
     {

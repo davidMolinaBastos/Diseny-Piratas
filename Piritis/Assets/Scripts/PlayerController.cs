@@ -35,6 +35,9 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        for (int i = 0; i < 3; i++)
+            if (cardHand[i] == null)
+                SwitchCards(cardHand[i], GetRandomDeckCard(), i);
         //Movimiento
         if (canMove)
         {
@@ -109,7 +112,9 @@ public class PlayerController : MonoBehaviour
     public CartaObject GetRandomDeckCard()
     {
         Random.InitState((int)System.DateTime.Now.Ticks);
-        return cb.CartasPlayer[Random.Range(0, cb.CartasPlayer.Capacity)];
+        cb.CartasPlayer.TrimExcess();
+        int r = Random.Range(0, cb.CartasPlayer.Capacity);
+        return cb.CartasPlayer[r];
     }
 
     public void Teleport(Transform objective)

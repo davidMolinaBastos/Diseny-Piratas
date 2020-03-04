@@ -38,14 +38,28 @@ public class EventNodeScript : NodoScript, IRestartGameElement
                 for (int i = 0; i < pirateHand.GetLength(0); i++)
                 {
                     Random.InitState((int)System.DateTime.Now.Ticks);
-                    pirateHand[i] = GameObject.FindGameObjectWithTag("GameController").GetComponent<CardBlackboard>().ReturnRandomCard(pirateLv); ;
+                    pirateHand[i] = gc.gameObject.GetComponent<CardBlackboard>().ReturnRandomCard(pirateLv); ;
                 }
             }
         }
         evento = eventos[Random.Range(0, 3)];
-        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().AddResetElement(this);
+        gc.GetComponent<GameController>().AddResetElement(this);
     }
-
+    void Update()
+    {
+        foreach (TEvent E in eventos)
+        {
+            if (E == TEvent.FIGHT)
+            {
+                for (int i = 0; i < pirateHand.GetLength(0); i++)
+                {
+                    Random.InitState((int)System.DateTime.Now.Ticks);
+                    if (pirateHand[i] == null)
+                        pirateHand[i] = gc.gameObject.GetComponent<CardBlackboard>().ReturnRandomCard(pirateLv); ;
+                }
+            }
+        }
+    }
     public void ChangeGoldEffect()
     {
         gc.ChangeGold(goldValue);
@@ -80,6 +94,6 @@ public class EventNodeScript : NodoScript, IRestartGameElement
     }
     public void Deplete() { depleted = true; }
     public bool GetDeplete() { return depleted; }
-    
+
     public TEvent GetEventType() { return evento; }
 }
