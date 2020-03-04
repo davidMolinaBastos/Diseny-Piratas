@@ -68,6 +68,7 @@ public class PlayerController : MonoBehaviour
                     if ((nextNode.transform.position - transform.position).magnitude < closeNodeR)
                     {
                         CurrentNode = nextNode;
+                        nextNode = null;
                         switch (CurrentNode.tipoNodo)
                         {
                             case NodoScript.TNodo.ISLA:
@@ -123,8 +124,7 @@ public class PlayerController : MonoBehaviour
     {
         Random.InitState((int)System.DateTime.Now.Ticks);
         cb.CartasPlayer.TrimExcess();
-        int r = Random.Range(0, cb.CartasPlayer.Capacity);
-        print(r);
+        int r = Random.Range(0, cb.CartasPlayer.Count);
         cb.CartasPlayer.RemoveAt(r);
     }
 

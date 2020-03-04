@@ -35,20 +35,9 @@ public class GameController : MonoBehaviour
     }
     private void Update()
     {
-        if (eventActive && evento.GetEventType() == EventNodeScript.TEvent.FIGHT)
-            if (fightCounter < 0)
-            {
-                mc.DisplayFight(false, null, pc.GetHand());
-                eventActive = false;
-                pc.SetMoving(true);
-                evento = null;
-                DeleteCards();
-                bm.FlushValues();
-            }
-            else
-            {
-                fightCounter -= Time.deltaTime;
-            }
+        if (eventActive && evento.GetEventType() == EventNodeScript.TEvent.FIGHT && fightCounter > 0)
+            fightCounter -= Time.deltaTime;
+
 #if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.T)) RefillNodes();  //DebugRefill
         if (Input.GetKeyDown(KeyCode.Y)) gold += 100f; //DebugAddMoney
@@ -56,7 +45,7 @@ public class GameController : MonoBehaviour
         if (eventActive)
         {
             /*
-            SE TIENE QUE CAMBIAR
+            SE TIENE QUE CAMBIAR, y se ha cambiao
             */
             if (evento.GetEventType() == EventNodeScript.TEvent.FIGHT && fightCounter <= 0)//Input.anyKeyDown && evento.GetEventType() == EventNodeScript.TEvent.FIGHT)
             {
@@ -64,6 +53,8 @@ public class GameController : MonoBehaviour
                 eventActive = false;
                 pc.SetMoving(true);
                 evento = null;
+                DeleteCards();
+                bm.FlushValues();
             }
             else if (evento.GetEventType() != EventNodeScript.TEvent.FIGHT && Input.anyKeyDown)
             {
@@ -144,7 +135,9 @@ public class GameController : MonoBehaviour
                 bm.Battle(pc.GetHand(), e.pirateHand);
                 gold += bm.GetWinnings();
                 playerRolls = bm.ReturnPlayerRolls();
+                foreach (int i in playerRolls) print("Rolled:" + i);
                 results = bm.ReturnResults();
+                foreach (BattleManager.TResults r in results) print("Result:" + r);
                 break;
             case EventNodeScript.TEvent.CHANGE_GOLD:
                 e.ChangeGoldEffect();

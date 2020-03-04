@@ -4706,13 +4706,7 @@ Animation:
   m_Enabled: 1
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: 0c075b4ce8fe56542b5c2d2c253f9be7, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 0c075b4ce8fe56542b5c2d2c253f9be7, type: 2}
-  - {fileID: 7400000, guid: fb4aa90644f277941901db5812bbb97b, type: 2}
-  - {fileID: 7400000, guid: 84f56274f5cf15749ab3a4a97109b5eb, type: 2}
-  - {fileID: 7400000, guid: 939a18ca71ecbfa4c96b19d1be803ef5, type: 2}
-  - {fileID: 7400000, guid: 1b07f7a0d7dca2c4883392a60b0ab783, type: 2}
-  - {fileID: 7400000, guid: c30c9c619960c2944957232b054bd696, type: 2}
+  m_Animations: []
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 1
@@ -6096,6 +6090,11 @@ PrefabInstance:
       value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 31406633898c7424aa0523eb27e5f181,
+        type: 3}
+      propertyPath: m_Name
+      value: DiceR
+      objectReference: {fileID: 0}
+    - target: {fileID: 721056895991426811, guid: 31406633898c7424aa0523eb27e5f181,
         type: 3}
       propertyPath: m_Name
       value: DiceR
@@ -14272,6 +14271,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DiceG
       objectReference: {fileID: 0}
+    - target: {fileID: 721056895991426811, guid: 31406633898c7424aa0523eb27e5f181,
+        type: 3}
+      propertyPath: m_Name
+      value: DiceG
+      objectReference: {fileID: 0}
     - target: {fileID: 8405317065323677370, guid: 31406633898c7424aa0523eb27e5f181,
         type: 3}
       propertyPath: m_CastShadows
@@ -17694,6 +17698,11 @@ PrefabInstance:
       value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 31406633898c7424aa0523eb27e5f181,
+        type: 3}
+      propertyPath: m_Name
+      value: DiceB
+      objectReference: {fileID: 0}
+    - target: {fileID: 721056895991426811, guid: 31406633898c7424aa0523eb27e5f181,
         type: 3}
       propertyPath: m_Name
       value: DiceB

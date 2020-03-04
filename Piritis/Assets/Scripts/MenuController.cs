@@ -97,7 +97,6 @@ public class MenuController : MonoBehaviour
                 {
                     playerCards[i].enabled = display;
                     playerCards[i].sprite = playerHand[i].sprite;
-                    print(gc.ReturnPlayerRolls()[i]);
                     dice[i].clip = anims[gc.ReturnPlayerRolls()[i]];
                     dice[i].Play();
                     gc.fightCounter = dice[i].clip.length;

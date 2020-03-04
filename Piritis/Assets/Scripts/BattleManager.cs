@@ -5,11 +5,11 @@ using UnityEngine;
 public class BattleManager : MonoBehaviour
 {
     public enum TResults { Win, Draw, Loose, Void }
-    TResults[] results = new TResults[2];
-    int[] PlayerRolls = new int[2];
-    int[] EnemyRolls = new int[2];
-    CartaObject[] playerHand = new CartaObject[2];
-    CartaObject[] enemyHand = new CartaObject[2];
+    TResults[] results = new TResults[3];
+    int[] PlayerRolls = new int[3];
+    int[] EnemyRolls = new int[3];
+    CartaObject[] playerHand = new CartaObject[3];
+    CartaObject[] enemyHand = new CartaObject[3];
     bool doubled = false;
 
     public float masacreWinnings = 400;
@@ -141,7 +141,6 @@ public class BattleManager : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             //PlayerPasive
-            print(playerHand[i]);
             switch (playerHand[i].pasiva)
             {
                 case CartaObject.TipoPasiva.CAMBIAR_VALOR:
