@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baa37abe85cac7641afe8c70757303d5, type: 3}
   m_Name: Simbad
   m_EditorClassIdentifier: 
-  nickname: 
+  nickname: 'Simbad '
   pasiva: 4
-  sprite: {fileID: 21300000, guid: d5c452260e8c8d04ca3770aae311687b, type: 3}
+  sprite: {fileID: 21300000, guid: b8c5a9771abfab5488527a135d2ba9fe, type: 3}
   levelCarta: 5
   rollValor: 0
   valor: 3
