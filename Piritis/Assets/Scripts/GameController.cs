@@ -42,6 +42,8 @@ public class GameController : MonoBehaviour
                 eventActive = false;
                 pc.SetMoving(true);
                 evento = null;
+                DeleteCards();
+                bm.FlushValues();
             }
             else
             {
@@ -83,7 +85,7 @@ public class GameController : MonoBehaviour
     }
     public void CloseInventory(int Case, int Lvl)
     {
-        inventory = true;
+        inventory = false;
         invCase = Case;
         mc.DisplayInventory(false, pc, Case, Lvl);
         pc.SetMoving(true);
@@ -117,12 +119,12 @@ public class GameController : MonoBehaviour
             return;
         if (e.GetEventType() == EventNodeScript.TEvent.FIGHT)
         {
+            PerformEvent(e);
             mc.DisplayFight(true, e.pirateHand, pc.GetHand());
             eventActive = true;
             pc.SetMoving(false);
             evento = e;
             e.Deplete();
-            PerformEvent(e);
         }
         else
         {
@@ -143,8 +145,6 @@ public class GameController : MonoBehaviour
                 gold += bm.GetWinnings();
                 playerRolls = bm.ReturnPlayerRolls();
                 results = bm.ReturnResults();
-                bm.FlushValues();
-                DeleteCards();
                 break;
             case EventNodeScript.TEvent.CHANGE_GOLD:
                 e.ChangeGoldEffect();

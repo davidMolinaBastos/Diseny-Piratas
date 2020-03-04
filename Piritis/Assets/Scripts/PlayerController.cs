@@ -23,14 +23,14 @@ public class PlayerController : MonoBehaviour
     bool moving = false, canMove = true;
     GameController gameController;
     CardBlackboard cb;
-    CartaObject[] cardHand = { null, null, null };
+    public CartaObject[] cardHand = { null, null, null };
 
     private void Start()
     {
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         cb = GameObject.FindGameObjectWithTag("GameController").GetComponent<CardBlackboard>();
         for (int i = 0; i < 3; i++)
-            cardHand[i] = cb.ReturnRandomPlayerCard();
+            SwitchCards(cardHand[i], cb.ReturnRandomPlayerCard(), i);
     }
 
     void Update()
@@ -93,13 +93,16 @@ public class PlayerController : MonoBehaviour
         if(oldHand != null)
             cb.CartasPlayer.Add(oldHand);
         cb.CartasPlayer.Remove(oldDeck);
+        cb.CartasPlayer.TrimExcess();
         cardHand[handID] = oldDeck;
     }
 
     public void RemoveCardFromHand(int index)
     {
         cardHand[index] = null;
+        cb.CartasPlayer.TrimExcess();
         SwitchCards(null, GetRandomDeckCard(), index);
+        cb.CartasPlayer.TrimExcess();
     }
 
     public CartaObject GetRandomDeckCard()
