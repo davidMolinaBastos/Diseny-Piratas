@@ -12,33 +12,20 @@ public class BattleManager : MonoBehaviour
     CartaObject[] enemyHand = new CartaObject[3];
     bool doubled = false;
 
-    public float masacreWinnings = 400;
-    public float capturaWinnings = 300;
-    public float pillajeWinnings = 250;
-    public float bravataWinnings = 200;
-    public float trifulcaWinnings = 150;
+    public float winnings = 100;
+    public float loss = 50;
 
     public void Battle(CartaObject[] pH, CartaObject[] eH) //Start
     {
-        results = new TResults[]{ TResults.Void, TResults.Void, TResults.Void };
+        results = new TResults[] { TResults.Void, TResults.Void, TResults.Void };
         playerHand = pH;
         enemyHand = eH;
         RollDice();
-        print("PlayerRolls: " + PlayerRolls[0] + " " +
-            PlayerRolls[1] + " " + PlayerRolls[2]);
-        print("EnemyRolls: " + EnemyRolls[0] + " " +
-            EnemyRolls[1] + " " + EnemyRolls[2]);
         ApplyPasives();
         CheckResults();
-        print("Results Pre Empates " + results[0] + " " + results[1] + " " + results[2]);
         ApplyLatePasives();
         CheckResults();
-        print("Results" + results[0] + " " + results[1] + " " + results[2]);
-
-        print("PlayerRolls: " + PlayerRolls[0] + " " +
-            PlayerRolls[1] + " " + PlayerRolls[2]);
-        print("EnemyRolls: " + EnemyRolls[0] + " " +
-            EnemyRolls[1] + " " + EnemyRolls[2]);
+        DebugResults();
     }
 
     //Public Handling
@@ -46,35 +33,17 @@ public class BattleManager : MonoBehaviour
     public int[] ReturnPlayerRolls() { return PlayerRolls; }
     public float GetWinnings()
     {
-        float wins, defeats, draws;
-        float total = wins = defeats = draws = 0;
+
+        float total = 0;
 
         for (int i = 0; i < 3; i++)
             if (results[i] == TResults.Win)
-                wins++;
+                total += winnings;
             else if (results[i] == TResults.Loose)
-                defeats++;
-            else
-                draws++;
-        switch (wins)
-        {
-            case 3:
-                total = masacreWinnings;
-                break;
-            case 2:
-                if (draws > 0)
-                    total = capturaWinnings;
-                else
-                    total = pillajeWinnings;
-                break;
-            case 1:
-                if (draws > 1)
-                    total = bravataWinnings;
-                else if (draws > 0)
-                    total = trifulcaWinnings;
-                break;
-        }
+                total -= loss;
+
         return doubled ? total * 2 : total;
+
     }
     public void FlushValues()
     {
@@ -85,7 +54,7 @@ public class BattleManager : MonoBehaviour
             EnemyRolls[i] = 0;
             playerHand[i] = null;
             enemyHand[i] = null;
-            doubled = true;
+            doubled = false;
         }
     }
 
@@ -100,27 +69,14 @@ public class BattleManager : MonoBehaviour
     }
     void CheckResults()
     {
-        for (int i = 0; i < 2; i++)
-        {
+        for (int i = 0; i < 3; i++)
             if (results[i] == TResults.Void)
-            {
                 if (PlayerRolls[i] < EnemyRolls[i])
-                {
                     results[i] = TResults.Loose;
-                    print("Loose");
-                }
                 else if (PlayerRolls[i] > EnemyRolls[i])
-                {
                     results[i] = TResults.Win;
-                    print("Win");
-                }
                 else
-                {
                     results[i] = TResults.Draw;
-                    print("Draw");
-                }
-            }
-        }
     }
     void ApplyLatePasives()
     {
@@ -229,4 +185,16 @@ public class BattleManager : MonoBehaviour
             }
         }
     }
+
+#if UNITY_EDITOR
+    //Debug Inform
+    public void DebugResults()
+    {
+        print("Results: " + results[0] + " , " + results[1] + " " + results[2]);
+        print("PlayerRolls: " + PlayerRolls[0] + " , " + PlayerRolls[1] + " , " + PlayerRolls[2]);
+        print("EnemyRolls: " + EnemyRolls[0] + " , " + EnemyRolls[1] + " , " + EnemyRolls[2]);
+        print("Player Pasives: " + playerHand[0].pasiva + " , " + playerHand[1].pasiva + " , " + playerHand[2].pasiva);
+        print("Enemy Pasives: " + enemyHand[0].pasiva + " , " + enemyHand[1].pasiva + " , " + enemyHand[2].pasiva);
+    }
+#endif
 }

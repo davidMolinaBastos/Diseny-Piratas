@@ -47,7 +47,7 @@ public class GameController : MonoBehaviour
             /*
             SE TIENE QUE CAMBIAR, y se ha cambiao
             */
-            if (evento.GetEventType() == EventNodeScript.TEvent.FIGHT && fightCounter <= 0)//Input.anyKeyDown && evento.GetEventType() == EventNodeScript.TEvent.FIGHT)
+            if (evento.GetEventType() == EventNodeScript.TEvent.FIGHT && fightCounter <= 0 && Input.anyKeyDown)//Input.anyKeyDown && evento.GetEventType() == EventNodeScript.TEvent.FIGHT)
             {
                 mc.DisplayFight(false, null, pc.GetHand());
                 eventActive = false;
