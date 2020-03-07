@@ -33,7 +33,7 @@ public class IslandScript : NodoScript
         if (treasure)
             price = treasurePrice;
         else
-            price = prices[lvl];
+            price = prices[lvl-1];
         return price;
     }
 }
