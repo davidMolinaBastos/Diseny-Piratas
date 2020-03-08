@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(CardBlackboard))]
 [RequireComponent(typeof(MenuController))]
@@ -17,6 +17,8 @@ public class GameController : MonoBehaviour
 
     public float gold = 0, treasureParts = 0;
     public int winMin = 10;
+    public string winscene = "WinScene";
+    public string loosescene = "LooseScene";
     bool eventActive;
     [HideInInspector] public bool inventory;
     [HideInInspector] public int invCase;
@@ -42,6 +44,8 @@ public class GameController : MonoBehaviour
 #if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.T)) RefillNodes();  //DebugRefill
         if (Input.GetKeyDown(KeyCode.Y)) gold += 100f; //DebugAddMoney
+        if (Input.GetKeyDown(KeyCode.U)) treasureParts++;
+        if (Input.GetKeyDown(KeyCode.I)) pc.RemoveCardFromHand(0);
 #endif
         if (eventActive)
         {
@@ -71,12 +75,13 @@ public class GameController : MonoBehaviour
                 evento = null;
             }
         }
+        if (pc.GetHand().Length < 1 && cb.GetPlayerCards().Count < 1)
+            GameEnd(loosescene);
+        if (treasureParts > winMin)
+            GameEnd(winscene);
     }
     
-    public void GameWon()
-    {
-
-    }
+    public void GameEnd( string scene){SceneManager.LoadScene(scene);}
 
     //InventoryManager
     public void CallInventory(int Case, int Lvl)
@@ -121,7 +126,7 @@ public class GameController : MonoBehaviour
     public void ChangePieces(int value)
     {
         if (treasureParts > winMin)
-            GameWon();
+            GameEnd(winscene);
         treasureParts += value;
     }
 

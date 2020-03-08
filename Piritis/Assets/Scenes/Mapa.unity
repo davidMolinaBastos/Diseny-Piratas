@@ -3008,27 +3008,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Nivel1:
   - {fileID: 11400000, guid: d31aded28e47eb340bd0a344686d6dee, type: 2}
-  - {fileID: 11400000, guid: d31aded28e47eb340bd0a344686d6dee, type: 2}
-  - {fileID: 11400000, guid: d31aded28e47eb340bd0a344686d6dee, type: 2}
+  - {fileID: 11400000, guid: 8ca79ff17da8ceb469c019d25f500010, type: 2}
+  - {fileID: 11400000, guid: 0b13bf1b4394acb42b08ab6ebf26de86, type: 2}
   Nivel2:
   - {fileID: 11400000, guid: 0e70d1a1f926f95429f256ae06fcdc90, type: 2}
-  - {fileID: 11400000, guid: 743bc0999d01a99449d8d00b9a535463, type: 2}
-  - {fileID: 11400000, guid: 743bc0999d01a99449d8d00b9a535463, type: 2}
-  - {fileID: 11400000, guid: 743bc0999d01a99449d8d00b9a535463, type: 2}
-  - {fileID: 11400000, guid: 743bc0999d01a99449d8d00b9a535463, type: 2}
+  - {fileID: 11400000, guid: 1beeab83b4aac204a829aa916620c78b, type: 2}
+  - {fileID: 11400000, guid: 2fa60f773af3b3a499456dd1aaa97985, type: 2}
+  - {fileID: 11400000, guid: 7d93b220a7ea6774fbec284aaa959d96, type: 2}
+  - {fileID: 11400000, guid: f9f9e131c0c875e46ae40e8b52b42c6e, type: 2}
   Nivel3:
   - {fileID: 11400000, guid: 22cb9dbd2560ea04dad6fbccbd927f65, type: 2}
   - {fileID: 11400000, guid: b96902fb2af6cfa45ad3161daf735b20, type: 2}
+  - {fileID: 11400000, guid: 997f7e29f400ede49a82c4ab84ec186d, type: 2}
   - {fileID: 11400000, guid: cd4c5999c19a6c84297b1825a4a01584, type: 2}
-  - {fileID: 11400000, guid: cd4c5999c19a6c84297b1825a4a01584, type: 2}
-  - {fileID: 11400000, guid: cd4c5999c19a6c84297b1825a4a01584, type: 2}
+  - {fileID: 11400000, guid: 41c731b145ab53a4ab95ea107c17e84c, type: 2}
   Nivel4:
-  - {fileID: 11400000, guid: f9f9e131c0c875e46ae40e8b52b42c6e, type: 2}
+  - {fileID: 11400000, guid: 4bc9124bb63a45f4183c697cb2826cc8, type: 2}
   - {fileID: 11400000, guid: c7c1afd947041fd40833c26fc0f5b21e, type: 2}
   - {fileID: 11400000, guid: 2d3594313ef8f6348b211a29ea1bb03f, type: 2}
   - {fileID: 11400000, guid: 279bf941614d4fb41b4938b32b4587cb, type: 2}
   Nivel5:
-  - {fileID: 11400000, guid: 743bc0999d01a99449d8d00b9a535463, type: 2}
+  - {fileID: 11400000, guid: caecb1203335e3d40be24965bcd71e5c, type: 2}
   - {fileID: 11400000, guid: 19078f66e404c4b449b04a729c746b7a, type: 2}
   - {fileID: 11400000, guid: 3b85caf4a9a50ac4cb9194d414734703, type: 2}
   CartasPlayer:

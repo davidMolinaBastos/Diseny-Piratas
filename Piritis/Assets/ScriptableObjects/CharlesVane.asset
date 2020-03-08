@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nickname: Charles Vane
   pasiva: 1
-  sprite: {fileID: 21300000, guid: 63b5519a1452fa24f9953734609a4487, type: 3}
+  sprite: {fileID: 21300000, guid: 760065321ebf9e94cbc0bc782332406e, type: 3}
   levelCarta: 3
   rollValor: 0
   valor: 0
