@@ -3033,7 +3033,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 743bc0999d01a99449d8d00b9a535463, type: 2}
   - {fileID: 11400000, guid: 19078f66e404c4b449b04a729c746b7a, type: 2}
   - {fileID: 11400000, guid: 3b85caf4a9a50ac4cb9194d414734703, type: 2}
-  CartasPlayer: []
+  CartasPlayer:
+  - {fileID: 11400000, guid: 3b85caf4a9a50ac4cb9194d414734703, type: 2}
 --- !u!114 &273755508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3059,16 +3060,16 @@ MonoBehaviour:
   - {fileID: 87976721}
   Background: {fileID: 1989690485}
   dice:
-  - {fileID: 476382261}
-  - {fileID: 947183972}
-  - {fileID: 2098546900}
-  anims:
-  - {fileID: 7400000, guid: 0c075b4ce8fe56542b5c2d2c253f9be7, type: 2}
-  - {fileID: 7400000, guid: fb4aa90644f277941901db5812bbb97b, type: 2}
-  - {fileID: 7400000, guid: 84f56274f5cf15749ab3a4a97109b5eb, type: 2}
-  - {fileID: 7400000, guid: 939a18ca71ecbfa4c96b19d1be803ef5, type: 2}
-  - {fileID: 7400000, guid: 1b07f7a0d7dca2c4883392a60b0ab783, type: 2}
-  - {fileID: 7400000, guid: c30c9c619960c2944957232b054bd696, type: 2}
+  - {fileID: 374241818}
+  - {fileID: 1023933513}
+  - {fileID: 1601054229}
+  diceSprites:
+  - {fileID: -5125555198026612319, guid: 1ea944731a347144388c7a839dbe447e, type: 3}
+  - {fileID: 175962787396787636, guid: 1ea944731a347144388c7a839dbe447e, type: 3}
+  - {fileID: 6366529046394908241, guid: 1ea944731a347144388c7a839dbe447e, type: 3}
+  - {fileID: 7183195401824034768, guid: 1ea944731a347144388c7a839dbe447e, type: 3}
+  - {fileID: -5666552777093224069, guid: 1ea944731a347144388c7a839dbe447e, type: 3}
+  - {fileID: -6251451809504726511, guid: 1ea944731a347144388c7a839dbe447e, type: 3}
   Buttons:
   - {fileID: 1245608262}
   - {fileID: 1557270144}
@@ -4299,6 +4300,80 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &374241815
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 374241816}
+  - component: {fileID: 374241817}
+  - component: {fileID: 374241818}
+  m_Layer: 5
+  m_Name: Dado1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &374241816
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374241815}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2029845112}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -175.8, y: -162}
+  m_SizeDelta: {x: 50, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &374241817
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374241815}
+  m_CullTransparentMesh: 0
+--- !u!114 &374241818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374241815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -5125555198026612319, guid: 1ea944731a347144388c7a839dbe447e,
+    type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &377556695
 GameObject:
   m_ObjectHideFlags: 0
@@ -4395,7 +4470,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &387039252
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6093,6 +6168,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DiceRE
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 31406633898c7424aa0523eb27e5f181,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 721056895991426811, guid: 31406633898c7424aa0523eb27e5f181,
         type: 3}
       propertyPath: m_Name
@@ -6567,7 +6647,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &584919705
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10585,6 +10665,80 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+--- !u!1 &1023933510
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1023933511}
+  - component: {fileID: 1023933512}
+  - component: {fileID: 1023933513}
+  m_Layer: 5
+  m_Name: Dado2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1023933511
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023933510}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2029845112}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 25, y: -162}
+  m_SizeDelta: {x: 50, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1023933512
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023933510}
+  m_CullTransparentMesh: 0
+--- !u!114 &1023933513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023933510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -5125555198026612319, guid: 1ea944731a347144388c7a839dbe447e,
+    type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &1032572893
 GameObject:
   m_ObjectHideFlags: 0
@@ -11371,7 +11525,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1110880873
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14271,6 +14425,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DiceGE
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 31406633898c7424aa0523eb27e5f181,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 721056895991426811, guid: 31406633898c7424aa0523eb27e5f181,
         type: 3}
       propertyPath: m_Name
@@ -16468,6 +16627,80 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1601054226
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1601054227}
+  - component: {fileID: 1601054228}
+  - component: {fileID: 1601054229}
+  m_Layer: 5
+  m_Name: Dado3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1601054227
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601054226}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2029845112}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 217.7, y: -162}
+  m_SizeDelta: {x: 50, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1601054228
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601054226}
+  m_CullTransparentMesh: 0
+--- !u!114 &1601054229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601054226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -5125555198026612319, guid: 1ea944731a347144388c7a839dbe447e,
+    type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &1602174457 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
@@ -17702,6 +17935,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DiceBE
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 31406633898c7424aa0523eb27e5f181,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 721056895991426811, guid: 31406633898c7424aa0523eb27e5f181,
         type: 3}
@@ -20695,6 +20933,9 @@ RectTransform:
   - {fileID: 1872445263}
   - {fileID: 348028137}
   - {fileID: 87976720}
+  - {fileID: 374241816}
+  - {fileID: 1023933511}
+  - {fileID: 1601054227}
   m_Father: {fileID: 203839316}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

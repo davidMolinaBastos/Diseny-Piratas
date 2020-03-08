@@ -100,7 +100,12 @@ public class GameController : MonoBehaviour
             return false;
         return true;
     }
-    public void ChangeGold(float value) { gold += value; }
+    public void ChangeGold(float value) {
+        if (gold - value < 0) 
+            gold = 0;
+        gold += value;
+        gold = Mathf.Clamp(gold, 0, gold);
+    }
     public void ChangePieces(int value) { treasureParts += value; }
 
     //Event Managment
@@ -156,7 +161,7 @@ public class GameController : MonoBehaviour
 
     public void DeleteCards()
     {
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < 3; i++)
             if (results[i] == BattleManager.TResults.Loose)
                 pc.RemoveCardFromHand(i);
     }

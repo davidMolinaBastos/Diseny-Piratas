@@ -103,6 +103,8 @@ public class PlayerController : MonoBehaviour
 
     public void RemoveCardFromHand(int index)
     {
+        if (cb.CartasPlayer.Count < 1)
+            return;
         cardHand[index] = null;
         cb.CartasPlayer.TrimExcess();
         SwitchCards(null, GetRandomDeckCard(), index);
@@ -111,6 +113,8 @@ public class PlayerController : MonoBehaviour
 
     public CartaObject GetRandomDeckCard()
     {
+        if (cb.CartasPlayer.Count < 1)
+            return null;
         Random.InitState((int)System.DateTime.Now.Ticks);
         cb.CartasPlayer.TrimExcess();
         int r = Random.Range(0, cb.CartasPlayer.Count);
