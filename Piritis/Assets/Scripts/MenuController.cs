@@ -17,6 +17,8 @@ public class MenuController : MonoBehaviour
     //public AnimationClip[] anims;
     public Image[] dice = new Image[3];
     public Sprite[] diceSprites = new Sprite[6];
+    public GameObject[] results = new GameObject[3];
+    public Text[] resultDisplay = new Text[3];
 
     [Header("Shop")]
     public GameObject[] Buttons;
@@ -54,7 +56,8 @@ public class MenuController : MonoBehaviour
         //  a.gameObject.SetActive(false);
         foreach (Image i in dice)
             i.enabled = false;
-
+        foreach (GameObject go in results)
+            go.SetActive(false);
 
         foreach (GameObject go in Buttons)
             go.SetActive(false);
@@ -69,17 +72,6 @@ public class MenuController : MonoBehaviour
         DeckLevels.SetActive(false);
         foreach (GameObject go in Lvls)
             go.SetActive(false);
-    }
-
-    private void Update()
-    {
-        if (Background.enabled)
-            UpdateFight();
-    }
-
-    void UpdateFight()
-    {
-
     }
     //DISPLAY METHODS
 
@@ -118,6 +110,9 @@ public class MenuController : MonoBehaviour
 
         }
         Background.enabled = display;
+        if (!display)
+            foreach (GameObject go in results)
+                go.SetActive(display);
         //foreach (Animation a in dice)
           //  a.gameObject.SetActive(display);
           

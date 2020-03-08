@@ -16,6 +16,7 @@ public class GameController : MonoBehaviour
     EventNodeScript evento;
 
     public float gold = 0, treasureParts = 0;
+    public int winMin = 10;
     bool eventActive;
     [HideInInspector] public bool inventory;
     [HideInInspector] public int invCase;
@@ -47,6 +48,12 @@ public class GameController : MonoBehaviour
             /*
             SE TIENE QUE CAMBIAR, y se ha cambiao
             */
+            if(evento.GetEventType() == EventNodeScript.TEvent.FIGHT && fightCounter >= 1 && !mc.results[1].active)
+                for(int i = 0; i < 3; i++)
+                {
+                    mc.results[i].SetActive(true);
+                    mc.resultDisplay[i].text = results[i].ToString();
+                }
             if (evento.GetEventType() == EventNodeScript.TEvent.FIGHT && fightCounter <= 0 && Input.anyKeyDown)//Input.anyKeyDown && evento.GetEventType() == EventNodeScript.TEvent.FIGHT)
             {
                 mc.DisplayFight(false, null, pc.GetHand());
@@ -64,6 +71,11 @@ public class GameController : MonoBehaviour
                 evento = null;
             }
         }
+    }
+    
+    public void GameWon()
+    {
+
     }
 
     //InventoryManager
@@ -106,7 +118,12 @@ public class GameController : MonoBehaviour
         gold += value;
         gold = Mathf.Clamp(gold, 0, gold);
     }
-    public void ChangePieces(int value) { treasureParts += value; }
+    public void ChangePieces(int value)
+    {
+        if (treasureParts > winMin)
+            GameWon();
+        treasureParts += value;
+    }
 
     //Event Managment
     public void CallEvent(EventNodeScript e)

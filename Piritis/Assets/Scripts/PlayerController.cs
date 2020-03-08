@@ -131,6 +131,8 @@ public class PlayerController : MonoBehaviour
     public void AddNewRandomCard(int lvl) { cb.CartasPlayer.Add(cb.ReturnRandomCard(lvl)); }
     public void DeleteRandomDeckCard()
     {
+        if (cb.CartasPlayer.Count < 1)
+            return;
         Random.InitState((int)System.DateTime.Now.Ticks);
         cb.CartasPlayer.TrimExcess();
         int r = Random.Range(0, cb.CartasPlayer.Count);

@@ -7,7 +7,7 @@ public class EventNodeScript : NodoScript, IRestartGameElement
 {
     //Lista de posibles eventos
     public enum TEvent { FIGHT, CHANGE_GOLD, CHANGE_CARD, CHANGE_BOTH, TELEPORT }
-    public TEvent evento;
+    TEvent evento;
 
     [Header("Eventos")]
     public TEvent[] eventos = new TEvent[3];
