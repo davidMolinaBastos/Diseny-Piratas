@@ -2,33 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-[CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/CartaObject", order = 1)]
-
-public class CartaObject : MonoBehaviour
+[CreateAssetMenu(fileName = "CartaData", menuName = "ScriptableObjects/CartaObject", order = 0)]
+public class CartaObject : ScriptableObject
 {
-
     public enum TipoPasiva
     {
-
+         MAL_EMPATE, BUEN_EMPATE, HUIDA, SUPER_EMPATE, //Eventos de empate
+         CAMBIAR_VALOR,  SUMA_ORO, SUMA_ALIADOS, KING_SLAYER, CAPITANÍA //Cambios de valores
     }
 
-    public string NombreCarta;
-    public Sprite ImagenCarta;
-    public int levelCarta;
-    public int rolValor;
+    public string nickname;
 
+    [Space(5)]
+    public TipoPasiva pasiva;
+    public Sprite sprite;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    [Space(10)]
+    [Range(1, 5)] public int levelCarta;
+    public int rollValor;
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+    [Header("Valor de la suma o resta")]
+    public int valor;
 }
