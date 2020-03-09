@@ -88,7 +88,6 @@ public class MenuController : MonoBehaviour
     {
         if (playerHand != null)
             for (int i = 0; i < 3; i++)
-            {
                 if (playerHand[i] != null)
                 {
                     playerCards[i].enabled = display;
@@ -100,7 +99,6 @@ public class MenuController : MonoBehaviour
                     dice[i].sprite = diceSprites[Mathf.Clamp(gc.ReturnPlayerRolls()[i], 0, 6)];
                     gc.fightCounter = 2f;
                 }
-            }
         for (int i = 0; i < 3; i++)
         {
             enemyCards[i].enabled = display;

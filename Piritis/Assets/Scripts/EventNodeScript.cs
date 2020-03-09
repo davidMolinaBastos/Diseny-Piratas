@@ -34,13 +34,11 @@ public class EventNodeScript : NodoScript, IRestartGameElement
         foreach (TEvent E in eventos)
         {
             if (E == TEvent.FIGHT)
-            {
                 for (int i = 0; i < pirateHand.GetLength(0); i++)
                 {
                     Random.InitState((int)System.DateTime.Now.Ticks);
                     pirateHand[i] = gc.gameObject.GetComponent<CardBlackboard>().ReturnRandomCard(pirateLv); ;
                 }
-            }
         }
         evento = eventos[Random.Range(0, 3)];
         gc.GetComponent<GameController>().AddResetElement(this);
@@ -48,22 +46,15 @@ public class EventNodeScript : NodoScript, IRestartGameElement
     void Update()
     {
         foreach (TEvent E in eventos)
-        {
             if (E == TEvent.FIGHT)
-            {
                 for (int i = 0; i < pirateHand.GetLength(0); i++)
                 {
                     Random.InitState((int)System.DateTime.Now.Ticks);
                     if (pirateHand[i] == null)
                         pirateHand[i] = gc.gameObject.GetComponent<CardBlackboard>().ReturnRandomCard(pirateLv); ;
                 }
-            }
-        }
     }
-    public void ChangeGoldEffect()
-    {
-        gc.ChangeGold(goldValue);
-    }
+    public void ChangeGoldEffect() { gc.ChangeGold(goldValue); }
     public void ChangeCardEffect()
     {
         PlayerController pc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
