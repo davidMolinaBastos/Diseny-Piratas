@@ -25,7 +25,6 @@ public class BattleManager : MonoBehaviour
         CheckResults();
         ApplyLatePasives();
         CheckResults();
-        DebugResults();
     }
 
     //Public Handling

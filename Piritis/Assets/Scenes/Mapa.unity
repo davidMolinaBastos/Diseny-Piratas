@@ -3119,6 +3119,8 @@ MonoBehaviour:
   gold: 0
   treasureParts: 0
   winMin: 10
+  winscene: WinScene
+  loosescene: LooseScene
   inventory: 0
   invCase: 0
   fightCounter: 0
@@ -4476,7 +4478,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &387039252
 RectTransform:
   m_ObjectHideFlags: 0
