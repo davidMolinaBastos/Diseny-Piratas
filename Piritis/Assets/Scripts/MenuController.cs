@@ -96,7 +96,7 @@ public class MenuController : MonoBehaviour
                     //dice[i].Play();
                     //gc.fightCounter = dice[i].clip.length + 1f;
                     dice[i].enabled = display;
-                    dice[i].sprite = diceSprites[Mathf.Clamp(gc.ReturnPlayerRolls()[i], 0, 6)];
+                    dice[i].sprite = diceSprites[Mathf.Clamp(gc.ReturnPlayerRolls()[i], 0, 5)];
                     gc.fightCounter = 2f;
                 }
         for (int i = 0; i < 3; i++)

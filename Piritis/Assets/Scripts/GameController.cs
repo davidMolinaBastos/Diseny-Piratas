@@ -75,8 +75,9 @@ public class GameController : MonoBehaviour
                 evento = null;
             }
         }
-        if (pc.GetHand().Length < 1 && cb.GetPlayerCards().Count < 1)
-            GameEnd(loosescene);
+        /*
+        if (pc.CheckLooseState())
+            GameEnd(loosescene);*/
         if (treasureParts > winMin)
             GameEnd(winscene);
     }
@@ -185,7 +186,10 @@ public class GameController : MonoBehaviour
     {
         for (int i = 0; i < 3; i++)
             if (results[i] == BattleManager.TResults.Loose)
+            {
+                print(results[i] + " " + i);
                 pc.RemoveCardFromHand(i);
+            }
     }
 
 

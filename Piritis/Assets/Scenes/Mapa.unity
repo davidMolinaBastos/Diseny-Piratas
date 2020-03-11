@@ -4752,7 +4752,7 @@ MonoBehaviour:
   lvl4Price: 700
   lvl5Price: 950
   prices: []
-  treasurePrice: 2000
+  treasurePrice: 200
 --- !u!114 &462818692 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1016678189268778091, guid: 7f7b98fc77400be4691c55ab803728e4,
@@ -9327,7 +9327,7 @@ MonoBehaviour:
   lvl4Price: 700
   lvl5Price: 950
   prices: []
-  treasurePrice: 2000
+  treasurePrice: 200
 --- !u!4 &865933214 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 769930972392881528, guid: 7f7b98fc77400be4691c55ab803728e4,
@@ -11508,7 +11508,7 @@ PrefabInstance:
     - target: {fileID: 1016678189268778091, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: tipoNodo
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1016678189268778091, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
@@ -14509,7 +14509,7 @@ MonoBehaviour:
   lvl4Price: 700
   lvl5Price: 950
   prices: []
-  treasurePrice: 2000
+  treasurePrice: 200
 --- !u!114 &1428563554 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1016678189268778091, guid: 7f7b98fc77400be4691c55ab803728e4,
@@ -15433,7 +15433,7 @@ MonoBehaviour:
   lvl4Price: 700
   lvl5Price: 950
   prices: []
-  treasurePrice: 2000
+  treasurePrice: 200
 --- !u!114 &1500179918 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1016678189268778091, guid: 7f7b98fc77400be4691c55ab803728e4,
@@ -16987,7 +16987,7 @@ MonoBehaviour:
   lvl4Price: 700
   lvl5Price: 950
   prices: []
-  treasurePrice: 2000
+  treasurePrice: 200
 --- !u!1 &1624761542
 GameObject:
   m_ObjectHideFlags: 0
@@ -19166,7 +19166,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 2000
+  m_Text: 200
 --- !u!222 &1855537056
 CanvasRenderer:
   m_ObjectHideFlags: 0

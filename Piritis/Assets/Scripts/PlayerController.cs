@@ -141,5 +141,14 @@ public class PlayerController : MonoBehaviour
 
     public CartaObject[] GetHand() { return cardHand; }
 
+    public bool CheckLooseState()
+    {
+        cb.CartasPlayer.TrimExcess();
+        if(cb.CartasPlayer.Count < 1)
+            for (int i = 0; i < 3; i++)
+                if (cardHand[i] == null)
+                    return true;
+        return false;
+    }
     public void SetMoving(bool movin) { canMove = movin; }
 }
