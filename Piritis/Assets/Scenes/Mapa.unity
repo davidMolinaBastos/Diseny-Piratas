@@ -1360,26 +1360,26 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
-  - name: Ambiente
-    clip: {fileID: 8300000, guid: 6aa177d6201a9fc4985be0d7a497f01e, type: 3}
+  - name: x
+    clip: {fileID: 0}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: Ambiente
-    clip: {fileID: 8300000, guid: 6aa177d6201a9fc4985be0d7a497f01e, type: 3}
+  - name: xx
+    clip: {fileID: 0}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: Ambiente
-    clip: {fileID: 8300000, guid: 6aa177d6201a9fc4985be0d7a497f01e, type: 3}
+  - name: xxx
+    clip: {fileID: 0}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: Ambiente
-    clip: {fileID: 8300000, guid: 6aa177d6201a9fc4985be0d7a497f01e, type: 3}
+  - name: xxxx
+    clip: {fileID: 0}
     volume: 1
     pitch: 1
     loop: 0
