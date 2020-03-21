@@ -79,7 +79,9 @@ public class MenuController : MonoBehaviour
     {
         currentEvent = evento;
         if (currentEvent != null)
-            e_text.text = currentEvent.message;
+            for (int i = 0; i < 3; i++)
+                if (currentEvent.evento == currentEvent.eventos[i])
+                    e_text.text = currentEvent.messages[i];
         e_text.enabled = display;
         e_image.enabled = display;
     }
@@ -102,9 +104,9 @@ public class MenuController : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             enemyCards[i].enabled = display;
-            if(pirateHand != null)
-            if (pirateHand[i] != null)
-                enemyCards[i].sprite = pirateHand[i].sprite;
+            if (pirateHand != null)
+                if (pirateHand[i] != null)
+                    enemyCards[i].sprite = pirateHand[i].sprite;
 
         }
         Background.enabled = display;
@@ -112,8 +114,8 @@ public class MenuController : MonoBehaviour
             foreach (GameObject go in results)
                 go.SetActive(display);
         //foreach (Animation a in dice)
-          //  a.gameObject.SetActive(display);
-          
+        //  a.gameObject.SetActive(display);
+
     }
 
     public void DisplayShop(bool display, float gold, float treasure)
