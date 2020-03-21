@@ -11,32 +11,27 @@ public class PauseMenu : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
-        {
             if (GameIsPause)
-            {
                 Resume();
-            }
             else
-            {
                 Pause();
-            }
-        }
     }
 
 
-        public void Resume()
-        {
-            pauseMenuUI.SetActive(false);
-            Time.timeScale = 1f;
-            GameIsPause = false;
-        }
-         public void Pause()
-            {
-                pauseMenuUI.SetActive(true);
-                Time.timeScale = 0f;
-                GameIsPause = true;
-
-            }
+    public void Resume()
+    {
+        pauseMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        GameIsPause = false;
+        FindObjectOfType<AudioManager>().Play("MusicaGeneral");
+    }
+    public void Pause()
+    {
+        pauseMenuUI.SetActive(true);
+        Time.timeScale = 0f;
+        GameIsPause = true;
+        FindObjectOfType<AudioManager>().Play("MusicaPausa");
+    }
     public void LoadMenu()
     {
         Time.timeScale = 1f;
@@ -47,20 +42,10 @@ public class PauseMenu : MonoBehaviour
     public void QuitGame()
     {
         Debug.Log("Quitting game...");
-
-        if (UnityEditor.EditorApplication.isPlaying ==true)
-        {
+        if (UnityEditor.EditorApplication.isPlaying == true)
             UnityEditor.EditorApplication.isPlaying = false;
-        }
         else
-        {
-
-
             Application.Quit();
-        }
     }
+}
 
-
-
-        }
-    

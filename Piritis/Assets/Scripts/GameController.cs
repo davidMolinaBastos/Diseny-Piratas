@@ -35,6 +35,7 @@ public class GameController : MonoBehaviour
         mc = GetComponent<MenuController>();
         bm = GetComponent<BattleManager>();
         pc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        FindObjectOfType<AudioManager>().Play("MusicaGeneral");
     }
     private void Update()
     {
@@ -49,15 +50,13 @@ public class GameController : MonoBehaviour
 #endif
         if (eventActive)
         {
-            /*
-            SE TIENE QUE CAMBIAR, y se ha cambiao
-            */
             if(evento.GetEventType() == EventNodeScript.TEvent.FIGHT && fightCounter >= 1 && !mc.results[1].active)
                 for(int i = 0; i < 3; i++)
                 {
                     mc.results[i].SetActive(true);
                     mc.resultDisplay[i].text = results[i].ToString();
                 }
+            
             if (evento.GetEventType() == EventNodeScript.TEvent.FIGHT && fightCounter <= 0 && Input.anyKeyDown)//Input.anyKeyDown && evento.GetEventType() == EventNodeScript.TEvent.FIGHT)
             {
                 mc.DisplayFight(false, null, pc.GetHand());
@@ -66,6 +65,7 @@ public class GameController : MonoBehaviour
                 evento = null;
                 DeleteCards();
                 bm.FlushValues();
+                FindObjectOfType<AudioManager>().Play("MusicaGeneral");
             }
             else if (evento.GetEventType() != EventNodeScript.TEvent.FIGHT && Input.anyKeyDown)
             {
@@ -144,6 +144,16 @@ public class GameController : MonoBehaviour
             pc.SetMoving(false);
             evento = e;
             e.Deplete();
+
+            if(Random.Range(0, 100) < 50)
+                FindObjectOfType<AudioManager>().Play("SonidoCombate");
+            else
+                FindObjectOfType<AudioManager>().Play("SonidoCombate2");
+            FindObjectOfType<AudioManager>().Play("Dados");
+            if(Random.Range(0,100)<50)
+            FindObjectOfType<AudioManager>().Play("CardSound");
+            else
+                FindObjectOfType<AudioManager>().Play("CardSound");
         }
         else
         {

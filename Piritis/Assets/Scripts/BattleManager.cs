@@ -40,9 +40,14 @@ public class BattleManager : MonoBehaviour
                 total += winnings;
             else if (results[i] == TResults.Loose)
                 total -= loss;
+        if (total > 0)
+            FindObjectOfType<AudioManager>().Play("Laugh");
+        else if(Random.Range(0, 100) < 50)
+            FindObjectOfType<AudioManager>().Play("ArrPirata1");
+        else
+            FindObjectOfType<AudioManager>().Play("ArrPirata2");
 
         return doubled ? total * 2 : total;
-
     }
     public void FlushValues()
     {

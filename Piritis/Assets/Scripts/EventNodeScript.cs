@@ -32,14 +32,12 @@ public class EventNodeScript : NodoScript, IRestartGameElement
         gameObject.tag = "EventNode";
         Random.InitState((int)System.DateTime.Now.Ticks);
         foreach (TEvent E in eventos)
-        {
             if (E == TEvent.FIGHT)
                 for (int i = 0; i < pirateHand.GetLength(0); i++)
                 {
                     Random.InitState((int)System.DateTime.Now.Ticks);
                     pirateHand[i] = gc.gameObject.GetComponent<CardBlackboard>().ReturnRandomCard(pirateLv); ;
                 }
-        }
         evento = eventos[Random.Range(0, 3)];
         gc.GetComponent<GameController>().AddResetElement(this);
     }
