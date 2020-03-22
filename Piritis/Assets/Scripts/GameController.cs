@@ -65,12 +65,16 @@ public class GameController : MonoBehaviour
                 evento = null;
                 DeleteCards();
                 bm.FlushValues();
+                mc.DisplayHUD(true);
+                mc.SetHUDValues(gold, treasureParts, cb.CartasPlayer.Count);
                 FindObjectOfType<AudioManager>().Play("MusicaGeneral");
             }
             else if (evento.GetEventType() != EventNodeScript.TEvent.FIGHT && Input.anyKeyDown)
             {
                 mc.DisplayEvent(false, null);
                 eventActive = false;
+                mc.DisplayHUD(true);
+                mc.SetHUDValues(gold, treasureParts, cb.CartasPlayer.Count);
                 pc.SetMoving(true);
                 evento = null;
             }
@@ -90,6 +94,7 @@ public class GameController : MonoBehaviour
         inventory = true;
         invCase = Case;
         mc.DisplayInventory(true, pc, Case, Lvl);
+        mc.DisplayHUD(false);
         pc.SetMoving(false);
     }
     public void CloseInventory(int Case, int Lvl)
@@ -97,6 +102,8 @@ public class GameController : MonoBehaviour
         inventory = false;
         invCase = Case;
         mc.DisplayInventory(false, pc, Case, Lvl);
+        mc.DisplayHUD(true);
+        mc.SetHUDValues(gold, treasureParts, cb.CartasPlayer.Count);
         pc.SetMoving(true);
     }
 
@@ -104,12 +111,15 @@ public class GameController : MonoBehaviour
     public void CallShopWindow()
     {
         mc.DisplayShop(true, gold, treasureParts);
+        mc.DisplayHUD(false);
         pc.SetMoving(false);
         RefillNodes();
     }
     public void CloseShopWindow()
     {
         mc.DisplayShop(false, gold, treasureParts);
+        mc.DisplayHUD(true);
+        mc.SetHUDValues(gold, treasureParts, cb.CartasPlayer.Count);
         pc.SetMoving(true);
     }
     public bool CanBuy(float value)
@@ -154,6 +164,7 @@ public class GameController : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("CardSound");
             else
                 FindObjectOfType<AudioManager>().Play("CardSound");
+            mc.DisplayHUD(false);
         }
         else
         {
@@ -163,6 +174,7 @@ public class GameController : MonoBehaviour
             evento = e;
             e.Deplete();
             PerformEvent(e);
+            mc.DisplayHUD(false);
         }
     }
     void PerformEvent(EventNodeScript e)

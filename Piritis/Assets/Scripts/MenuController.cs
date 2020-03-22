@@ -38,6 +38,11 @@ public class MenuController : MonoBehaviour
     [HideInInspector] public CartaObject SelectedHandCard = null;
     [HideInInspector] public CartaObject SelectedDeckCard = null;
 
+    [Header("HUD")]
+    public Text gold;
+    public Text treasure;
+    public Text cards;
+
     GameController gc;
     public void Start()
     {
@@ -115,7 +120,6 @@ public class MenuController : MonoBehaviour
                 go.SetActive(display);
         //foreach (Animation a in dice)
         //  a.gameObject.SetActive(display);
-
     }
 
     public void DisplayShop(bool display, float gold, float treasure)
@@ -148,5 +152,18 @@ public class MenuController : MonoBehaviour
                 Lvls[lvl].SetActive(display);
                 break;
         }
+    }
+
+    public void DisplayHUD(bool display)
+    {
+        gold.enabled = display;
+        treasure.enabled = display;
+        cards.enabled = display;
+    }
+    public void SetHUDValues(float gold_l, float treasure_l, float deckCount)
+    {
+        gold.text = "Gold: " + gold_l;
+        treasure.text = "Treasure: " + treasure_l;
+        cards.text = "Cards in deck :" + (deckCount + 3);
     }
 }
