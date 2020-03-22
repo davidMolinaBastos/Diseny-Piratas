@@ -465,12 +465,16 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 391939942}
   tipoNodo: 1
+  evento: 0
   eventos: 010000000400000002000000
   tripulantes: 0
   goldValue: 100
   crewValue: 100
   islandID: 1
-  message: Mermaid reef
+  messages:
+  - default
+  - default
+  - default
   pirateLv: 1
   pirateHand:
   - {fileID: 11400000, guid: 743bc0999d01a99449d8d00b9a535463, type: 2}
@@ -2928,12 +2932,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodos: []
   tipoNodo: 1
+  evento: 0
   eventos: 010000000200000004000000
   tripulantes: 0
   goldValue: 300
   crewValue: 1
   islandID: 0
-  message: Prosperous winds
+  messages:
+  - default
+  - default
+  - default
   pirateLv: 0
   pirateHand:
   - {fileID: 0}
@@ -3804,12 +3812,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodos: []
   tipoNodo: 1
+  evento: 0
   eventos: 010000000200000004000000
   tripulantes: 0
   goldValue: 0
   crewValue: 0
   islandID: 2
-  message: Bottled messages
+  messages:
+  - default
+  - default
+  - default
   pirateLv: 1
   pirateHand:
   - {fileID: 0}
@@ -4712,7 +4724,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 216, y: -109}
+  m_AnchoredPosition: {x: 0, y: -86}
   m_SizeDelta: {x: 668, y: 78.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &395148711
@@ -4748,7 +4760,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -5214,12 +5226,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodos: []
   tipoNodo: 1
+  evento: 0
   eventos: 00000000000000000000000000000000
   tripulantes: 0
   goldValue: 300
   crewValue: 0
   islandID: 1
-  message: Ghost ship
+  messages:
+  - default
+  - default
+  - default
   pirateLv: 2
   pirateHand:
   - {fileID: 0}
@@ -6911,7 +6927,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &584919705
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10954,12 +10970,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodos: []
   tipoNodo: 1
+  evento: 0
   eventos: 010000000200000004000000
   tripulantes: 0
   goldValue: 150
   crewValue: 2
   islandID: 0
-  message: Possessed compass
+  messages:
+  - default
+  - default
+  - default
   pirateLv: 0
   pirateHand:
   - {fileID: 0}
@@ -12489,12 +12509,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodos: []
   tipoNodo: 1
+  evento: 0
   eventos: 010000000200000004000000
   tripulantes: 0
   goldValue: 250
   crewValue: 1
   islandID: 2
-  message: Maelstrom
+  messages:
+  - default
+  - default
+  - default
   pirateLv: 0
   pirateHand:
   - {fileID: 0}
@@ -13789,12 +13813,16 @@ MonoBehaviour:
   - {fileID: 391939942}
   - {fileID: 0}
   tipoNodo: 1
+  evento: 0
   eventos: 000000000000000000000000
   tripulantes: 0
   goldValue: 100
   crewValue: 100
   islandID: 0
-  message: Dangerous seas
+  messages:
+  - default
+  - default
+  - default
   pirateLv: 1
   pirateHand:
   - {fileID: 11400000, guid: 743bc0999d01a99449d8d00b9a535463, type: 2}
@@ -17528,12 +17556,16 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 391939942}
   tipoNodo: 1
+  evento: 0
   eventos: 000000000000000000000000
   tripulantes: 0
   goldValue: 100
   crewValue: 100
   islandID: 0
-  message: Onboard Mutiny
+  messages:
+  - default
+  - default
+  - default
   pirateLv: 1
   pirateHand:
   - {fileID: 11400000, guid: 743bc0999d01a99449d8d00b9a535463, type: 2}
@@ -18785,12 +18817,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodos: []
   tipoNodo: 1
+  evento: 0
   eventos: 010000000200000001000000
   tripulantes: 0
   goldValue: 200
   crewValue: 1
   islandID: 0
-  message: Destiny Designs
+  messages:
+  - default
+  - default
+  - default
   pirateLv: 0
   pirateHand:
   - {fileID: 0}
@@ -21721,12 +21757,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodos: []
   tipoNodo: 1
+  evento: 0
   eventos: 010000000200000003000000
   tripulantes: 0
   goldValue: 100
   crewValue: 2
   islandID: 0
-  message: Beware the Kraken
+  messages:
+  - default
+  - default
+  - default
   pirateLv: 0
   pirateHand:
   - {fileID: 0}
@@ -22349,7 +22389,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2029845112
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23380,12 +23420,16 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 391939942}
   tipoNodo: 1
+  evento: 0
   eventos: 000000000000000000000000
   tripulantes: 0
   goldValue: 800
   crewValue: 100
   islandID: 0
-  message: Calavera Island
+  messages:
+  - default
+  - default
+  - default
   pirateLv: 3
   pirateHand:
   - {fileID: 11400000, guid: 743bc0999d01a99449d8d00b9a535463, type: 2}
