@@ -7,7 +7,6 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPause = false;
     public GameObject pauseMenuUI;
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -38,13 +37,8 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
-
     public void QuitGame()
     {
-        Debug.Log("Quitting game...");
-        if (UnityEditor.EditorApplication.isPlaying == true)
-            UnityEditor.EditorApplication.isPlaying = false;
-        else
             Application.Quit();
     }
 }

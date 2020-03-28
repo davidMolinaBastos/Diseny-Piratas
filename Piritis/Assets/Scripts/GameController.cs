@@ -37,7 +37,7 @@ public class GameController : MonoBehaviour
         pc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         FindObjectOfType<AudioManager>().Play("MusicaGeneral");
 
-        mc.SetHUDValues(gold, treasureParts, cb.CartasPlayer.Count);
+        mc.SetHUDValues(gold, treasureParts, cb.ReturnDeckCount());
     }
     private void Update()
     {
@@ -52,13 +52,13 @@ public class GameController : MonoBehaviour
 #endif
         if (eventActive)
         {
-            if(evento.GetEventType() == EventNodeScript.TEvent.FIGHT && fightCounter >= 1 && !mc.results[1].active)
-                for(int i = 0; i < 3; i++)
+            if (evento.GetEventType() == EventNodeScript.TEvent.FIGHT && fightCounter >= 1 && !mc.results[1].active)
+                for (int i = 0; i < 3; i++)
                 {
                     mc.results[i].SetActive(true);
                     mc.resultDisplay[i].text = results[i].ToString();
                 }
-            
+
             if (evento.GetEventType() == EventNodeScript.TEvent.FIGHT && fightCounter <= 0 && Input.anyKeyDown)//Input.anyKeyDown && evento.GetEventType() == EventNodeScript.TEvent.FIGHT)
             {
                 mc.DisplayFight(false, null, pc.GetHand());
@@ -68,7 +68,7 @@ public class GameController : MonoBehaviour
                 DeleteCards();
                 bm.FlushValues();
                 mc.DisplayHUD(true);
-                mc.SetHUDValues(gold, treasureParts, cb.CartasPlayer.Count);
+                mc.SetHUDValues(gold, treasureParts, cb.ReturnDeckCount());
                 FindObjectOfType<AudioManager>().Play("MusicaGeneral");
             }
             else if (evento.GetEventType() != EventNodeScript.TEvent.FIGHT && Input.anyKeyDown)
@@ -76,7 +76,7 @@ public class GameController : MonoBehaviour
                 mc.DisplayEvent(false, null);
                 eventActive = false;
                 mc.DisplayHUD(true);
-                mc.SetHUDValues(gold, treasureParts, cb.CartasPlayer.Count);
+                mc.SetHUDValues(gold, treasureParts, cb.ReturnDeckCount());
                 pc.SetMoving(true);
                 evento = null;
             }
@@ -87,8 +87,8 @@ public class GameController : MonoBehaviour
         if (treasureParts > winMin)
             GameEnd(winscene);
     }
-    
-    public void GameEnd( string scene){SceneManager.LoadScene(scene);}
+
+    public void GameEnd(string scene) { SceneManager.LoadScene(scene); }
 
     //InventoryManager
     public void CallInventory(int Case, int Lvl)
@@ -105,7 +105,7 @@ public class GameController : MonoBehaviour
         invCase = Case;
         mc.DisplayInventory(false, pc, Case, Lvl);
         mc.DisplayHUD(true);
-        mc.SetHUDValues(gold, treasureParts, cb.CartasPlayer.Count);
+        mc.SetHUDValues(gold, treasureParts, cb.ReturnDeckCount());
         pc.SetMoving(true);
     }
 
@@ -121,18 +121,12 @@ public class GameController : MonoBehaviour
     {
         mc.DisplayShop(false, gold, treasureParts);
         mc.DisplayHUD(true);
-        mc.SetHUDValues(gold, treasureParts, cb.CartasPlayer.Count);
+        mc.SetHUDValues(gold, treasureParts, cb.ReturnDeckCount());
         pc.SetMoving(true);
     }
-    public bool CanBuy(float value)
+    public bool CanBuy(float value) { return gold > value; }
+    public void ChangeGold(float value)
     {
-        if (value > gold)
-            return false;
-        return true;
-    }
-    public void ChangeGold(float value) {
-        if (gold - value < 0) 
-            gold = 0;
         gold += value;
         gold = Mathf.Clamp(gold, 0, gold);
     }
@@ -157,13 +151,13 @@ public class GameController : MonoBehaviour
             evento = e;
             e.Deplete();
 
-            if(Random.Range(0, 100) < 50)
+            if (Random.Range(0, 100) < 50)
                 FindObjectOfType<AudioManager>().Play("SonidoCombate");
             else
                 FindObjectOfType<AudioManager>().Play("SonidoCombate2");
             FindObjectOfType<AudioManager>().Play("Dados");
-            if(Random.Range(0,100)<50)
-            FindObjectOfType<AudioManager>().Play("CardSound");
+            if (Random.Range(0, 100) < 50)
+                FindObjectOfType<AudioManager>().Play("CardSound");
             else
                 FindObjectOfType<AudioManager>().Play("CardSound");
             mc.DisplayHUD(false);
@@ -185,7 +179,7 @@ public class GameController : MonoBehaviour
         {
             case EventNodeScript.TEvent.FIGHT:
                 bm.Battle(pc.GetHand(), e.pirateHand);
-                gold += bm.GetWinnings();
+                ChangeGold(bm.GetWinnings());
                 playerRolls = bm.ReturnPlayerRolls();
                 results = bm.ReturnResults();
                 break;
@@ -210,10 +204,8 @@ public class GameController : MonoBehaviour
     {
         for (int i = 0; i < 3; i++)
             if (results[i] == BattleManager.TResults.Loose)
-            {
-                print(results[i] + " " + i);
                 pc.RemoveCardFromHand(i);
-            }
+            
     }
 
 

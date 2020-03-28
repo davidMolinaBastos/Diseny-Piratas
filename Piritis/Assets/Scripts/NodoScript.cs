@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NodoScript : MonoBehaviour
 {
-    public enum TNodo { ISLA, EVENTO, VOID  }
+    public enum TNodo { ISLA, EVENTO, VOID }
 
     /* 0 = Norte 
        1 = Este 

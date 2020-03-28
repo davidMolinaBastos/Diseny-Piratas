@@ -3204,7 +3204,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: caecb1203335e3d40be24965bcd71e5c, type: 2}
   - {fileID: 11400000, guid: 19078f66e404c4b449b04a729c746b7a, type: 2}
   - {fileID: 11400000, guid: 3b85caf4a9a50ac4cb9194d414734703, type: 2}
-  CartasPlayer:
+  StartingDeck:
   - {fileID: 11400000, guid: 3b85caf4a9a50ac4cb9194d414734703, type: 2}
 --- !u!114 &273755508
 MonoBehaviour:

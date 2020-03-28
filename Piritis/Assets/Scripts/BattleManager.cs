@@ -32,14 +32,14 @@ public class BattleManager : MonoBehaviour
     public int[] ReturnPlayerRolls() { return PlayerRolls; }
     public float GetWinnings()
     {
-
         float total = 0;
 
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < results.Length; i++)
             if (results[i] == TResults.Win)
                 total += winnings;
             else if (results[i] == TResults.Loose)
                 total -= loss;
+
         if (total > 0)
             FindObjectOfType<AudioManager>().Play("Laugh");
         else if(Random.Range(0, 100) < 50)
@@ -51,15 +51,15 @@ public class BattleManager : MonoBehaviour
     }
     public void FlushValues()
     {
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < playerHand.Length; i++)
         {
             results[i] = TResults.Void;
             PlayerRolls[i] = 0;
             EnemyRolls[i] = 0;
             playerHand[i] = null;
             enemyHand[i] = null;
-            doubled = false;
         }
+        doubled = false;
     }
 
     //Computacion
@@ -73,7 +73,7 @@ public class BattleManager : MonoBehaviour
     }
     void CheckResults()
     {
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < results.Length; i++)
             if (results[i] == TResults.Void)
                 if (PlayerRolls[i] < EnemyRolls[i])
                     results[i] = TResults.Loose;
@@ -84,7 +84,7 @@ public class BattleManager : MonoBehaviour
     }
     void ApplyLatePasives()
     {
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < playerHand.Length; i++)
         {
             //PlayerPasive
             switch (playerHand[i].pasiva)
@@ -124,7 +124,7 @@ public class BattleManager : MonoBehaviour
     }
     void ApplyPasives()
     {
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < playerHand.Length; i++)
         {
             //PlayerPasive
             switch (playerHand[i].pasiva)
