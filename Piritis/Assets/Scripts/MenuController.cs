@@ -77,6 +77,10 @@ public class MenuController : MonoBehaviour
         DeckLevels.SetActive(false);
         foreach (GameObject go in Lvls)
             go.SetActive(false);
+
+        gold.enabled = true;
+        treasure.enabled = true;
+        cards.enabled = true;
     }
     //DISPLAY METHODS
 

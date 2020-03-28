@@ -36,6 +36,8 @@ public class GameController : MonoBehaviour
         bm = GetComponent<BattleManager>();
         pc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         FindObjectOfType<AudioManager>().Play("MusicaGeneral");
+
+        mc.SetHUDValues(gold, treasureParts, cb.CartasPlayer.Count);
     }
     private void Update()
     {

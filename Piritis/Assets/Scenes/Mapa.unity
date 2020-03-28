@@ -3277,9 +3277,9 @@ MonoBehaviour:
   - {fileID: 795918283}
   SelectedHandCard: {fileID: 0}
   SelectedDeckCard: {fileID: 0}
-  gold: {fileID: 0}
-  treasure: {fileID: 0}
-  cards: {fileID: 0}
+  gold: {fileID: 1767664843}
+  treasure: {fileID: 1875388984}
+  cards: {fileID: 550854490}
 --- !u!114 &273755509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7008,7 +7008,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &584919705
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12057,7 +12057,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1110880873
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22662,7 +22662,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2029845112
 RectTransform:
   m_ObjectHideFlags: 0
