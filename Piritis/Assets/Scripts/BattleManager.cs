@@ -43,7 +43,7 @@ public class BattleManager : MonoBehaviour
 
         if (total > 0)
             FindObjectOfType<AudioManager>().Play("Laugh");
-        else if(Random.Range(0, 100) < 50)
+        else if (Random.Range(0, 100) < 50)
             FindObjectOfType<AudioManager>().Play("ArrPirata1");
         else
             FindObjectOfType<AudioManager>().Play("ArrPirata2");
@@ -52,14 +52,11 @@ public class BattleManager : MonoBehaviour
     }
     public void FlushValues()
     {
-        for (int i = 0; i < playerHand.Length; i++)
-        {
-            results[i] = TResults.Void;
-            PlayerRolls[i] = 0;
-            EnemyRolls[i] = 0;
-            playerHand[i] = null;
-            enemyHand[i] = null;
-        }
+        results = new TResults[] { TResults.Void, TResults.Void, TResults.Void };
+        playerHand = new CartaObject[] { null, null, null };
+        enemyHand = new CartaObject[] { null, null, null };
+        PlayerRolls = new int[] { 0, 0, 0 };
+        EnemyRolls = new int[] { 0, 0, 0 };
         doubled = false;
     }
 

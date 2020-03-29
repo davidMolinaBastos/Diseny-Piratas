@@ -103,7 +103,7 @@ public class PlayerController : MonoBehaviour
     public void RemoveCardFromHand(int index)
     {
         if (cb.ReturnDeckCount() < 1)
-            return;
+            gameController.GameEnd(gameController.loosescene);
         cardHand[index] = null;
         SwitchCards(null, cb.ReturnRandomPlayerCard(), index);
     }
@@ -141,6 +141,12 @@ public class PlayerController : MonoBehaviour
                 if (cardHand[i] == null)
                     return true;
         return false;
+    }
+    public void DeleteCards(bool[] delete)
+    {
+        for (int i = 0; i < delete.Length; i++)
+            if (delete[i])
+                RemoveCardFromHand(i);
     }
     public void SetMoving(bool movin) { canMove = movin; }
 }

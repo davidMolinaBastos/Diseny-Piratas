@@ -1269,62 +1269,62 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: MusicaGeneral
-    clip: {fileID: 8300000, guid: bdd5eac270406a04b9ea646b2362c127, type: 3}
-    volume: 1
+    clip: {fileID: 8300000, guid: c44eba9a3661110408147c99e480ac58, type: 3}
+    volume: 0.62
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: MusicaPausa
     clip: {fileID: 8300000, guid: c70cf9659a3677e4fb3c58d42ba32f7a, type: 3}
-    volume: 1
+    volume: 0.68
     pitch: 0.1
     loop: 0
     source: {fileID: 0}
   - name: MusicaMenu
     clip: {fileID: 8300000, guid: 3c7c5075aa6f8a646bbda7b0c8f62170, type: 3}
-    volume: 1
+    volume: 0.75
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: SonidoCombate
     clip: {fileID: 8300000, guid: 401e0cbd41ce9914396f60f6330ff91e, type: 3}
-    volume: 1
+    volume: 0.7
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: SonidoCombate2
     clip: {fileID: 8300000, guid: 429872f25e7994a43a0623a24f9082ba, type: 3}
-    volume: 1
+    volume: 0.68
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Laugh
     clip: {fileID: 8300000, guid: 8957cacc153832e4282691e17f107d9c, type: 3}
-    volume: 1
+    volume: 0.72
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Dados
     clip: {fileID: 8300000, guid: a09b50aa06bca6645aeec85db1d61b03, type: 3}
-    volume: 1
+    volume: 0.72
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Musica2
     clip: {fileID: 8300000, guid: d3491ac4ae5ee9e449eace895a02ccc5, type: 3}
-    volume: 1
+    volume: 0.74
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: ArrPirata1
     clip: {fileID: 8300000, guid: 2c963c1c325acdc469ea8d72b5ba8890, type: 3}
-    volume: 1
+    volume: 0.72
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: ArrPirata2
     clip: {fileID: 8300000, guid: 8d71ad9827f1b4d40bc05c525b410cea, type: 3}
-    volume: 1
+    volume: 0.75
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -1342,7 +1342,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Gulls
     clip: {fileID: 8300000, guid: d6e9ae5d9560f6645a139cec85ee266e, type: 3}
-    volume: 1
+    volume: 0.74
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -1360,7 +1360,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: MasMusica
     clip: {fileID: 8300000, guid: d3491ac4ae5ee9e449eace895a02ccc5, type: 3}
-    volume: 1
+    volume: 0.62
     pitch: 1
     loop: 1
     source: {fileID: 0}
@@ -3337,7 +3337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4509219722e4ca4b989969b77ad1c5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winnings: 100
+  winnings: 200
   loss: 50
 --- !u!1 &278207635
 GameObject:

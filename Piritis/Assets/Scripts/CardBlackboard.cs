@@ -42,8 +42,17 @@ public class CardBlackboard : MonoBehaviour
         Random.InitState((int)System.DateTime.Now.Ticks);
         return CartasPlayer[Random.Range(0, CartasPlayer.Count)];
     }
-    public int ReturnDeckCount() { CartasPlayer.TrimExcess(); return CartasPlayer.Count; }
-    public void AddCardToDeck(CartaObject card) { CartasPlayer.Add(card); CartasPlayer.TrimExcess(); }
-    public void RemoveDeckCard(CartaObject card) { CartasPlayer.Remove(card); CartasPlayer.TrimExcess(); }
-    public bool EmptyDeck() { return ReturnDeckCount() < 1; }
+    public int ReturnDeckCount() {
+        CartasPlayer.TrimExcess();
+        return CartasPlayer.Count;
+    }
+    public void AddCardToDeck(CartaObject card) {
+        CartasPlayer.Add(card);
+        CartasPlayer.TrimExcess(); }
+    public void RemoveDeckCard(CartaObject card) {
+        CartasPlayer.Remove(card);
+        CartasPlayer.TrimExcess(); }
+    public bool EmptyDeck() {
+        return ReturnDeckCount() < 1;
+    }
 }

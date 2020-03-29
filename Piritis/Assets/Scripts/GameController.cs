@@ -66,8 +66,11 @@ public class GameController : MonoBehaviour
                 eventActive = false;
                 pc.SetMoving(true);
                 evento = null;
+                print(cb.ReturnDeckCount() + " " + pc.cardHand[0] + " " + pc.cardHand[1] + " " + pc.cardHand[2]);
                 DeleteCards();
+                print(cb.ReturnDeckCount() + " " + pc.cardHand[0] + " " + pc.cardHand[1] + " " + pc.cardHand[2]);
                 bm.FlushValues();
+                print(cb.ReturnDeckCount() + " " + pc.cardHand[0] + " " + pc.cardHand[1] + " " + pc.cardHand[2]);
                 mc.DisplayHUD(true);
                 mc.SetHUDValues(gold, treasureParts, cb.ReturnDeckCount());
                 FindObjectOfType<AudioManager>().Play("MusicaGeneral");
@@ -83,7 +86,10 @@ public class GameController : MonoBehaviour
             }
         }
         if (pc.CheckLooseState())
+        {
+            print(cb.ReturnDeckCount() + " " + pc.cardHand[0] + " " + pc.cardHand[1] + " " + pc.cardHand[2]);
             GameEnd(loosescene);
+        }
         if (treasureParts > winMin)
             GameEnd(winscene);
     }
@@ -204,9 +210,10 @@ public class GameController : MonoBehaviour
 
     public void DeleteCards()
     {
-        for (int i = 0; i < 3; i++)
-            if (results[i] == BattleManager.TResults.Lose)
-                pc.RemoveCardFromHand(i);
+        bool[] destroy = { false, false, false };
+        for (int i = 0; i < destroy.Length; i++)
+            destroy[i] = results[i] == BattleManager.TResults.Lose;
+        pc.DeleteCards(destroy);
     }
 
 
