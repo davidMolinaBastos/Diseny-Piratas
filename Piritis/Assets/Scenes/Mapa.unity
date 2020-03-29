@@ -3298,7 +3298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gold: 0
   treasureParts: 0
-  winMin: 10
+  winMin: 5
   winscene: WinScene
   loosescene: LooseScene
   inventory: 0
