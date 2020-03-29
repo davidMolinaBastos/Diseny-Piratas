@@ -468,13 +468,13 @@ MonoBehaviour:
   evento: 0
   eventos: 010000000400000002000000
   tripulantes: 0
-  goldValue: 100
-  crewValue: 100
+  goldValue: 1000
+  crewValue: 3
   islandID: 1
   messages:
-  - default
-  - default
-  - default
+  - El dorado! You earn 1000 gold
+  - The currents take you to an island!
+  - A kraken! You lose three crew members
   pirateLv: 1
   pirateHand:
   - {fileID: 11400000, guid: 743bc0999d01a99449d8d00b9a535463, type: 2}
@@ -878,7 +878,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 220.9, y: 137.19699}
+  m_AnchoredPosition: {x: 220.9, y: 114.3}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &87976721
@@ -1690,7 +1690,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 220.9, y: -42.6}
+  m_AnchoredPosition: {x: 220.9, y: -67.415}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &149327823
@@ -2128,7 +2128,7 @@ PrefabInstance:
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_Name
-      value: Nodo Combate R1
+      value: CombateR 1
       objectReference: {fileID: 0}
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
@@ -2603,7 +2603,7 @@ PrefabInstance:
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_Name
-      value: Nodos Islas R1
+      value: Isla R1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f7b98fc77400be4691c55ab803728e4, type: 3}
@@ -2904,7 +2904,7 @@ PrefabInstance:
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_Name
-      value: Nodos Evento R2''
+      value: Evento R2
       objectReference: {fileID: 0}
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
@@ -2940,9 +2940,9 @@ MonoBehaviour:
   crewValue: 1
   islandID: 0
   messages:
-  - default
-  - default
-  - default
+  - Treasure map! You earn 300 gold
+  - Sharks! You lose a crew member
+  - The currents take you to an island!
   pirateLv: 0
   pirateHand:
   - {fileID: 0}
@@ -3234,6 +3234,10 @@ MonoBehaviour:
   - {fileID: 374241818}
   - {fileID: 1023933513}
   - {fileID: 1601054229}
+  diceE:
+  - {fileID: 1976762270}
+  - {fileID: 664956985}
+  - {fileID: 1881383554}
   diceSprites:
   - {fileID: -5125555198026612319, guid: 1ea944731a347144388c7a839dbe447e, type: 3}
   - {fileID: 175962787396787636, guid: 1ea944731a347144388c7a839dbe447e, type: 3}
@@ -3787,7 +3791,7 @@ PrefabInstance:
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_Name
-      value: Nodos Evento R4
+      value: Evento R4
       objectReference: {fileID: 0}
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
@@ -3819,14 +3823,14 @@ MonoBehaviour:
   evento: 0
   eventos: 010000000200000004000000
   tripulantes: 0
-  goldValue: 0
-  crewValue: 0
+  goldValue: 1000
+  crewValue: 3
   islandID: 2
   messages:
-  - default
-  - default
-  - default
-  pirateLv: 1
+  - El  dorado! You earn 1000 gold
+  - A Kraken! You loose three crew members
+  - The currents take you to an island!
+  pirateLv: 3
   pirateHand:
   - {fileID: 0}
   - {fileID: 0}
@@ -4132,7 +4136,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 26.823, y: 138.057}
+  m_AnchoredPosition: {x: 26.823, y: 115.16001}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &348028138
@@ -4728,8 +4732,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -86}
-  m_SizeDelta: {x: 668, y: 78.6}
+  m_AnchoredPosition: {x: 0, y: -89.100006}
+  m_SizeDelta: {x: 428.1, y: 105.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &395148711
 CanvasRenderer:
@@ -4990,7 +4994,7 @@ PrefabInstance:
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_Name
-      value: Nodo Combate Final
+      value: Combate F
       objectReference: {fileID: 0}
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
@@ -5156,7 +5160,7 @@ PrefabInstance:
         type: 3}
       propertyPath: nodos.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 981569476}
     - target: {fileID: 1016678189268778091, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: nodos.Array.data[2]
@@ -5166,7 +5170,7 @@ PrefabInstance:
         type: 3}
       propertyPath: nodos.Array.data[3]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1771174634}
     - target: {fileID: 1016678189268778091, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: tipoNodo
@@ -5201,7 +5205,7 @@ PrefabInstance:
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_Name
-      value: Nodos Combats L1
+      value: CombateL1
       objectReference: {fileID: 0}
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
@@ -5376,7 +5380,7 @@ PrefabInstance:
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_Name
-      value: Nodos Islas R2
+      value: Isla R2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f7b98fc77400be4691c55ab803728e4, type: 3}
@@ -5860,7 +5864,7 @@ PrefabInstance:
         type: 3}
       propertyPath: nodos.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1270085493}
     - target: {fileID: 1016678189268778091, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: tipoNodo
@@ -5915,7 +5919,7 @@ PrefabInstance:
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_Name
-      value: Nodos Islas C2
+      value: Islas C2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f7b98fc77400be4691c55ab803728e4, type: 3}
@@ -7610,9 +7614,83 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -14.300001}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &664956983
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 664956984}
+  - component: {fileID: 664956986}
+  - component: {fileID: 664956985}
+  m_Layer: 5
+  m_Name: DadoE (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &664956984
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664956983}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2029845112}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 28.6, y: 194.69998}
+  m_SizeDelta: {x: 50, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &664956985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664956983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -5125555198026612319, guid: 1ea944731a347144388c7a839dbe447e,
+    type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &664956986
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664956983}
+  m_CullTransparentMesh: 0
 --- !u!1 &670181324
 GameObject:
   m_ObjectHideFlags: 0
@@ -11010,7 +11088,7 @@ PrefabInstance:
         type: 3}
       propertyPath: nodos.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1500179918}
     - target: {fileID: 1016678189268778091, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: nodos.Array.data[0]
@@ -11060,7 +11138,7 @@ PrefabInstance:
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_Name
-      value: Nodos Evento R1
+      value: Evento R1
       objectReference: {fileID: 0}
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
@@ -11096,9 +11174,9 @@ MonoBehaviour:
   crewValue: 2
   islandID: 0
   messages:
-  - default
-  - default
-  - default
+  - Sunken treasure! You earn 150 gold
+  - Sirens! You lose two crew members
+  - The currents take you to an island!
   pirateLv: 0
   pirateHand:
   - {fileID: 0}
@@ -12004,6 +12082,11 @@ PrefabInstance:
       propertyPath: nodos.Array.data[0]
       value: 
       objectReference: {fileID: 462818692}
+    - target: {fileID: 1016678189268778091, guid: 7f7b98fc77400be4691c55ab803728e4,
+        type: 3}
+      propertyPath: nodos.Array.data[1]
+      value: 
+      objectReference: {fileID: 44216855}
     - target: {fileID: 4472259160784094926, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_Color.r
@@ -12033,7 +12116,7 @@ PrefabInstance:
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_Name
-      value: Nodo Combate C1
+      value: CombateC1
       objectReference: {fileID: 0}
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
@@ -12599,7 +12682,7 @@ PrefabInstance:
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_Name
-      value: Nodos Evento L2
+      value: EventoL2
       objectReference: {fileID: 0}
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
@@ -12635,9 +12718,9 @@ MonoBehaviour:
   crewValue: 1
   islandID: 2
   messages:
-  - default
-  - default
-  - default
+  - Treasure chest! You earn 250 gold
+  - A shark! You lose a crew member
+  - The currents take you to an island!
   pirateLv: 0
   pirateHand:
   - {fileID: 0}
@@ -12881,7 +12964,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: -2.8, y: -86}
-  m_SizeDelta: {x: 322.4, y: 95.323}
+  m_SizeDelta: {x: 551.77, y: 130.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1201698839
 CanvasRenderer:
@@ -13159,7 +13242,7 @@ PrefabInstance:
         type: 3}
       propertyPath: nodos.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1172375356}
     - target: {fileID: 1016678189268778091, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: tipoNodo
@@ -13175,6 +13258,11 @@ PrefabInstance:
       propertyPath: nodos.Array.data[2]
       value: 
       objectReference: {fileID: 1172375356}
+    - target: {fileID: 1016678189268778091, guid: 7f7b98fc77400be4691c55ab803728e4,
+        type: 3}
+      propertyPath: nodos.Array.data[3]
+      value: 
+      objectReference: {fileID: 2018876418}
     - target: {fileID: 4472259160784094926, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_Color.g
@@ -13209,7 +13297,7 @@ PrefabInstance:
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_Name
-      value: Nodos Islas L1
+      value: IslaL1
       objectReference: {fileID: 0}
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
@@ -15606,7 +15694,7 @@ PrefabInstance:
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_Name
-      value: Nodos Islas C1
+      value: IslaC1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f7b98fc77400be4691c55ab803728e4, type: 3}
@@ -17441,7 +17529,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -178.4, y: -40.884995}
+  m_AnchoredPosition: {x: -178.4, y: -65.7}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1600686586
@@ -18197,7 +18285,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -14.3}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1671237723
@@ -18393,7 +18481,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -14.300001}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1684589584
@@ -18943,9 +19031,9 @@ MonoBehaviour:
   crewValue: 1
   islandID: 0
   messages:
-  - default
-  - default
-  - default
+  - You found a barrel drifting! You earn 200 gold
+  - Plague! You lose a crew member
+  - You found a barrel drifting! You earn 200 gold
   pirateLv: 0
   pirateHand:
   - {fileID: 0}
@@ -19367,7 +19455,7 @@ PrefabInstance:
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_Name
-      value: Nodos Evento 0
+      value: Evento 0
       objectReference: {fileID: 0}
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
@@ -20291,7 +20379,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -177.17, y: 138.91699}
+  m_AnchoredPosition: {x: -177.17, y: 116.02}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1872445264
@@ -20406,6 +20494,80 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1875388982}
+  m_CullTransparentMesh: 0
+--- !u!1 &1881383552
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1881383553}
+  - component: {fileID: 1881383555}
+  - component: {fileID: 1881383554}
+  m_Layer: 5
+  m_Name: DadoE (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1881383553
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881383552}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2029845112}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 220.8, y: 194.69998}
+  m_SizeDelta: {x: 50, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1881383554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881383552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -5125555198026612319, guid: 1ea944731a347144388c7a839dbe447e,
+    type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1881383555
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881383552}
   m_CullTransparentMesh: 0
 --- !u!1 &1881956654
 GameObject:
@@ -21433,7 +21595,7 @@ PrefabInstance:
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_Name
-      value: Nodos Islas 0
+      value: Void
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f7b98fc77400be4691c55ab803728e4, type: 3}
@@ -21951,7 +22113,7 @@ PrefabInstance:
         type: 3}
       propertyPath: nodos.Array.data[1]
       value: 
-      objectReference: {fileID: 1316918624}
+      objectReference: {fileID: 391939942}
     - target: {fileID: 1016678189268778091, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: nodos.Array.data[0]
@@ -21961,12 +22123,12 @@ PrefabInstance:
         type: 3}
       propertyPath: nodos.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 391939942}
     - target: {fileID: 1016678189268778091, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: nodos.Array.data[3]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1771174634}
     - target: {fileID: 1016678189268778091, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: tipoNodo
@@ -22001,7 +22163,7 @@ PrefabInstance:
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_Name
-      value: Nodos Evento L1
+      value: EventoL1
       objectReference: {fileID: 0}
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
@@ -22033,13 +22195,13 @@ MonoBehaviour:
   evento: 0
   eventos: 010000000200000003000000
   tripulantes: 0
-  goldValue: 100
+  goldValue: -100
   crewValue: 2
   islandID: 0
   messages:
-  - default
-  - default
-  - default
+  - A thief! You lose 100 gold
+  - A Kraken! You lose 2 crew members
+  - Traitor! You lose 100 gold and 2 crew members
   pirateLv: 0
   pirateHand:
   - {fileID: 0}
@@ -22121,6 +22283,80 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1974950129}
+  m_CullTransparentMesh: 0
+--- !u!1 &1976762268
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1976762269}
+  - component: {fileID: 1976762271}
+  - component: {fileID: 1976762270}
+  m_Layer: 5
+  m_Name: DadoE (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1976762269
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1976762268}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2029845112}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -175.8, y: 194.7}
+  m_SizeDelta: {x: 50, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1976762270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1976762268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -5125555198026612319, guid: 1ea944731a347144388c7a839dbe447e,
+    type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1976762271
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1976762268}
   m_CullTransparentMesh: 0
 --- !u!1 &1978832120
 GameObject:
@@ -22620,7 +22856,7 @@ PrefabInstance:
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
       propertyPath: m_Name
-      value: NodoEvento R2'
+      value: Evento R3
       objectReference: {fileID: 0}
     - target: {fileID: 5108475234255911970, guid: 7f7b98fc77400be4691c55ab803728e4,
         type: 3}
@@ -22687,6 +22923,9 @@ RectTransform:
   - {fileID: 1680844387}
   - {fileID: 659015323}
   - {fileID: 1667082736}
+  - {fileID: 1976762269}
+  - {fileID: 664956984}
+  - {fileID: 1881383553}
   m_Father: {fileID: 203839316}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -23630,7 +23869,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 26.823, y: -41.741993}
+  m_AnchoredPosition: {x: 26.823, y: -66.55699}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2108831888

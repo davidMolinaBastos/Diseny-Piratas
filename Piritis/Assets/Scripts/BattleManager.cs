@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BattleManager : MonoBehaviour
 {
-    public enum TResults { Win, Draw, Loose, Void }
+    public enum TResults { Win, Draw, Lose, Void }
     TResults[] results = new TResults[3];
     int[] PlayerRolls = new int[3];
     int[] EnemyRolls = new int[3];
@@ -30,6 +30,7 @@ public class BattleManager : MonoBehaviour
     //Public Handling
     public TResults[] ReturnResults() { return results; }
     public int[] ReturnPlayerRolls() { return PlayerRolls; }
+    public int[] ReturnEnemyRolls() { return EnemyRolls; }
     public float GetWinnings()
     {
         float total = 0;
@@ -37,7 +38,7 @@ public class BattleManager : MonoBehaviour
         for (int i = 0; i < results.Length; i++)
             if (results[i] == TResults.Win)
                 total += winnings;
-            else if (results[i] == TResults.Loose)
+            else if (results[i] == TResults.Lose)
                 total -= loss;
 
         if (total > 0)
@@ -76,7 +77,7 @@ public class BattleManager : MonoBehaviour
         for (int i = 0; i < results.Length; i++)
             if (results[i] == TResults.Void)
                 if (PlayerRolls[i] < EnemyRolls[i])
-                    results[i] = TResults.Loose;
+                    results[i] = TResults.Lose;
                 else if (PlayerRolls[i] > EnemyRolls[i])
                     results[i] = TResults.Win;
                 else
@@ -95,7 +96,7 @@ public class BattleManager : MonoBehaviour
                     break;
                 case CartaObject.TipoPasiva.MAL_EMPATE:
                     if (results[i] == TResults.Draw)
-                        results[i] = TResults.Loose;
+                        results[i] = TResults.Lose;
                     break;
                 case CartaObject.TipoPasiva.SUPER_EMPATE:
                     if (results[i] == TResults.Draw)
@@ -109,7 +110,7 @@ public class BattleManager : MonoBehaviour
             {
                 case CartaObject.TipoPasiva.BUEN_EMPATE:
                     if (results[i] == TResults.Draw)
-                        results[i] = TResults.Loose;
+                        results[i] = TResults.Lose;
                     break;
                 case CartaObject.TipoPasiva.MAL_EMPATE:
                     if (results[i] == TResults.Draw)
@@ -117,7 +118,7 @@ public class BattleManager : MonoBehaviour
                     break;
                 case CartaObject.TipoPasiva.SUPER_EMPATE:
                     if (results[i] == TResults.Draw)
-                        results[i] = TResults.Loose;
+                        results[i] = TResults.Lose;
                     break;
             }
         }

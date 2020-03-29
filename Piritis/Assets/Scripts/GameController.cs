@@ -24,6 +24,7 @@ public class GameController : MonoBehaviour
     [HideInInspector] public int invCase;
     BattleManager.TResults[] results;
     int[] playerRolls;
+    int[] enemyRolls;
     [HideInInspector] public float fightCounter = 5;
     // PORT ROYAL = 0, TORTUGA = 1, NEW PROVIDENCE = 2, 
     public Transform[] Islas = new Transform[6];
@@ -81,9 +82,8 @@ public class GameController : MonoBehaviour
                 evento = null;
             }
         }
-        /*
         if (pc.CheckLooseState())
-            GameEnd(loosescene);*/
+            GameEnd(loosescene);
         if (treasureParts > winMin)
             GameEnd(winscene);
     }
@@ -124,7 +124,7 @@ public class GameController : MonoBehaviour
         mc.SetHUDValues(gold, treasureParts, cb.ReturnDeckCount());
         pc.SetMoving(true);
     }
-    public bool CanBuy(float value) { return gold > value; }
+    public bool CanBuy(float value) { return gold >= value; }
     public void ChangeGold(float value)
     {
         gold += value;
@@ -181,6 +181,7 @@ public class GameController : MonoBehaviour
                 bm.Battle(pc.GetHand(), e.pirateHand);
                 ChangeGold(bm.GetWinnings());
                 playerRolls = bm.ReturnPlayerRolls();
+                enemyRolls = bm.ReturnEnemyRolls();
                 results = bm.ReturnResults();
                 break;
             case EventNodeScript.TEvent.CHANGE_GOLD:
@@ -199,13 +200,13 @@ public class GameController : MonoBehaviour
     }
 
     public int[] ReturnPlayerRolls() { return playerRolls; }
+    public int[] ReturnEnemyRolls() { return enemyRolls; }
 
     public void DeleteCards()
     {
         for (int i = 0; i < 3; i++)
-            if (results[i] == BattleManager.TResults.Loose)
+            if (results[i] == BattleManager.TResults.Lose)
                 pc.RemoveCardFromHand(i);
-            
     }
 
 
