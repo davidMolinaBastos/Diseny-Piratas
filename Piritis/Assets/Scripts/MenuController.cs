@@ -16,6 +16,7 @@ public class MenuController : MonoBehaviour
     //public Animation[] dice;
     //public AnimationClip[] anims;
     public Image[] dice = new Image[3];
+    public Image[] diceE = new Image[3];
     public Sprite[] diceSprites = new Sprite[6];
     public GameObject[] results = new GameObject[3];
     public Text[] resultDisplay = new Text[3];
@@ -38,6 +39,11 @@ public class MenuController : MonoBehaviour
     [HideInInspector] public CartaObject SelectedHandCard = null;
     [HideInInspector] public CartaObject SelectedDeckCard = null;
 
+    [Header("HUD")]
+    public Text gold;
+    public Text treasure;
+    public Text cards;
+
     GameController gc;
     public void Start()
     {
@@ -56,6 +62,8 @@ public class MenuController : MonoBehaviour
         //  a.gameObject.SetActive(false);
         foreach (Image i in dice)
             i.enabled = false;
+        foreach (Image i in diceE)
+            i.enabled = false;
         foreach (GameObject go in results)
             go.SetActive(false);
 
@@ -72,6 +80,10 @@ public class MenuController : MonoBehaviour
         DeckLevels.SetActive(false);
         foreach (GameObject go in Lvls)
             go.SetActive(false);
+
+        gold.enabled = true;
+        treasure.enabled = true;
+        cards.enabled = true;
     }
     //DISPLAY METHODS
 
@@ -79,7 +91,9 @@ public class MenuController : MonoBehaviour
     {
         currentEvent = evento;
         if (currentEvent != null)
-            e_text.text = currentEvent.message;
+            for (int i = 0; i < 3; i++)
+                if (currentEvent.evento == currentEvent.eventos[i])
+                    e_text.text = currentEvent.messages[i];
         e_text.enabled = display;
         e_image.enabled = display;
     }
@@ -88,7 +102,6 @@ public class MenuController : MonoBehaviour
     {
         if (playerHand != null)
             for (int i = 0; i < 3; i++)
-            {
                 if (playerHand[i] != null)
                 {
                     playerCards[i].enabled = display;
@@ -97,16 +110,17 @@ public class MenuController : MonoBehaviour
                     //dice[i].Play();
                     //gc.fightCounter = dice[i].clip.length + 1f;
                     dice[i].enabled = display;
-                    dice[i].sprite = diceSprites[Mathf.Clamp(gc.ReturnPlayerRolls()[i], 0, 6)];
+                    dice[i].sprite = diceSprites[Mathf.Clamp(gc.ReturnPlayerRolls()[i], 0, 5)];
+                    diceE[i].enabled = display;
+                    diceE[i].sprite = diceSprites[Mathf.Clamp(gc.ReturnEnemyRolls()[i], 0, 5)];
                     gc.fightCounter = 2f;
                 }
-            }
         for (int i = 0; i < 3; i++)
         {
             enemyCards[i].enabled = display;
-            if(pirateHand != null)
-            if (pirateHand[i] != null)
-                enemyCards[i].sprite = pirateHand[i].sprite;
+            if (pirateHand != null)
+                if (pirateHand[i] != null)
+                    enemyCards[i].sprite = pirateHand[i].sprite;
 
         }
         Background.enabled = display;
@@ -114,8 +128,7 @@ public class MenuController : MonoBehaviour
             foreach (GameObject go in results)
                 go.SetActive(display);
         //foreach (Animation a in dice)
-          //  a.gameObject.SetActive(display);
-          
+        //  a.gameObject.SetActive(display);
     }
 
     public void DisplayShop(bool display, float gold, float treasure)
@@ -148,5 +161,19 @@ public class MenuController : MonoBehaviour
                 Lvls[lvl].SetActive(display);
                 break;
         }
+    }
+
+    public void DisplayHUD(bool display)
+    {
+        gold.enabled = display;
+        treasure.enabled = display;
+        cards.enabled = display;
+    }
+    public void SetHUDValues(float gold_l, float treasure_l, int deckCount)
+    {
+        int count = deckCount + 3;
+        gold.text = "Gold: " + gold_l;
+        treasure.text = "Treasure: " + treasure_l;
+        cards.text = "Cards in deck :" + count;
     }
 }

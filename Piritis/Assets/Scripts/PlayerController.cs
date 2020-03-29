@@ -29,15 +29,15 @@ public class PlayerController : MonoBehaviour
     {
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         cb = GameObject.FindGameObjectWithTag("GameController").GetComponent<CardBlackboard>();
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < cardHand.Length; i++)
             SwitchCards(cardHand[i], cb.ReturnRandomPlayerCard(), i);
     }
 
     void Update()
     {
-        for (int i = 0; i < 3; i++)
-            if (cardHand[i] == null && cb.CartasPlayer.Count > 0)
-                SwitchCards(cardHand[i], GetRandomDeckCard(), i);
+        for (int i = 0; i < cardHand.Length; i++)
+            if (cardHand[i] == null && cb.ReturnDeckCount() > 0)
+                SwitchCards(cardHand[i], cb.ReturnRandomPlayerCard(), i);
         //Movimiento
         if (canMove)
         {
@@ -94,24 +94,21 @@ public class PlayerController : MonoBehaviour
 
     public void SwitchCards(CartaObject oldHand, CartaObject oldDeck, int handID)
     {
-        if(oldHand != null)
-            cb.CartasPlayer.Add(oldHand);
-        cb.CartasPlayer.Remove(oldDeck);
-        cb.CartasPlayer.TrimExcess();
+        if (oldHand != null)
+            cb.AddCardToDeck(oldHand);
+        cb.RemoveDeckCard(oldDeck);
         cardHand[handID] = oldDeck;
     }
 
     public void RemoveCardFromHand(int index)
     {
-        if (cb.CartasPlayer.Count < 1)
+        if (cb.ReturnDeckCount() < 1)
             return;
         cardHand[index] = null;
-        cb.CartasPlayer.TrimExcess();
-        SwitchCards(null, GetRandomDeckCard(), index);
-        cb.CartasPlayer.TrimExcess();
+        SwitchCards(null, cb.ReturnRandomPlayerCard(), index);
     }
 
-    public CartaObject GetRandomDeckCard()
+    /*public CartaObject GetRandomDeckCard()
     {
         if (cb.CartasPlayer.Count < 1)
             return null;
@@ -120,7 +117,7 @@ public class PlayerController : MonoBehaviour
         int r = Random.Range(0, cb.CartasPlayer.Count);
         return cb.CartasPlayer[r];
     }
-
+    */
     public void Teleport(Transform objective)
     {
         transform.position = objective.position;
@@ -128,18 +125,22 @@ public class PlayerController : MonoBehaviour
         gameController.CallShopWindow();
     }
 
-    public void AddNewRandomCard(int lvl) { cb.CartasPlayer.Add(cb.ReturnRandomCard(lvl)); }
+    public void AddNewRandomCard(int lvl) { cb.AddCardToDeck(cb.ReturnRandomCard(lvl)); }
     public void DeleteRandomDeckCard()
     {
-        if (cb.CartasPlayer.Count < 1)
-            return;
-        Random.InitState((int)System.DateTime.Now.Ticks);
-        cb.CartasPlayer.TrimExcess();
-        int r = Random.Range(0, cb.CartasPlayer.Count);
-        cb.CartasPlayer.RemoveAt(r);
+        if (cb.ReturnDeckCount() > 1)
+            cb.RemoveDeckCard(cb.ReturnRandomPlayerCard());
     }
 
     public CartaObject[] GetHand() { return cardHand; }
 
+    public bool CheckLooseState()
+    {
+        if (cb.EmptyDeck())
+            for (int i = 0; i < cardHand.Length; i++)
+                if (cardHand[i] == null)
+                    return true;
+        return false;
+    }
     public void SetMoving(bool movin) { canMove = movin; }
 }

@@ -24,6 +24,7 @@ public class GameController : MonoBehaviour
     [HideInInspector] public int invCase;
     BattleManager.TResults[] results;
     int[] playerRolls;
+    int[] enemyRolls;
     [HideInInspector] public float fightCounter = 5;
     // PORT ROYAL = 0, TORTUGA = 1, NEW PROVIDENCE = 2, 
     public Transform[] Islas = new Transform[6];
@@ -35,6 +36,9 @@ public class GameController : MonoBehaviour
         mc = GetComponent<MenuController>();
         bm = GetComponent<BattleManager>();
         pc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        FindObjectOfType<AudioManager>().Play("MusicaGeneral");
+
+        mc.SetHUDValues(gold, treasureParts, cb.ReturnDeckCount());
     }
     private void Update()
     {
@@ -49,15 +53,13 @@ public class GameController : MonoBehaviour
 #endif
         if (eventActive)
         {
-            /*
-            SE TIENE QUE CAMBIAR, y se ha cambiao
-            */
-            if(evento.GetEventType() == EventNodeScript.TEvent.FIGHT && fightCounter >= 1 && !mc.results[1].active)
-                for(int i = 0; i < 3; i++)
+            if (evento.GetEventType() == EventNodeScript.TEvent.FIGHT && fightCounter >= 1 && !mc.results[1].active)
+                for (int i = 0; i < 3; i++)
                 {
                     mc.results[i].SetActive(true);
                     mc.resultDisplay[i].text = results[i].ToString();
                 }
+
             if (evento.GetEventType() == EventNodeScript.TEvent.FIGHT && fightCounter <= 0 && Input.anyKeyDown)//Input.anyKeyDown && evento.GetEventType() == EventNodeScript.TEvent.FIGHT)
             {
                 mc.DisplayFight(false, null, pc.GetHand());
@@ -66,22 +68,27 @@ public class GameController : MonoBehaviour
                 evento = null;
                 DeleteCards();
                 bm.FlushValues();
+                mc.DisplayHUD(true);
+                mc.SetHUDValues(gold, treasureParts, cb.ReturnDeckCount());
+                FindObjectOfType<AudioManager>().Play("MusicaGeneral");
             }
             else if (evento.GetEventType() != EventNodeScript.TEvent.FIGHT && Input.anyKeyDown)
             {
                 mc.DisplayEvent(false, null);
                 eventActive = false;
+                mc.DisplayHUD(true);
+                mc.SetHUDValues(gold, treasureParts, cb.ReturnDeckCount());
                 pc.SetMoving(true);
                 evento = null;
             }
         }
-        if (pc.GetHand().Length < 1 && cb.GetPlayerCards().Count < 1)
+        if (pc.CheckLooseState())
             GameEnd(loosescene);
         if (treasureParts > winMin)
             GameEnd(winscene);
     }
-    
-    public void GameEnd( string scene){SceneManager.LoadScene(scene);}
+
+    public void GameEnd(string scene) { SceneManager.LoadScene(scene); }
 
     //InventoryManager
     public void CallInventory(int Case, int Lvl)
@@ -89,6 +96,7 @@ public class GameController : MonoBehaviour
         inventory = true;
         invCase = Case;
         mc.DisplayInventory(true, pc, Case, Lvl);
+        mc.DisplayHUD(false);
         pc.SetMoving(false);
     }
     public void CloseInventory(int Case, int Lvl)
@@ -96,6 +104,8 @@ public class GameController : MonoBehaviour
         inventory = false;
         invCase = Case;
         mc.DisplayInventory(false, pc, Case, Lvl);
+        mc.DisplayHUD(true);
+        mc.SetHUDValues(gold, treasureParts, cb.ReturnDeckCount());
         pc.SetMoving(true);
     }
 
@@ -103,23 +113,20 @@ public class GameController : MonoBehaviour
     public void CallShopWindow()
     {
         mc.DisplayShop(true, gold, treasureParts);
+        mc.DisplayHUD(false);
         pc.SetMoving(false);
         RefillNodes();
     }
     public void CloseShopWindow()
     {
         mc.DisplayShop(false, gold, treasureParts);
+        mc.DisplayHUD(true);
+        mc.SetHUDValues(gold, treasureParts, cb.ReturnDeckCount());
         pc.SetMoving(true);
     }
-    public bool CanBuy(float value)
+    public bool CanBuy(float value) { return gold >= value; }
+    public void ChangeGold(float value)
     {
-        if (value > gold)
-            return false;
-        return true;
-    }
-    public void ChangeGold(float value) {
-        if (gold - value < 0) 
-            gold = 0;
         gold += value;
         gold = Mathf.Clamp(gold, 0, gold);
     }
@@ -143,6 +150,17 @@ public class GameController : MonoBehaviour
             pc.SetMoving(false);
             evento = e;
             e.Deplete();
+
+            if (Random.Range(0, 100) < 50)
+                FindObjectOfType<AudioManager>().Play("SonidoCombate");
+            else
+                FindObjectOfType<AudioManager>().Play("SonidoCombate2");
+            FindObjectOfType<AudioManager>().Play("Dados");
+            if (Random.Range(0, 100) < 50)
+                FindObjectOfType<AudioManager>().Play("CardSound");
+            else
+                FindObjectOfType<AudioManager>().Play("CardSound");
+            mc.DisplayHUD(false);
         }
         else
         {
@@ -152,6 +170,7 @@ public class GameController : MonoBehaviour
             evento = e;
             e.Deplete();
             PerformEvent(e);
+            mc.DisplayHUD(false);
         }
     }
     void PerformEvent(EventNodeScript e)
@@ -160,8 +179,9 @@ public class GameController : MonoBehaviour
         {
             case EventNodeScript.TEvent.FIGHT:
                 bm.Battle(pc.GetHand(), e.pirateHand);
-                gold += bm.GetWinnings();
+                ChangeGold(bm.GetWinnings());
                 playerRolls = bm.ReturnPlayerRolls();
+                enemyRolls = bm.ReturnEnemyRolls();
                 results = bm.ReturnResults();
                 break;
             case EventNodeScript.TEvent.CHANGE_GOLD:
@@ -180,11 +200,12 @@ public class GameController : MonoBehaviour
     }
 
     public int[] ReturnPlayerRolls() { return playerRolls; }
+    public int[] ReturnEnemyRolls() { return enemyRolls; }
 
     public void DeleteCards()
     {
         for (int i = 0; i < 3; i++)
-            if (results[i] == BattleManager.TResults.Loose)
+            if (results[i] == BattleManager.TResults.Lose)
                 pc.RemoveCardFromHand(i);
     }
 
